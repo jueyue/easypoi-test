@@ -15,6 +15,7 @@ import org.jeecgframework.poi.excel.export.styler.ExcelExportStylerColorImpl;
 import org.jeecgframework.poi.test.entity.temp.BudgetAccountsEntity;
 import org.jeecgframework.poi.test.entity.temp.PayeeEntity;
 import org.jeecgframework.poi.test.entity.temp.TemplateExcelExportEntity;
+import org.jeecgframework.poi.util.PoiMergeCellUtil;
 import org.junit.Test;
 
 import com.google.common.collect.Lists;
@@ -51,16 +52,17 @@ public class TemplateForEachTest {
             mapList.add(testMap);
         }
         map.put("maplist", mapList);
-        
+
         mapList = new ArrayList<Map<String, Object>>();
         for (int i = 0; i < 6; i++) {
             Map<String, Object> testMap = new HashMap<String, Object>();
-            
+
             testMap.put("si", "xman");
             mapList.add(testMap);
         }
         map.put("sitest", mapList);
         Workbook workbook = ExcelExportUtil.exportExcel(params, map);
+        PoiMergeCellUtil.mergeCells(workbook.getSheetAt(0), 1, 0, 4);
         File savefile = new File("d:/");
         if (!savefile.exists()) {
             savefile.mkdirs();
@@ -68,10 +70,6 @@ public class TemplateForEachTest {
         FileOutputStream fos = new FileOutputStream("d:/foreach.xlsx");
         workbook.write(fos);
         fos.close();
-//        workbook = ExcelExportUtil.exportExcel(params, map);
-//        fos = new FileOutputStream("d:/foreach2.xlsx");
-//        workbook.write(fos);
-//        fos.close();
     }
 
 }
