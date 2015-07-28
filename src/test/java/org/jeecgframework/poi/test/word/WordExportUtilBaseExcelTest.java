@@ -21,7 +21,7 @@ public class WordExportUtilBaseExcelTest {
     /**
      * 简单导出包含图片
      */
-    @Test
+    //@Test
     public void imageWordExport() {
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("department", "Jeecg");
@@ -54,6 +54,7 @@ public class WordExportUtilBaseExcelTest {
         map.put("person", "JueYue");
         map.put("auditPerson", "JueYue");
         map.put("time", format.format(new Date()));
+        map.put("date", new Date());
         List<Person> list = new ArrayList<Person>();
         Person p = new Person();
         p.setName("小明");
