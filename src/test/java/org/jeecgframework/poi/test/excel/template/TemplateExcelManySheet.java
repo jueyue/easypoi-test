@@ -1,4 +1,4 @@
-package org.jeecgframework.poi.test.excel.test;
+package org.jeecgframework.poi.test.excel.template;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -18,18 +18,24 @@ import org.jeecgframework.poi.test.entity.TeacherEntity;
 import org.junit.Before;
 import org.junit.Test;
 
-public class ExcelExportTemplateTest {
+/**
+ * 多sheet导出
+ * @author JueYue
+ * @date 2015年8月15日 下午10:39:21
+ */
+public class TemplateExcelManySheet {
 
     List<CourseEntity> list = new ArrayList<CourseEntity>();
     CourseEntity       courseEntity;
 
-    //@Test
-    public void one() throws Exception {
+    @Test
+    public void manyMap() throws Exception {
         TemplateExportParams params = new TemplateExportParams(
             "org/jeecgframework/poi/test/excel/doc/exportTemp.xls", true);
         params.setHeadingRows(2);
         params.setHeadingStartRow(2);
         params.setStyle(ExcelStyleType.BORDER.getClazz());
+        Map<Integer,Map<String,Object>> sheetMap = new HashMap<Integer, Map<String,Object>>();
         Map<String, Object> map = new HashMap<String, Object>();
         //sheet 1
         map.put("year", "2013");
@@ -37,8 +43,13 @@ public class ExcelExportTemplateTest {
         Map<String, Object> obj = new HashMap<String, Object>();
         map.put("obj", obj);
         obj.put("name", list.size());
+        
         // sheet 2
         map.put("month", 10);
+        
+        //第一个sheet Map的值put进去
+        sheetMap.put(0, map);
+        map = new HashMap<String, Object>();
         Map<String, Object> temp;
         for (int i = 1; i < 8; i++) {
             temp = new HashMap<String, Object>();
@@ -47,12 +58,14 @@ public class ExcelExportTemplateTest {
             temp.put("summon", i * 10000);
             map.put("i" + i, temp);
         }
-        Workbook book = ExcelExportUtil.exportExcel(params, CourseEntity.class, list, map);
+      //第二个sheet Map的值put进去
+        sheetMap.put(1, map);
+        Workbook book = ExcelExportUtil.exportExcel(sheetMap,params);
         File savefile = new File("d:/");
         if (!savefile.exists()) {
             savefile.mkdirs();
         }
-        FileOutputStream fos = new FileOutputStream("d:/exportTemp.xls");
+        FileOutputStream fos = new FileOutputStream("d:/exportTemp3.xls");
         book.write(fos);
         fos.close();
 
@@ -89,28 +102,4 @@ public class ExcelExportTemplateTest {
         }
     }
 
-    @Test
-    public void two() throws Exception {
-        TemplateExportParams params = new TemplateExportParams(
-            "org/jeecgframework/poi/test/excel/doc/exportTemp.xls", 1);
-        Map<String, Object> map = new HashMap<String, Object>();
-        map.put("month", 10);
-        Map<String, Object> temp;
-        for (int i = 1; i < 8; i++) {
-            temp = new HashMap<String, Object>();
-            temp.put("per", i * 10);
-            temp.put("mon", i * 1000);
-            temp.put("summon", i * 10000);
-            map.put("i" + i, temp);
-        }
-        Workbook book = ExcelExportUtil.exportExcel(params, map);
-        File savefile = new File("d:/");
-        if (!savefile.exists()) {
-            savefile.mkdirs();
-        }
-        FileOutputStream fos = new FileOutputStream("d:/exportTemp2.xls");
-        book.write(fos);
-        fos.close();
-
-    }
 }
