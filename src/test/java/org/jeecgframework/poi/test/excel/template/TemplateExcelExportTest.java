@@ -85,19 +85,19 @@ public class TemplateExcelExportTest {
     @Test
     public void test2() throws Exception {
         TemplateExportParams params = new TemplateExportParams(
-            "org/jeecgframework/poi/test/excel/doc/projectDetail.xls");
+            "org/jeecgframework/poi/test/excel/doc/merge_test.xls");
         Map<String, Object> map = new HashMap<String, Object>();
 
         List<Map<String, String>> list = new ArrayList<Map<String, String>>();
 
         for (int i = 0; i < 3; i++) {
             Map<String, String> m = new HashMap<String, String>();
-            m.put("username", "username" + "1");
+            m.put("id", "id" + "1");
             m.put("uname", "name" + "1");
-            m.put("investmentAmount", "investmentAmount" + "1");
+            m.put("amount", "amount" + "1");
             list.add(m);
         }
-        map.put("investmentList", list);
+        map.put("list", list);
         Workbook workbook = ExcelExportUtil.exportExcel(params, map);
         File savefile = new File("d:/");
         if (!savefile.exists()) {
