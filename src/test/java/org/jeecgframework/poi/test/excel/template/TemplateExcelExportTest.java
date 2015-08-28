@@ -26,7 +26,7 @@ import com.google.common.collect.Lists;
 
 public class TemplateExcelExportTest {
 
-    @Test
+    //@Test
     public void test() throws Exception {
         TemplateExportParams params = new TemplateExportParams(
             "org/jeecgframework/poi/test/excel/doc/专项支出用款申请书.xls");
@@ -73,6 +73,32 @@ public class TemplateExcelExportTest {
 
         Workbook workbook = ExcelExportUtil.exportExcel(params, TemplateExcelExportEntity.class,
             list, map);
+        File savefile = new File("d:/");
+        if (!savefile.exists()) {
+            savefile.mkdirs();
+        }
+        FileOutputStream fos = new FileOutputStream("d:/tt.xls");
+        workbook.write(fos);
+        fos.close();
+    }
+
+    @Test
+    public void test2() throws Exception {
+        TemplateExportParams params = new TemplateExportParams(
+            "org/jeecgframework/poi/test/excel/doc/projectDetail.xls");
+        Map<String, Object> map = new HashMap<String, Object>();
+
+        List<Map<String, String>> list = new ArrayList<Map<String, String>>();
+
+        for (int i = 0; i < 3; i++) {
+            Map<String, String> m = new HashMap<String, String>();
+            m.put("username", "username" + "1");
+            m.put("uname", "name" + "1");
+            m.put("investmentAmount", "investmentAmount" + "1");
+            list.add(m);
+        }
+        map.put("investmentList", list);
+        Workbook workbook = ExcelExportUtil.exportExcel(params, map);
         File savefile = new File("d:/");
         if (!savefile.exists()) {
             savefile.mkdirs();
