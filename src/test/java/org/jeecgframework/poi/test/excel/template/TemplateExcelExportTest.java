@@ -90,11 +90,11 @@ public class TemplateExcelExportTest {
 
         List<Map<String, String>> list = new ArrayList<Map<String, String>>();
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 8; i++) {
             Map<String, String> m = new HashMap<String, String>();
             m.put("id", "id" + "1");
             m.put("uname", "name" + "1");
-            m.put("amount", "amount" + "1");
+            m.put("amount", i+"");
             list.add(m);
         }
         map.put("list", list);
