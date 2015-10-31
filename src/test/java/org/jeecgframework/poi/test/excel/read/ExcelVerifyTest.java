@@ -39,7 +39,7 @@ public class ExcelVerifyTest {
     
     private final static  Logger  LOGGER = LoggerFactory.getLogger(ExcelVerifyTest.class);
 
-    @Test
+    //@Test
     public void basetest() {
         try {
             ImportParams params = new ImportParams();
@@ -60,7 +60,7 @@ public class ExcelVerifyTest {
     }
     
     
-    @Test
+    //@Test
     public void baseModetest() {
         try {
             ImportParams params = new ImportParams();
@@ -80,11 +80,32 @@ public class ExcelVerifyTest {
         }
     }
     
-    @Test
+    //@Test
     public void baseHanldertest() {
         try {
             ImportParams params = new ImportParams();
             params.setVerifyHanlder(new ExcelVerifyHandlerImpl());
+            ExcelImportResult<ExcelVerifyEntityOfMode> result = ExcelImportUtil.importExcelVerify(
+                new File("D:/mySpace/myself/easypoi-test/src/main/resources/import/verfiy.xlsx"),
+                ExcelVerifyEntityOfMode.class, params);
+            FileOutputStream fos = new FileOutputStream("d:/tt.xlsx");
+            result.getWorkbook().write(fos);
+            fos.close();
+            for (int i = 0; i < result.getList().size(); i++) {
+                System.out.println(ReflectionToStringBuilder.toString(result.getList().get(i)));
+            }
+            Assert.assertTrue(result.getList().size() == 4);
+        } catch (Exception e) {
+            LOGGER.error(e.getMessage(),e);
+        }
+    }
+    
+    @Test
+    public void combinedVerificationTest() {
+        try {
+            ImportParams params = new ImportParams();
+            params.setVerifyHanlder(new ExcelVerifyHandlerImpl());
+            params.setNeedVerfiy(true);
             ExcelImportResult<ExcelVerifyEntityOfMode> result = ExcelImportUtil.importExcelVerify(
                 new File("D:/mySpace/myself/easypoi-test/src/main/resources/import/verfiy.xlsx"),
                 ExcelVerifyEntityOfMode.class, params);
