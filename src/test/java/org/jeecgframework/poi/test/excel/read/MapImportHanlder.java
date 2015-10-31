@@ -5,7 +5,7 @@ import java.util.Map;
 import org.jeecgframework.poi.handler.impl.ExcelDataHandlerDefaultImpl;
 import org.jeecgframework.poi.util.PoiPublicUtil;
 
-public class MapImportHanlder extends ExcelDataHandlerDefaultImpl {
+public class MapImportHanlder extends ExcelDataHandlerDefaultImpl<Map<String, Object>> {
 
     @Override
     public void setMapValue(Map<String, Object> map, String originKey, Object value) {

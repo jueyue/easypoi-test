@@ -1,7 +1,12 @@
 package org.jeecgframework.poi.test.entity;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+
+import org.hibernate.validator.constraints.Email;
 import org.jeecgframework.poi.excel.annotation.Excel;
-import org.jeecgframework.poi.excel.annotation.ExcelVerify;
 
 /**
  * Excel导入校验类
@@ -14,48 +19,32 @@ public class ExcelVerifyEntity {
      * Email校验
      */
     @Excel(name = "Email", width = 25)
-    @ExcelVerify(isEmail = true, notNull = true)
+    @Email
     private String email;
     /**
-     * 手机号校验
+     * 最大
      */
-    @Excel(name = "Mobile", width = 20)
-    @ExcelVerify(isMobile = true, notNull = true)
-    private String mobile;
+    @Excel(name = "Max")
+    @Max(15)
+    private int    max;
     /**
-     * 电话校验
+     * 最小
      */
-    @Excel(name = "Tel", width = 20)
-    @ExcelVerify(isTel = true, notNull = true)
-    private String tel;
-    /**
-     * 最长校验
-     */
-    @Excel(name = "MaxLength")
-    @ExcelVerify(maxLength = 15)
-    private String maxLength;
-    /**
-     * 最短校验
-     */
-    @Excel(name = "MinLength")
-    @ExcelVerify(minLength = 3)
-    private String minLength;
+    @Excel(name = "Min")
+    @Min(3)
+    private int    min;
     /**
      * 非空校验
      */
     @Excel(name = "NotNull")
-    @ExcelVerify(notNull = true)
+    @NotNull
     private String notNull;
     /**
      * 正则校验
      */
     @Excel(name = "Regex")
-    @ExcelVerify(regex = "[\u4E00-\u9FA5]*", regexTip = "不是中文")
+    @Pattern(regexp = "[\u4E00-\u9FA5]*", message = "不是中文")
     private String regex;
-    /**
-     * 接口校验
-     */
-    private String interHandler;
 
     public String getEmail() {
         return email;
@@ -65,36 +54,20 @@ public class ExcelVerifyEntity {
         this.email = email;
     }
 
-    public String getMobile() {
-        return mobile;
+    public int getMax() {
+        return max;
     }
 
-    public void setMobile(String mobile) {
-        this.mobile = mobile;
+    public void setMax(int max) {
+        this.max = max;
     }
 
-    public String getTel() {
-        return tel;
+    public int getMin() {
+        return min;
     }
 
-    public void setTel(String tel) {
-        this.tel = tel;
-    }
-
-    public String getMaxLength() {
-        return maxLength;
-    }
-
-    public void setMaxLength(String maxLength) {
-        this.maxLength = maxLength;
-    }
-
-    public String getMinLength() {
-        return minLength;
-    }
-
-    public void setMinLength(String minLength) {
-        this.minLength = minLength;
+    public void setMin(int min) {
+        this.min = min;
     }
 
     public String getNotNull() {
@@ -111,14 +84,6 @@ public class ExcelVerifyEntity {
 
     public void setRegex(String regex) {
         this.regex = regex;
-    }
-
-    public String getInterHandler() {
-        return interHandler;
-    }
-
-    public void setInterHandler(String interHandler) {
-        this.interHandler = interHandler;
     }
 
 }

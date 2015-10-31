@@ -6,7 +6,6 @@ import org.jeecgframework.poi.excel.annotation.Excel;
 import org.jeecgframework.poi.excel.annotation.ExcelCollection;
 import org.jeecgframework.poi.excel.annotation.ExcelEntity;
 import org.jeecgframework.poi.excel.annotation.ExcelTarget;
-import org.jeecgframework.poi.excel.annotation.ExcelVerify;
 
 /**
  * @Title: Entity
@@ -26,7 +25,6 @@ public class CourseEntity implements java.io.Serializable {
     private String              name;
     /** 老师主键 */
     @ExcelEntity(id = "yuwen")
-    @ExcelVerify()
     private TeacherEntity       teacher;
     /** 老师主键 */
     //@ExcelEntity(id = "shuxue")
