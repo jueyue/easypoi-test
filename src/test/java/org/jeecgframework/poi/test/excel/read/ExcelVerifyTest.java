@@ -39,7 +39,7 @@ public class ExcelVerifyTest {
     
     private final static  Logger  LOGGER = LoggerFactory.getLogger(ExcelVerifyTest.class);
 
-    //@Test
+    @Test
     public void basetest() {
         try {
             ImportParams params = new ImportParams();
@@ -60,7 +60,7 @@ public class ExcelVerifyTest {
     }
     
     
-    //@Test
+    @Test
     public void baseModetest() {
         try {
             ImportParams params = new ImportParams();
@@ -80,7 +80,7 @@ public class ExcelVerifyTest {
         }
     }
     
-    //@Test
+    @Test
     public void baseHanldertest() {
         try {
             ImportParams params = new ImportParams();

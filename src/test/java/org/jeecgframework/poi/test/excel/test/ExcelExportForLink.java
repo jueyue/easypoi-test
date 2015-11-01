@@ -25,6 +25,7 @@ import org.jeecgframework.poi.handler.inter.IExcelDataHandler;
 import org.jeecgframework.poi.test.entity.HyperLinkEntity;
 import org.jeecgframework.poi.test.entity.MsgClient;
 import org.jeecgframework.poi.test.entity.MsgClientGroup;
+import org.junit.Test;
 
 /**
  * 超链接测试
@@ -33,7 +34,8 @@ import org.jeecgframework.poi.test.entity.MsgClientGroup;
  */
 public class ExcelExportForLink {
 
-    public static void main(String[] args) throws Exception {
+    @Test
+    public void test() throws Exception {
 
         List<HyperLinkEntity> list = new ArrayList<HyperLinkEntity>();
         HyperLinkEntity client = new HyperLinkEntity();

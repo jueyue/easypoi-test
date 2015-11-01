@@ -28,7 +28,7 @@ public class TemplateForEachTest2 {
             "org/jeecgframework/poi/test/excel/doc/foreach_many.xlsx");
         Map<String, Object> map = new HashMap<String, Object>();
         List<Map<String, Object>> mapList = new ArrayList<Map<String, Object>>();
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 400; i++) {
             Map<String, Object> testMap = new HashMap<String, Object>();
 
             testMap.put("id", "080101" + i);

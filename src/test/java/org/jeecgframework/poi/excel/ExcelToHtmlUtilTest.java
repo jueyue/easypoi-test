@@ -15,7 +15,7 @@ import org.junit.Test;
 
 public class ExcelToHtmlUtilTest {
 
-    //@Test
+    @Test
     public void testToTableHtmlWorkbook() {
         try {
             Workbook wb = new HSSFWorkbook(new FileInputStream(new File(PoiPublicUtil
@@ -31,7 +31,7 @@ public class ExcelToHtmlUtilTest {
         }
     }
 
-    //@Test
+    @Test
     public void testToTableHtmlWorkbookInt() {
         try {
             Workbook wb = new HSSFWorkbook(new FileInputStream(new File(PoiPublicUtil
@@ -76,7 +76,7 @@ public class ExcelToHtmlUtilTest {
         }
     }
 
-    //@Test
+    @Test
     public void testToAllHtmlWorkbook() {
 
         try {
@@ -96,7 +96,7 @@ public class ExcelToHtmlUtilTest {
         }
     }
 
-    //@Test
+    @Test
     public void testToAllHtmlWorkbookInt() {
         try {
             Workbook wb = new HSSFWorkbook(new FileInputStream(new File(PoiPublicUtil

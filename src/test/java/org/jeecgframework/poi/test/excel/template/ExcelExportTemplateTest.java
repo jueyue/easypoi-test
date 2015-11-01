@@ -23,7 +23,7 @@ public class ExcelExportTemplateTest {
     List<CourseEntity> list = new ArrayList<CourseEntity>();
     CourseEntity       courseEntity;
 
-    //@Test
+    @Test
     public void one() throws Exception {
         TemplateExportParams params = new TemplateExportParams(
             "org/jeecgframework/poi/test/excel/doc/exportTemp.xls", true);

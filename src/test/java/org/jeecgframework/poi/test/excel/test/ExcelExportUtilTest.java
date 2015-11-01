@@ -91,7 +91,7 @@ public class ExcelExportUtilTest {
      * 
      * @throws Exception
      */
-    //@Test
+    @Test
     public void testExportExcel() throws Exception {
         Date start = new Date();
         Workbook workbook = ExcelExportUtil.exportExcel(new ExportParams("2412312", "测试", "测试"),
@@ -111,7 +111,7 @@ public class ExcelExportUtilTest {
      * 
      * @throws Exception
      */
-    //@Test
+    @Test
     public void testExportTitleExcel() throws Exception {
         Date start = new Date();
         Workbook workbook = ExcelExportUtil.exportExcel(new ExportParams("2412312", "测试"),
@@ -131,7 +131,7 @@ public class ExcelExportUtilTest {
      * 
      * @throws Exception
      */
-    //@Test
+    @Test
     public void testTempExportExcel() throws Exception {
         TemplateExportParams params = new TemplateExportParams();
         params.setHeadingRows(2);

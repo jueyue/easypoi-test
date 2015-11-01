@@ -21,7 +21,7 @@ public class ExcelImportUtilTest {
 
     ///ExcelExportMsgClient 测试是这个到处的数据
 
-    //@Test
+    @Test
     public void test() {
         try {
             ImportParams params = new ImportParams();

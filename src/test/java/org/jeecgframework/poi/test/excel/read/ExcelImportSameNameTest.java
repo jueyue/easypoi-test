@@ -27,7 +27,7 @@ import org.junit.Test;
  */
 public class ExcelImportSameNameTest {
 
-    //@Test
+    @Test
     public void exportTest() {
         StudentEntity studentEntity = new StudentEntity();
         studentEntity.setId("11231");

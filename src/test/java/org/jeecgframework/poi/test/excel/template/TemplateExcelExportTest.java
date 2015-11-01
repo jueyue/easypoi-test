@@ -103,7 +103,7 @@ public class TemplateExcelExportTest {
         if (!savefile.exists()) {
             savefile.mkdirs();
         }
-        FileOutputStream fos = new FileOutputStream("d:/tt.xls");
+        FileOutputStream fos = new FileOutputStream("d:/merge_test.xls");
         workbook.write(fos);
         fos.close();
     }

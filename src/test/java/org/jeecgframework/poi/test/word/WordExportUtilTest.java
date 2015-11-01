@@ -18,7 +18,7 @@ public class WordExportUtilTest {
     /**
      * 简单导出包含图片
      */
-    //@Test
+    @Test
     public void imageWordExport() {
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("department", "Jeecg");
@@ -27,7 +27,7 @@ public class WordExportUtilTest {
         WordImageEntity image = new WordImageEntity();
         image.setHeight(200);
         image.setWidth(500);
-        image.setUrl("org/jeecgframework/poi/word/img/testCode.png");
+        image.setUrl("org/jeecgframework/poi/test/word/img/testCode.png");
         image.setType(WordImageEntity.URL);
         map.put("testCode", image);
         try {

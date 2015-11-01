@@ -65,7 +65,7 @@ public class ExcelExportForMap {
     /**
      * 合并同类项
      */
-    //@Test
+    @Test
     public void testMerge() {
         try {
             List<ExcelExportEntity> entity = new ArrayList<ExcelExportEntity>();
@@ -107,7 +107,7 @@ public class ExcelExportForMap {
         }
     }
 
-    //@Test
+    @Test
     public void testMany() {
         try {
             List<ExcelExportEntity> entity = new ArrayList<ExcelExportEntity>();
