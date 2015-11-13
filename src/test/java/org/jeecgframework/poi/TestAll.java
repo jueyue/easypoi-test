@@ -24,6 +24,7 @@ import org.jeecgframework.poi.test.excel.read.ExcelImportSameNameTest;
 import org.jeecgframework.poi.test.excel.read.ExcelImportUtilTest;
 import org.jeecgframework.poi.test.excel.read.ExcelMapImportTest;
 import org.jeecgframework.poi.test.excel.read.ExcelVerifyTest;
+import org.jeecgframework.poi.test.excel.read.check.ImportCheckTestOneLine;
 import org.jeecgframework.poi.test.excel.template.ExcelExportTemplateTest;
 import org.jeecgframework.poi.test.excel.template.TemplateExcelExportTest;
 import org.jeecgframework.poi.test.excel.template.TemplateExcelManySheet;
@@ -55,7 +56,7 @@ import org.junit.runners.Suite.SuiteClasses;
                 TemplateExcelManySheet.class, TemplateExcelExportTest.class,
                 ExcelExportTemplateTest.class, ExcelToHtmlUtilTest.class, ExcelVerifyTest.class,
                 ExcelMapImportTest.class, ExcelImportUtilTest.class, ExcelImportSameNameTest.class,
-                CustomerEntityTest.class })
+                CustomerEntityTest.class,ImportCheckTestOneLine.class })
 public class TestAll {
 
 }

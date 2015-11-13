@@ -60,7 +60,7 @@ public class ExcelVerifyTest {
     }
     
     
-    @Test
+   // @Test
     public void baseModetest() {
         try {
             ImportParams params = new ImportParams();
@@ -80,7 +80,7 @@ public class ExcelVerifyTest {
         }
     }
     
-    @Test
+    //@Test
     public void baseHanldertest() {
         try {
             ImportParams params = new ImportParams();
@@ -100,7 +100,7 @@ public class ExcelVerifyTest {
         }
     }
     
-    @Test
+    //@Test
     public void combinedVerificationTest() {
         try {
             ImportParams params = new ImportParams();

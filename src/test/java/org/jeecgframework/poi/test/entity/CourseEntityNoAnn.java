@@ -17,20 +17,20 @@ import org.jeecgframework.poi.excel.annotation.ExcelTarget;
  */
 @SuppressWarnings("serial")
 @ExcelTarget("courseEntity")
-public class CourseEntity implements java.io.Serializable {
+public class CourseEntityNoAnn implements java.io.Serializable {
     /** 主键 */
     private String        id;
     /** 课程名称 */
-    @Excel(name = "课程名称", orderNum = "1", width = 15, needMerge = true, isImportField = "true")
+    @Excel(name = "课程名称", orderNum = "1", width = 15, needMerge = true)
     private String        name;
     /** 老师主键 */
-    @ExcelEntity(id = "yuwen")
+    @ExcelEntity(id = "shuxue")
     private TeacherEntity teacher;
     /** 老师主键 */
     //@ExcelEntity(id = "shuxue")
     private TeacherEntity shuxueteacher;
 
-    @ExcelCollection(id = "st", name = "学生", orderNum = "4")
+    @ExcelCollection(id = "shuxuest", name = "学生", orderNum = "4")
     private List<StudentEntity> students;
 
     /**
