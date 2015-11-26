@@ -37,6 +37,7 @@ import org.jeecgframework.poi.test.excel.test.ExcelExportMsgClient;
 import org.jeecgframework.poi.test.excel.test.ExcelExportStatisticTest;
 import org.jeecgframework.poi.test.excel.test.ExcelExportUtilDataHandlerTest;
 import org.jeecgframework.poi.test.excel.test.ExcelExportUtilIdTest;
+import org.jeecgframework.poi.test.word.TaxManagementTest;
 import org.jeecgframework.poi.test.word.WordExportUtilAnnExcelTest;
 import org.jeecgframework.poi.test.word.WordExportUtilBaseExcelTest;
 import org.jeecgframework.poi.test.word.WordExportUtilTest;
@@ -56,7 +57,7 @@ import org.junit.runners.Suite.SuiteClasses;
                 TemplateExcelManySheet.class, TemplateExcelExportTest.class,
                 ExcelExportTemplateTest.class, ExcelToHtmlUtilTest.class, ExcelVerifyTest.class,
                 ExcelMapImportTest.class, ExcelImportUtilTest.class, ExcelImportSameNameTest.class,
-                CustomerEntityTest.class,ImportCheckTestOneLine.class })
+                CustomerEntityTest.class,ImportCheckTestOneLine.class,TaxManagementTest.class })
 public class TestAll {
 
 }
