@@ -21,7 +21,7 @@ public class ExcelExportForMap {
     /**
      * Map 测试
      */
-    @Test
+    //@Test
     public void test() {
         try {
             List<ExcelExportEntity> entity = new ArrayList<ExcelExportEntity>();
@@ -62,6 +62,7 @@ public class ExcelExportForMap {
             e.printStackTrace();
         }
     }
+
     /**
      * 合并同类项
      */
@@ -71,11 +72,14 @@ public class ExcelExportForMap {
             List<ExcelExportEntity> entity = new ArrayList<ExcelExportEntity>();
             ExcelExportEntity excelentity = new ExcelExportEntity("部门", "depart");
             excelentity.setMergeVertical(true);
-            excelentity.setMergeRely(new int[0]);
             entity.add(excelentity);
-
-            entity.add(new ExcelExportEntity("姓名", "name"));
+            excelentity = new ExcelExportEntity("姓名", "name");
+            excelentity.setMergeVertical(true);
+            excelentity.setMergeRely(new int[]{0});
+            entity.add(excelentity);
             excelentity = new ExcelExportEntity("电话", "phone");
+            excelentity.setMergeVertical(true);
+            excelentity.setMergeRely(new int[] { 1 });
             entity.add(excelentity);
 
             List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
@@ -83,15 +87,15 @@ public class ExcelExportForMap {
             for (int i = 0; i < 10; i++) {
                 map = new HashMap<String, Object>();
                 map.put("depart", "设计部");
-                map.put("name", "小明" + i);
-                map.put("phone", "1311234567" + i);
+                map.put("name", "小明" + i / 3);
+                map.put("phone", "1311234567" + i / 2);
                 list.add(map);
             }
             for (int i = 0; i < 10; i++) {
                 map = new HashMap<String, Object>();
                 map.put("depart", "开发部");
-                map.put("name", "小蓝" + i);
-                map.put("phone", "1871234567" + i);
+                map.put("name", "小蓝" + i / 3);
+                map.put("phone", "1871234567" + i / 2);
                 list.add(map);
             }
 
@@ -107,7 +111,7 @@ public class ExcelExportForMap {
         }
     }
 
-    @Test
+    // @Test
     public void testMany() {
         try {
             List<ExcelExportEntity> entity = new ArrayList<ExcelExportEntity>();

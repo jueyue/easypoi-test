@@ -32,7 +32,7 @@ import org.junit.Test;
 
 public class TaxManagementTest {
 
-    @Test
+    //@Test
     public void testHasTotal() {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String curTime = format.format(new Date());
@@ -90,6 +90,10 @@ public class TaxManagementTest {
         tax.setThissum("1750");
         mapList.add(tax);
         map.put("taxlist", new ExcelListEntity(mapList, TaxManagement.class));
+        Map<String, String> total = new HashMap<String, String>();
+        total.put("totalpreyear", "2660");
+        total.put("totalthisyear", "3400");
+        map.put("total", total);
         map.put("totalpreyear", "2660");
         map.put("totalthisyear", "3400");
         try {

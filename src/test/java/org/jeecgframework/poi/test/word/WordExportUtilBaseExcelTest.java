@@ -25,8 +25,10 @@ public class WordExportUtilBaseExcelTest {
     public void imageWordExport() {
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("department", "Jeecg");
-        map.put("person", "JueYue");
         map.put("time", format.format(new Date()));
+        Person person = new Person();
+        person.setName("JueYue");
+        map.put("p", person);
         WordImageEntity image = new WordImageEntity();
         image.setHeight(200);
         image.setWidth(500);
@@ -47,7 +49,7 @@ public class WordExportUtilBaseExcelTest {
     /**
      * 简单导出没有图片和Excel
      */
-    @Test
+    //@Test
     public void SimpleWordExport() {
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("department", "Jeecg");
