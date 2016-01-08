@@ -13,29 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jeecgframework.poi.pdf;
+package org.jeecgframework.poi.test.pdf;
 
-import static org.junit.Assert.*;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import org.jeecgframework.poi.excel.annotation.Excel;
-import org.jeecgframework.poi.excel.entity.ExportParams;
-import org.jeecgframework.poi.excel.entity.enmus.ExcelType;
+import org.jeecgframework.poi.pdf.PdfExportUtil;
+import org.jeecgframework.poi.pdf.entity.PdfExportParams;
 import org.jeecgframework.poi.test.entity.MsgClient;
 import org.jeecgframework.poi.test.entity.MsgClientGroup;
 import org.junit.Test;
 
 import com.itextpdf.text.Document;
-import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.pdf.PdfWriter;
 
 public class PdfExportUtilTest {
 
@@ -49,7 +44,7 @@ public class PdfExportUtilTest {
         }
         
         List<MsgClient> list = new ArrayList<MsgClient>();
-        for (int i = 0; i < 1000000; i++) {
+        for (int i = 0; i < 10; i++) {
             MsgClient client = new MsgClient();
             client.setBirthday(new Date());
             client.setClientName("小明" + i);
@@ -63,7 +58,7 @@ public class PdfExportUtilTest {
             list.add(client);
         }
         Date start = new Date();
-        ExportParams params = new ExportParams("2412312",null);
+        PdfExportParams params = new PdfExportParams("2412312",null);
         try {
             File file = new File("D://test.pdf");
             file.createNewFile();

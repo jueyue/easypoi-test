@@ -45,14 +45,14 @@ public class ExcelExportUtilTest {
         FileOutputStream fos = new FileOutputStream("d:/tt.xlsx");
         workbook.write(fos);
         fos.close();
-//        savefile = new File("d:/1");
-//        if (!savefile.exists()) {
-//            savefile.setWritable(true, false);
-//            savefile.mkdirs();
-//        }
-//        fos = new FileOutputStream("d:/1/tt3.xlsx");
-//        workbook.write(fos);
-//        fos.close();
+        //        savefile = new File("d:/1");
+        //        if (!savefile.exists()) {
+        //            savefile.setWritable(true, false);
+        //            savefile.mkdirs();
+        //        }
+        //        fos = new FileOutputStream("d:/1/tt3.xlsx");
+        //        workbook.write(fos);
+        //        fos.close();
     }
 
     @Before
@@ -101,7 +101,7 @@ public class ExcelExportUtilTest {
         if (!savefile.exists()) {
             savefile.mkdirs();
         }
-        FileOutputStream fos = new FileOutputStream("d:/tt.xls");
+        FileOutputStream fos = new FileOutputStream("d:/ExcelExportUtilTest.testExportExcel.xls");
         workbook.write(fos);
         fos.close();
     }

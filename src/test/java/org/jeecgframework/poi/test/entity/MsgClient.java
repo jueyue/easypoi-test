@@ -30,7 +30,7 @@ public class MsgClient implements java.io.Serializable {
     @Excel(name = "备注")
     private String           remark      = null;
     // 生日
-    @Excel(name = "出生日期")
+    @Excel(name = "出生日期", format = "yyyy-MM-dd", width = 20)
     private Date             birthday    = null;
     // 创建人
     private String           createBy    = null;

@@ -17,7 +17,7 @@ package org.jeecgframework.poi;
 
 import static org.junit.Assert.*;
 
-import org.jeecgframework.poi.excel.ExcelToHtmlUtilTest;
+import org.jeecgframework.poi.html.ExcelToHtmlUtilTest;
 import org.jeecgframework.poi.test.UtilTest;
 import org.jeecgframework.poi.test.excel.read.CustomerEntityTest;
 import org.jeecgframework.poi.test.excel.read.ExcelImportSameNameTest;

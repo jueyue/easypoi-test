@@ -13,7 +13,6 @@ import org.jeecgframework.poi.excel.ExcelImportUtil;
 import org.jeecgframework.poi.excel.entity.ImportParams;
 import org.jeecgframework.poi.test.entity.CourseEntity;
 import org.jeecgframework.poi.test.entity.MsgClient;
-import org.jeecgframework.poi.test.entity.TestEntity;
 import org.jeecgframework.poi.test.entity.statistics.StatisticEntity;
 import org.junit.Test;
 

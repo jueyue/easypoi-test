@@ -21,7 +21,7 @@ public class CourseEntity implements java.io.Serializable {
     /** 主键 */
     private String        id;
     /** 课程名称 */
-    @Excel(name = "课程名称", orderNum = "1", width = 15, needMerge = true, isImportField = "true")
+    @Excel(name = "课程名称", orderNum = "1", width = 25, needMerge = true, isImportField = "true")
     private String        name;
     /** 老师主键 */
     @ExcelEntity(id = "yuwen")
