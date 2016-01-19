@@ -5,7 +5,6 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
-import org.hibernate.validator.constraints.Email;
 import org.jeecgframework.poi.excel.annotation.Excel;
 
 /**
@@ -19,13 +18,12 @@ public class ExcelVerifyEntity {
      * Email校验
      */
     @Excel(name = "Email", width = 25)
-    @Email
     private String email;
     /**
      * 最大
      */
     @Excel(name = "Max")
-    @Max(15)
+    @Max(value = 15,message = "max 最大值不能超过15")
     private int    max;
     /**
      * 最小
