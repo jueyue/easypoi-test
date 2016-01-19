@@ -10,7 +10,7 @@ import org.jeecgframework.poi.excel.export.styler.ExcelExportStylerDefaultImpl;
 /**
  * Excel 自定义styler 的例子
  * @author JueYue
- * @date 2015年3月29日 下午9:04:41
+ *   2015年3月29日 下午9:04:41
  */
 public class ExcelExportStatisticStyler extends ExcelExportStylerDefaultImpl {
 

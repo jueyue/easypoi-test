@@ -7,7 +7,7 @@ import org.jeecgframework.poi.excel.annotation.ExcelTarget;
  * @Title: Entity
  * @Description: 课程老师
  * @author JueYue
- * @date 2013-08-31 22:52:17
+ *   2013-08-31 22:52:17
  * @version V1.0
  * 
  */

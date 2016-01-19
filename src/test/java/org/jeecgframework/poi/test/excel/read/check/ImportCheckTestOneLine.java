@@ -28,7 +28,7 @@ import org.junit.Test;
  * 输入模板校验
  * 单行版本
  * @author JueYue
- * @date 2015年11月13日 下午8:40:05
+ *   2015年11月13日 下午8:40:05
  */
 public class ImportCheckTestOneLine {
 

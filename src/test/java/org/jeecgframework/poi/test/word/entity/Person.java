@@ -5,7 +5,7 @@ import org.jeecgframework.poi.excel.annotation.Excel;
 /**
  * 测试人员类
  * @author JueYue
- * @date 2014年7月26日 下午10:51:30
+ *   2014年7月26日 下午10:51:30
  */
 public class Person {
 

@@ -34,7 +34,7 @@ import com.itextpdf.text.Document;
 /**
  * 多行表头导出
  * @author JueYue
- * @date 2016年1月6日 下午9:57:52
+ *   2016年1月6日 下午9:57:52
  */
 public class MultiLineHeadersTest {
 

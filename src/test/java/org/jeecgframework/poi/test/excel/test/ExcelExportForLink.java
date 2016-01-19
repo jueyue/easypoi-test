@@ -30,7 +30,7 @@ import org.junit.Test;
 /**
  * 超链接测试
  * @author JueYue
- * @date 2015年7月20日 下午10:34:18
+ *   2015年7月20日 下午10:34:18
  */
 public class ExcelExportForLink {
 

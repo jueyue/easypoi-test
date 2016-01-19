@@ -6,7 +6,7 @@ import org.jeecgframework.poi.excel.annotation.Excel;
  * @Title: Entity
  * @Description: 客户信息
  * @author JueYue
- * @date 2015-04-03 22:16:53
+ *   2015-04-03 22:16:53
  * @version V1.0
  * 
  */

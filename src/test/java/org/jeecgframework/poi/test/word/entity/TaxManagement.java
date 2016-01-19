@@ -20,7 +20,7 @@ import org.jeecgframework.poi.excel.annotation.Excel;
 /**
  * 纳税管理
  * @author JueYue
- * @date 2015年11月24日 下午10:52:11
+ *   2015年11月24日 下午10:52:11
  */
 public class TaxManagement {
 

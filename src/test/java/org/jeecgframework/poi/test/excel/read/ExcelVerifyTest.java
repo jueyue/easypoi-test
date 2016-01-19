@@ -33,7 +33,7 @@ import org.slf4j.LoggerFactory;
 /**
  * Excel 导入校验
  * @author JueYue
- * @date 2015年10月31日 下午10:34:35
+ *   2015年10月31日 下午10:34:35
  */
 public class ExcelVerifyTest {
     

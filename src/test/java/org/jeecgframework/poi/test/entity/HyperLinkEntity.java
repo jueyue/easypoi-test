@@ -5,7 +5,7 @@ import org.jeecgframework.poi.excel.annotation.Excel;
 /**
  * 超链接测试
  * @author JueYue
- * @date 2015年7月20日 下午10:35:20
+ *   2015年7月20日 下午10:35:20
  */
 public class HyperLinkEntity {
 

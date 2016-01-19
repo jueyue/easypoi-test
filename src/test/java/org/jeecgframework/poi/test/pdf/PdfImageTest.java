@@ -33,7 +33,7 @@ import com.itextpdf.text.Document;
 /**
  * Pdf 图片的导出
  * @author JueYue
- * @date 2016年1月8日 下午4:00:19
+ *   2016年1月8日 下午4:00:19
  */
 public class PdfImageTest {
 

@@ -12,7 +12,7 @@ import org.junit.Test;
 /**
  * Map导入测试
  * @author JueYue
- * @date 2015年6月21日 下午10:56:03
+ *   2015年6月21日 下午10:56:03
  */
 public class ExcelMapImportTest {
 

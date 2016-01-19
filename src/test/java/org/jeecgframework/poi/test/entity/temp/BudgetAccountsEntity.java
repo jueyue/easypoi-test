@@ -5,7 +5,7 @@ import org.jeecgframework.poi.excel.annotation.Excel;
 /**
  * 预算
  * @author JueYue
- * @date 2014年12月27日 下午9:08:03
+ *   2014年12月27日 下午9:08:03
  */
 public class BudgetAccountsEntity {
 

@@ -23,7 +23,7 @@ import org.junit.Test;
 /**
  * 同名列导入测试
  * @author JueYue
- * @date 2015年5月2日 上午11:19:40
+ *   2015年5月2日 上午11:19:40
  */
 public class ExcelImportSameNameTest {
 

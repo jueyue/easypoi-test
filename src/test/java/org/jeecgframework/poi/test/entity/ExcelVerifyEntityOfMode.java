@@ -11,7 +11,7 @@ import org.jeecgframework.poi.handler.inter.IExcelModel;
 /**
  * Excel导入校验类
  * @author JueYue
- * @date 2015年2月24日 下午2:21:07
+ *   2015年2月24日 下午2:21:07
  */
 public class ExcelVerifyEntityOfMode extends ExcelVerifyEntity implements IExcelModel {
 

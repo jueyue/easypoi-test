@@ -9,7 +9,7 @@ import org.jeecgframework.poi.excel.annotation.ExcelEntity;
  * @Title: Entity
  * @Description: 通讯录
  * @author JueYue
- * @date 2014-09-22 16:03:32
+ *   2014-09-22 16:03:32
  * @version V1.0
  * 
  */

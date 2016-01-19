@@ -7,7 +7,7 @@ import org.jeecgframework.poi.excel.annotation.Excel;
 /**
  * 统计测试类
  * @author JueYue
- * @date 2014年12月17日 上午11:51:10
+ *   2014年12月17日 上午11:51:10
  */
 public class StatisticEntity {
 

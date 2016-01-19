@@ -23,7 +23,7 @@ import org.junit.Test;
 /**
  * 当行大数据量测试
  * @author JueYue
- * @date 2014年12月13日 下午3:42:57
+ *   2014年12月13日 下午3:42:57
  */
 public class ExcelExportMsgClient {
 

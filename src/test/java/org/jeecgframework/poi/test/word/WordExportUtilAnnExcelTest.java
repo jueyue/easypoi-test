@@ -22,7 +22,7 @@ import org.junit.Test;
  * 注解导出测试
  * 
  * @author JueYue
- * @date 2014年8月9日 下午11:36:33
+ *   2014年8月9日 下午11:36:33
  */
 public class WordExportUtilAnnExcelTest {
 

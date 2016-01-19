@@ -10,7 +10,7 @@ import org.jeecgframework.poi.excel.annotation.ExcelEntity;
 /**
  * 模板导出 测试类
  * @author JueYue
- * @date 2014年12月26日 上午9:39:13
+ *   2014年12月26日 上午9:39:13
  */
 public class TemplateExcelExportEntity implements Serializable {
 

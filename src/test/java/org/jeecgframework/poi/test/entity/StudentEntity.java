@@ -9,7 +9,7 @@ import org.jeecgframework.poi.excel.annotation.Excel;
  * @version V1.0
  * @Title: Entity
  * @Description: 学生
- * @date 2013-08-31 22:53:34
+ *   2013-08-31 22:53:34
  */
 @SuppressWarnings("serial")
 public class StudentEntity implements java.io.Serializable {
