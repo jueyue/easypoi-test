@@ -1,11 +1,12 @@
 package org.jeecgframework.poi.test.excel.test;
 
 import org.jeecgframework.poi.handler.impl.ExcelDataHandlerDefaultImpl;
+import org.jeecgframework.poi.test.entity.CourseEntity;
 
-public class CourseHanlder extends ExcelDataHandlerDefaultImpl {
+public class CourseHanlder extends ExcelDataHandlerDefaultImpl<CourseEntity> {
 
     @Override
-    public Object exportHandler(Object obj, String name, Object value) {
+    public Object exportHandler(CourseEntity obj, String name, Object value) {
         if (name.equals("课程名称")) {
             return String.valueOf(value) + "课程";
         }
@@ -13,7 +14,7 @@ public class CourseHanlder extends ExcelDataHandlerDefaultImpl {
     }
 
     @Override
-    public Object importHandler(Object obj, String name, Object value) {
+    public Object importHandler(CourseEntity obj, String name, Object value) {
         return super.importHandler(obj, name, value);
     }
 

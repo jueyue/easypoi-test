@@ -47,7 +47,7 @@ public class ExcelVerifyTest {
             ExcelImportResult<ExcelVerifyEntity> result = ExcelImportUtil.importExcelVerify(
                 new File("D:/mySpace/myself/easypoi-test/src/main/resources/import/verfiy.xlsx"),
                 ExcelVerifyEntity.class, params);
-            FileOutputStream fos = new FileOutputStream("d:/tt.xlsx");
+            FileOutputStream fos = new FileOutputStream("d:/ExcelVerifyTest.basetest.xlsx");
             result.getWorkbook().write(fos);
             fos.close();
             for (int i = 0; i < result.getList().size(); i++) {

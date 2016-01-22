@@ -20,10 +20,11 @@ public class ExcelMapImportTest {
     public void mapTest() {
 
         ImportParams params = new ImportParams();
+        params.setTitleRows(1);
         params.setHeadRows(1);
         params.setDataHanlder(new MapImportHanlder());
         long start = new Date().getTime();
-        List<Map<String, Object>> list = ExcelImportUtil.importExcel(new File("d:/tt.xlsx"),
+        List<Map<String, Object>> list = ExcelImportUtil.importExcel(new File("D:/mySpace/myself/easypoi-test/src/main/resources/import/check.xls"),
             Map.class, params);
         System.out.println(new Date().getTime() - start);
         System.out.println(list.size());

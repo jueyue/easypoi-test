@@ -26,13 +26,12 @@ import com.google.common.collect.Lists;
 
 public class TemplateExcelExportTest {
 
-    //@Test
+    @Test
     public void test() throws Exception {
         TemplateExportParams params = new TemplateExportParams(
             "org/jeecgframework/poi/test/excel/doc/专项支出用款申请书.xls");
         params.setHeadingStartRow(3);
         params.setHeadingRows(2);
-        params.setStyle(ExcelExportStylerColorImpl.class);
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("date", "2014-12-25");
         map.put("money", 2000000.00);
@@ -77,7 +76,45 @@ public class TemplateExcelExportTest {
         if (!savefile.exists()) {
             savefile.mkdirs();
         }
-        FileOutputStream fos = new FileOutputStream("d:/tt.xls");
+        FileOutputStream fos = new FileOutputStream("d:/专项支出用款申请书.xls");
+        workbook.write(fos);
+        fos.close();
+    }
+
+    @Test
+    public void fe_map() throws Exception {
+        TemplateExportParams params = new TemplateExportParams(
+            "org/jeecgframework/poi/test/excel/doc/专项支出用款申请书_map.xls");
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("date", "2014-12-25");
+        map.put("money", 2000000.00);
+        map.put("upperMoney", "贰佰万");
+        map.put("company", "执笔潜行科技有限公司");
+        map.put("bureau", "财政局");
+        map.put("person", "JueYue");
+        map.put("phone", "1879740****");
+        List<Map<String, String>> listMap = new ArrayList<Map<String, String>>();
+        for (int i = 0; i < 4; i++) {
+            Map<String, String> lm = new HashMap<String, String>();
+            lm.put("id", i + 1 + "");
+            lm.put("zijin", i * 10000 + "");
+            lm.put("bianma", "A001");
+            lm.put("mingcheng", "设计");
+            lm.put("xiangmumingcheng", "EasyPoi " + i + "期");
+            lm.put("quancheng", "开源项目");
+            lm.put("sqje", i * 10000 + "");
+            lm.put("hdje", i * 10000 + "");
+
+            listMap.add(lm);
+        }
+        map.put("maplist", listMap);
+
+        Workbook workbook = ExcelExportUtil.exportExcel(params, map);
+        File savefile = new File("d:/");
+        if (!savefile.exists()) {
+            savefile.mkdirs();
+        }
+        FileOutputStream fos = new FileOutputStream("d:/专项支出用款申请书_map.xls");
         workbook.write(fos);
         fos.close();
     }
@@ -94,7 +131,7 @@ public class TemplateExcelExportTest {
             Map<String, String> m = new HashMap<String, String>();
             m.put("id", "id" + "1");
             m.put("uname", "name" + "1");
-            m.put("amount", i+"");
+            m.put("amount", i + "");
             list.add(m);
         }
         map.put("list", list);
@@ -107,22 +144,20 @@ public class TemplateExcelExportTest {
         workbook.write(fos);
         fos.close();
     }
-    
-    
-    @Test
+
+    //@Test
     public void test3() throws Exception {
-        TemplateExportParams params = new TemplateExportParams(
-                "d:/jzsp_fgkzbxmmxb.xls");
+        TemplateExportParams params = new TemplateExportParams("d:/jzsp_fgkzbxmmxb.xls");
         Map<String, Object> map = new HashMap<String, Object>();
-        
+
         List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
-        
+
         for (int i = 0; i < 8; i++) {
             Map<String, Object> m = new HashMap<String, Object>();
             m.put("proTypeName", "id" + "1");
             m.put("sn", "sn" + "1");
             m.put("projectName", "projectName" + "1");
-            m.put("budgetAmount",i);
+            m.put("budgetAmount", i);
             m.put("purchaseModeCode", "ZO4");
             m.put("purchaseModeReason", "purchaseModeReason");
             list.add(m);
