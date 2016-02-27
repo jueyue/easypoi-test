@@ -7,6 +7,7 @@ import java.util.Map;
 
 import org.jeecgframework.poi.excel.ExcelImportUtil;
 import org.jeecgframework.poi.excel.entity.ImportParams;
+import org.jeecgframework.poi.util.PoiPublicUtil;
 import org.junit.Test;
 
 /**
@@ -24,8 +25,8 @@ public class ExcelMapImportTest {
         params.setHeadRows(1);
         params.setDataHanlder(new MapImportHanlder());
         long start = new Date().getTime();
-        List<Map<String, Object>> list = ExcelImportUtil.importExcel(new File("D:/mySpace/myself/easypoi-test/src/main/resources/import/check.xls"),
-            Map.class, params);
+        List<Map<String, Object>> list = ExcelImportUtil.importExcel(
+            new File(PoiPublicUtil.getWebRootPath("import/check.xls")), Map.class, params);
         System.out.println(new Date().getTime() - start);
         System.out.println(list.size());
         System.out.println(list.get(0));

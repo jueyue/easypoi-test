@@ -145,31 +145,4 @@ public class TemplateExcelExportTest {
         fos.close();
     }
 
-    //@Test
-    public void test3() throws Exception {
-        TemplateExportParams params = new TemplateExportParams("d:/jzsp_fgkzbxmmxb.xls");
-        Map<String, Object> map = new HashMap<String, Object>();
-
-        List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
-
-        for (int i = 0; i < 8; i++) {
-            Map<String, Object> m = new HashMap<String, Object>();
-            m.put("proTypeName", "id" + "1");
-            m.put("sn", "sn" + "1");
-            m.put("projectName", "projectName" + "1");
-            m.put("budgetAmount", i);
-            m.put("purchaseModeCode", "ZO4");
-            m.put("purchaseModeReason", "purchaseModeReason");
-            list.add(m);
-        }
-        map.put("projectList", list);
-        Workbook workbook = ExcelExportUtil.exportExcel(params, map);
-        File savefile = new File("d:/");
-        if (!savefile.exists()) {
-            savefile.mkdirs();
-        }
-        FileOutputStream fos = new FileOutputStream("d:/jzsp_fgkzbxmmxb22.xls");
-        workbook.write(fos);
-        fos.close();
-    }
 }

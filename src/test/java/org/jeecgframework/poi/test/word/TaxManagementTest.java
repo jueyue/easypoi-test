@@ -32,7 +32,7 @@ import org.junit.Test;
 
 public class TaxManagementTest {
 
-    //@Test
+    @Test
     public void testHasTotal() {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String curTime = format.format(new Date());

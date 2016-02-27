@@ -31,7 +31,7 @@ public class StudentEntity implements java.io.Serializable {
     @Excel(name = "出生日期", databaseFormat = "yyyyMMddHHmmss", format = "yyyy-MM-dd", isImportField = "true_st", width = 20)
     private Date          birthday;
 
-    @Excel(name = "进校日期", databaseFormat = "yyyyMMddHHmmss", format = "yyyy-MM-dd", isImportField = "true_st")
+    @Excel(name = "进校日期", databaseFormat = "yyyyMMddHHmmss", format = "yyyy-MM-dd")
     private java.sql.Time registrationDate;
     /**
      * 课程主键

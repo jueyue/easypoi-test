@@ -49,7 +49,7 @@ public class WordExportUtilBaseExcelTest {
     /**
      * 简单导出没有图片和Excel
      */
-    //@Test
+    @Test
     public void SimpleWordExport() {
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("department", "Jeecg");

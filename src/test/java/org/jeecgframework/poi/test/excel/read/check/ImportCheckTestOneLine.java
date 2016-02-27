@@ -22,8 +22,10 @@ import org.jeecgframework.poi.excel.ExcelImportUtil;
 import org.jeecgframework.poi.excel.entity.ImportParams;
 import org.jeecgframework.poi.test.entity.check.ImportCheckOneLine;
 import org.jeecgframework.poi.test.entity.check.ImportCheckOneLineNoAnn;
+import org.jeecgframework.poi.util.PoiPublicUtil;
 import org.junit.Assert;
 import org.junit.Test;
+
 /**
  * 输入模板校验
  * 单行版本
@@ -39,7 +41,7 @@ public class ImportCheckTestOneLine {
             ImportParams params = new ImportParams();
             params.setTitleRows(1);
             List<ImportCheckOneLine> list = ExcelImportUtil.importExcel(
-                new File("D:/mySpace/myself/easypoi-test/src/main/resources/import/check.xls"),
+                new File(PoiPublicUtil.getWebRootPath("import/check.xls")),
                 ImportCheckOneLine.class, params);
         } catch (Exception e) {
             e.printStackTrace();
@@ -56,7 +58,7 @@ public class ImportCheckTestOneLine {
             params.setTitleRows(1);
             params.setStartSheetIndex(1);
             List<ImportCheckOneLine> list = ExcelImportUtil.importExcel(
-                new File("D:/mySpace/myself/easypoi-test/src/main/resources/import/check.xls"),
+                new File(PoiPublicUtil.getWebRootPath("import/check.xls")),
                 ImportCheckOneLine.class, params);
         } catch (Exception e) {
             e.printStackTrace();
@@ -64,16 +66,16 @@ public class ImportCheckTestOneLine {
         }
         Assert.assertTrue(!isOK);
     }
-    
+
     @Test
     public void testOneLineByParams() {
         boolean isOK = true;
         try {
             ImportParams params = new ImportParams();
             params.setTitleRows(1);
-            params.setImportFields(new String[]{"姓名","性别","年纪","爱好"});
+            params.setImportFields(new String[] { "姓名", "性别", "年纪", "爱好" });
             List<ImportCheckOneLineNoAnn> list = ExcelImportUtil.importExcel(
-                new File("D:/mySpace/myself/easypoi-test/src/main/resources/import/check.xls"),
+                new File(PoiPublicUtil.getWebRootPath("import/check.xls")),
                 ImportCheckOneLineNoAnn.class, params);
         } catch (Exception e) {
             e.printStackTrace();
@@ -81,7 +83,7 @@ public class ImportCheckTestOneLine {
         }
         Assert.assertTrue(isOK);
     }
-    
+
     @Test
     public void testOneLineErrorByParams() {
         boolean isOK = true;
@@ -89,9 +91,9 @@ public class ImportCheckTestOneLine {
             ImportParams params = new ImportParams();
             params.setTitleRows(1);
             params.setStartSheetIndex(1);
-            params.setImportFields(new String[]{"姓名","性别","年纪","爱好"});
+            params.setImportFields(new String[] { "姓名", "性别", "年纪", "爱好" });
             List<ImportCheckOneLineNoAnn> list = ExcelImportUtil.importExcel(
-                new File("D:/mySpace/myself/easypoi-test/src/main/resources/import/check.xls"),
+                new File(PoiPublicUtil.getWebRootPath("import/check.xls")),
                 ImportCheckOneLineNoAnn.class, params);
         } catch (Exception e) {
             e.printStackTrace();

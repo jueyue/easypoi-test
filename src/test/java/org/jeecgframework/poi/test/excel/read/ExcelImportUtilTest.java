@@ -14,6 +14,7 @@ import org.jeecgframework.poi.excel.entity.ImportParams;
 import org.jeecgframework.poi.test.entity.CourseEntity;
 import org.jeecgframework.poi.test.entity.MsgClient;
 import org.jeecgframework.poi.test.entity.statistics.StatisticEntity;
+import org.jeecgframework.poi.util.PoiPublicUtil;
 import org.junit.Test;
 
 public class ExcelImportUtilTest {
@@ -26,9 +27,11 @@ public class ExcelImportUtilTest {
             ImportParams params = new ImportParams();
             params.setTitleRows(1);
             long start = new Date().getTime();
-            List<StatisticEntity> list = ExcelImportUtil.importExcelBySax(new FileInputStream(
-                new File("d:/tt.xlsx")), StatisticEntity.class, params);
-            //        List<StatisticEntity> list = ExcelImportUtil.importExcelBySax(new File("d:/tt.xlsx"),
+            List<StatisticEntity> list = ExcelImportUtil.importExcelBySax(
+                new FileInputStream(
+                    new File(PoiPublicUtil.getWebRootPath("import/ExcelExportMsgClient.xlsx"))),
+                StatisticEntity.class, params);
+            //        List<StatisticEntity> list = ExcelImportUtil.importExcelBySax(new File(PoiPublicUtil.getWebRootPath("import/ExcelExportMsgClient.xlsx"),
             //            StatisticEntity.class, params);
             /*for (int i = 0; i < list.size(); i++) {
                 System.out.println(ReflectionToStringBuilder.toString(list.get(i)));
@@ -46,8 +49,9 @@ public class ExcelImportUtilTest {
         params.setTitleRows(1);
         params.setHeadRows(1);
         long start = new Date().getTime();
-        List<MsgClient> list = ExcelImportUtil.importExcel(new File("d:/tt.xlsx"), MsgClient.class,
-            params);
+        List<MsgClient> list = ExcelImportUtil.importExcel(
+            new File(PoiPublicUtil.getWebRootPath("import/ExcelExportMsgClient.xlsx")),
+            MsgClient.class, params);
         System.out.println(new Date().getTime() - start);
         System.out.println(list.size());
         System.out.println(ReflectionToStringBuilder.toString(list.get(0)));
@@ -59,8 +63,9 @@ public class ExcelImportUtilTest {
         params.setTitleRows(1);
         params.setHeadRows(1);
         long start = new Date().getTime();
-        List<Map<String, Object>> list = ExcelImportUtil.importExcel(new File("d:/tt.xlsx"),
-            Map.class, params);
+        List<Map<String, Object>> list = ExcelImportUtil.importExcel(
+            new File(PoiPublicUtil.getWebRootPath("import/ExcelExportMsgClient.xlsx")), Map.class,
+            params);
         System.out.println(new Date().getTime() - start);
         System.out.println(list.size());
         System.out.println(list.get(0));

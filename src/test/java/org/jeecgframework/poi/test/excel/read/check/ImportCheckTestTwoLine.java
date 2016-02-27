@@ -22,6 +22,7 @@ import org.jeecgframework.poi.excel.ExcelImportUtil;
 import org.jeecgframework.poi.excel.entity.ImportParams;
 import org.jeecgframework.poi.test.entity.CourseEntity;
 import org.jeecgframework.poi.test.entity.CourseEntityNoAnn;
+import org.jeecgframework.poi.util.PoiPublicUtil;
 import org.junit.Assert;
 import org.junit.Test;
 /**
@@ -39,7 +40,7 @@ public class ImportCheckTestTwoLine {
             ImportParams params = new ImportParams();
             params.setHeadRows(2);
             List<CourseEntity> list = ExcelImportUtil.importExcel(
-                new File("D:/mySpace/myself/easypoi-test/src/main/resources/import/checkTwo.xls"),
+                new File(PoiPublicUtil.getWebRootPath("import/checkTwo.xls")),
                 CourseEntity.class, params);
         } catch (Exception e) {
             e.printStackTrace();
@@ -56,7 +57,7 @@ public class ImportCheckTestTwoLine {
             params.setHeadRows(2);
             params.setStartSheetIndex(1);
             List<CourseEntity> list = ExcelImportUtil.importExcel(
-                new File("D:/mySpace/myself/easypoi-test/src/main/resources/import/checkTwo.xls"),
+                new File(PoiPublicUtil.getWebRootPath("import/checkTwo.xls")),
                 CourseEntity.class, params);
         } catch (Exception e) {
             e.printStackTrace();
@@ -71,9 +72,9 @@ public class ImportCheckTestTwoLine {
         try {
             ImportParams params = new ImportParams();
             params.setHeadRows(2);
-            params.setImportFields(new String[]{"课程名称","老师姓名","学生_学生姓名","学生_学生性别","学生_出生日期","学生_进校日期"});
+            params.setImportFields(new String[]{"课程名称","老师姓名","学生_学生姓名","学生_学生性别","学生_出生日期"});
             List<CourseEntityNoAnn> list = ExcelImportUtil.importExcel(
-                new File("D:/mySpace/myself/easypoi-test/src/main/resources/import/checkTwo.xls"),
+                new File(PoiPublicUtil.getWebRootPath("import/checkTwo.xls")),
                 CourseEntityNoAnn.class, params);
         } catch (Exception e) {
             e.printStackTrace();
@@ -91,7 +92,7 @@ public class ImportCheckTestTwoLine {
             params.setStartSheetIndex(1);
             params.setImportFields(new String[]{"课程名称","老师姓名","学生_学生姓名","学生_学生性别","学生_出生日期","学生_进校日期"});
             List<CourseEntityNoAnn> list = ExcelImportUtil.importExcel(
-                new File("D:/mySpace/myself/easypoi-test/src/main/resources/import/checkTwo.xls"),
+                new File(PoiPublicUtil.getWebRootPath("import/checkTwo.xls")),
                 CourseEntityNoAnn.class, params);
         } catch (Exception e) {
             e.printStackTrace();

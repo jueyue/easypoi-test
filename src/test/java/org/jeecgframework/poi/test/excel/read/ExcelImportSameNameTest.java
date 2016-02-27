@@ -18,6 +18,7 @@ import org.jeecgframework.poi.test.entity.CourseEntity;
 import org.jeecgframework.poi.test.entity.MsgClient;
 import org.jeecgframework.poi.test.entity.StudentEntity;
 import org.jeecgframework.poi.test.entity.samename.ClassName;
+import org.jeecgframework.poi.util.PoiPublicUtil;
 import org.junit.Test;
 
 /**
@@ -53,7 +54,8 @@ public class ExcelImportSameNameTest {
         ExportParams params = new ExportParams();
         try {
             Workbook workbook = ExcelExportUtil.exportExcel(params, ClassName.class, list);
-            FileOutputStream fos = new FileOutputStream("d:/sameName.xls");
+            FileOutputStream fos = new FileOutputStream(
+                PoiPublicUtil.getWebRootPath("import/sameName.xls"));
             workbook.write(fos);
             fos.close();
         } catch (FileNotFoundException e) {
@@ -70,8 +72,8 @@ public class ExcelImportSameNameTest {
         ImportParams params = new ImportParams();
         params.setHeadRows(2);
         long start = new Date().getTime();
-        List<ClassName> list = ExcelImportUtil.importExcel(new File("d:/sameName.xls"),
-            ClassName.class, params);
+        List<ClassName> list = ExcelImportUtil.importExcel(
+            new File(PoiPublicUtil.getWebRootPath("import/sameName.xls")), ClassName.class, params);
         System.out.println(new Date().getTime() - start);
         System.out.println(list.size());
         System.out.println(ReflectionToStringBuilder.toString(list.get(0)));
