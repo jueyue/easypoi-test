@@ -55,7 +55,7 @@ public class PdfImageTest {
     public void imageTest() {
         PdfExportParams params = new PdfExportParams("学生信息");
         try {
-            File file = new File("D://PdfImageTest.pdf");
+            File file = new File("D:/excel//PdfImageTest.pdf");
             file.createNewFile();
             PdfExportUtil.exportPdf(params, StudentEntityImage.class, studentList,
                 new FileOutputStream(file));

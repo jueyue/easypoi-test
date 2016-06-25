@@ -33,7 +33,7 @@ public class WordExportUtilTest {
         try {
             XWPFDocument doc = WordExportUtil.exportWord07(
                 "org/jeecgframework/poi/test/word/doc/Image.docx", map);
-            FileOutputStream fos = new FileOutputStream("d:/image.docx");
+            FileOutputStream fos = new FileOutputStream("D:/excel/image.docx");
             doc.write(fos);
             fos.close();
         } catch (Exception e) {
@@ -55,7 +55,7 @@ public class WordExportUtilTest {
         try {
             XWPFDocument doc = WordExportUtil.exportWord07(
                 "org/jeecgframework/poi/test/word/doc/Simple.docx", map);
-            FileOutputStream fos = new FileOutputStream("d:/simple.docx");
+            FileOutputStream fos = new FileOutputStream("D:/excel/simple.docx");
             doc.write(fos);
             fos.close();
         } catch (Exception e) {

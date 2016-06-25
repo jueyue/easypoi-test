@@ -48,7 +48,7 @@ public class ExcelVerifyTest {
             ExcelImportResult<ExcelVerifyEntity> result = ExcelImportUtil.importExcelVerify(
                 new File(PoiPublicUtil.getWebRootPath("import/verfiy.xlsx")),
                 ExcelVerifyEntity.class, params);
-            FileOutputStream fos = new FileOutputStream("d:/ExcelVerifyTest.basetest.xlsx");
+            FileOutputStream fos = new FileOutputStream("D:/excel/ExcelVerifyTest.basetest.xlsx");
             result.getWorkbook().write(fos);
             fos.close();
             for (int i = 0; i < result.getList().size(); i++) {
@@ -70,7 +70,7 @@ public class ExcelVerifyTest {
             ExcelImportResult<ExcelVerifyEntityOfMode> result = ExcelImportUtil.importExcelVerify(
                 new File(PoiPublicUtil.getWebRootPath("import/verfiy.xlsx")),
                 ExcelVerifyEntityOfMode.class, params);
-            FileOutputStream fos = new FileOutputStream("d:/baseModetest.xlsx");
+            FileOutputStream fos = new FileOutputStream("D:/excel/baseModetest.xlsx");
             result.getWorkbook().write(fos);
             fos.close();
             for (int i = 0; i < result.getList().size(); i++) {
@@ -90,7 +90,7 @@ public class ExcelVerifyTest {
             ExcelImportResult<ExcelVerifyEntityOfMode> result = ExcelImportUtil.importExcelVerify(
                 new File(PoiPublicUtil.getWebRootPath("import/verfiy.xlsx")),
                 ExcelVerifyEntityOfMode.class, params);
-            FileOutputStream fos = new FileOutputStream("d:/baseHanldertest.xlsx");
+            FileOutputStream fos = new FileOutputStream("D:/excel/baseHanldertest.xlsx");
             result.getWorkbook().write(fos);
             fos.close();
             for (int i = 0; i < result.getList().size(); i++) {
@@ -111,7 +111,7 @@ public class ExcelVerifyTest {
             ExcelImportResult<ExcelVerifyEntityOfMode> result = ExcelImportUtil.importExcelVerify(
                 new File(PoiPublicUtil.getWebRootPath("import/verfiy.xlsx")),
                 ExcelVerifyEntityOfMode.class, params);
-            FileOutputStream fos = new FileOutputStream("d:/combinedVerificationTest.xlsx");
+            FileOutputStream fos = new FileOutputStream("D:/excel/combinedVerificationTest.xlsx");
             result.getWorkbook().write(fos);
             fos.close();
             for (int i = 0; i < result.getList().size(); i++) {

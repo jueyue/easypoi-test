@@ -61,7 +61,7 @@ public class ContractDemoTest {
         try {
             XWPFDocument doc = WordExportUtil
                 .exportWord07("org/jeecgframework/poi/test/word/doc/contractDemo.docx", map);
-            FileOutputStream fos = new FileOutputStream("d:/ContractDemo.docx");
+            FileOutputStream fos = new FileOutputStream("D:/excel/ContractDemo.docx");
             doc.write(fos);
             fos.close();
         } catch (Exception e) {

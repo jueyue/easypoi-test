@@ -60,7 +60,7 @@ public class PdfExportUtilTest {
         Date start = new Date();
         PdfExportParams params = new PdfExportParams("2412312",null);
         try {
-            File file = new File("D://PdfExportUtilTest.testExportPdf.pdf");
+            File file = new File("D:/excel//PdfExportUtilTest.testExportPdf.pdf");
             file.createNewFile();
             Document document =  PdfExportUtil.exportPdf(params, MsgClient.class, list,new FileOutputStream(file));
         } catch (Exception e) {

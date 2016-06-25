@@ -38,19 +38,19 @@ public class ExcelExportUtilTest {
         Date start = new Date();
         Workbook workbook = ExcelExportUtil.exportExcel(params, CourseEntity.class, list);
         System.out.println(new Date().getTime() - start.getTime());
-        File savefile = new File("d:/");
+        File savefile = new File("D:/excel/");
         if (!savefile.exists()) {
             savefile.mkdirs();
         }
-        FileOutputStream fos = new FileOutputStream("d:/tt.xlsx");
+        FileOutputStream fos = new FileOutputStream("D:/excel/tt.xlsx");
         workbook.write(fos);
         fos.close();
-        //        savefile = new File("d:/1");
+        //        savefile = new File("D:/excel/1");
         //        if (!savefile.exists()) {
         //            savefile.setWritable(true, false);
         //            savefile.mkdirs();
         //        }
-        //        fos = new FileOutputStream("d:/1/tt3.xlsx");
+        //        fos = new FileOutputStream("D:/excel/1/tt3.xlsx");
         //        workbook.write(fos);
         //        fos.close();
     }
@@ -97,11 +97,11 @@ public class ExcelExportUtilTest {
         Workbook workbook = ExcelExportUtil.exportExcel(new ExportParams("2412312", "测试", "测试"),
             CourseEntity.class, list);
         System.out.println(new Date().getTime() - start.getTime());
-        File savefile = new File("d:/");
+        File savefile = new File("D:/excel/");
         if (!savefile.exists()) {
             savefile.mkdirs();
         }
-        FileOutputStream fos = new FileOutputStream("d:/ExcelExportUtilTest.testExportExcel.xls");
+        FileOutputStream fos = new FileOutputStream("D:/excel/ExcelExportUtilTest.testExportExcel.xls");
         workbook.write(fos);
         fos.close();
     }
@@ -117,11 +117,11 @@ public class ExcelExportUtilTest {
         Workbook workbook = ExcelExportUtil.exportExcel(new ExportParams("2412312", "测试"),
             CourseEntity.class, list);
         System.out.println(new Date().getTime() - start.getTime());
-        File savefile = new File("d:/");
+        File savefile = new File("D:/excel/");
         if (!savefile.exists()) {
             savefile.mkdirs();
         }
-        FileOutputStream fos = new FileOutputStream("d:/tt.xls");
+        FileOutputStream fos = new FileOutputStream("D:/excel/tt.xls");
         workbook.write(fos);
         fos.close();
     }
@@ -139,11 +139,11 @@ public class ExcelExportUtilTest {
         params.setTemplateUrl("tt.xls");
         Workbook book = ExcelExportUtil.exportExcel(params, CourseEntity.class, list,
             new HashMap<String, Object>());
-        File savefile = new File("d:/");
+        File savefile = new File("D:/excel/");
         if (!savefile.exists()) {
             savefile.mkdirs();
         }
-        FileOutputStream fos = new FileOutputStream("d:/t_tt.xls");
+        FileOutputStream fos = new FileOutputStream("D:/excel/t_tt.xls");
         book.write(fos);
         fos.close();
     }

@@ -48,11 +48,11 @@ public class ExcelExportTemplateTest {
             map.put("i" + i, temp);
         }
         Workbook book = ExcelExportUtil.exportExcel(params, CourseEntity.class, list, map);
-        File savefile = new File("d:/");
+        File savefile = new File("D:/excel/");
         if (!savefile.exists()) {
             savefile.mkdirs();
         }
-        FileOutputStream fos = new FileOutputStream("d:/exportTemp.xls");
+        FileOutputStream fos = new FileOutputStream("D:/excel/exportTemp.xls");
         book.write(fos);
         fos.close();
 
@@ -104,11 +104,11 @@ public class ExcelExportTemplateTest {
             map.put("i" + i, temp);
         }
         Workbook book = ExcelExportUtil.exportExcel(params, map);
-        File savefile = new File("d:/");
+        File savefile = new File("D:/excel/");
         if (!savefile.exists()) {
             savefile.mkdirs();
         }
-        FileOutputStream fos = new FileOutputStream("d:/exportTemp2.xls");
+        FileOutputStream fos = new FileOutputStream("D:/excel/exportTemp2.xls");
         book.write(fos);
         fos.close();
 

@@ -22,7 +22,7 @@ public class ExcelToHtmlUtilTest {
             Workbook wb = new HSSFWorkbook(new FileInputStream(new File(PoiPublicUtil
                 .getWebRootPath("org/jeecgframework/poi/test/excel/doc/专项支出用款申请书.xls"))));
             String html = ExcelToHtmlUtil.toTableHtml(wb);
-            FileWriter fw = new FileWriter("d:/专项支出用款申请书_table.html");
+            FileWriter fw = new FileWriter("D:/excel/专项支出用款申请书_table.html");
             fw.write(html);
             fw.close();
         } catch (FileNotFoundException e) {
@@ -38,7 +38,7 @@ public class ExcelToHtmlUtilTest {
             Workbook wb = new HSSFWorkbook(new FileInputStream(new File(PoiPublicUtil
                 .getWebRootPath("org/jeecgframework/poi/test/excel/doc/exportTemp.xls"))));
             String html = ExcelToHtmlUtil.toTableHtml(wb, 1);
-            FileWriter fw = new FileWriter("d:/exportTemp_table.html");
+            FileWriter fw = new FileWriter("D:/excel/exportTemp_table.html");
             fw.write(html);
             fw.close();
         } catch (FileNotFoundException e) {
@@ -52,21 +52,21 @@ public class ExcelToHtmlUtilTest {
     public void testToAllHtmlWorkbookAndImage() {
 
         try {
-            Workbook wb = new HSSFWorkbook(new FileInputStream(new File("d:/tt.xls")));
+            Workbook wb = new HSSFWorkbook(new FileInputStream(new File("D:/excel/tt.xls")));
             //            Workbook wb = new HSSFWorkbook(new FileInputStream(
             //                new File(
             //                    PoiPublicUtil
             //                    .getWebRootPath("org/jeecgframework/poi/test/excel/doc/专项支出用款申请书.xls"))));
             long d = System.nanoTime();
-            String html = ExcelToHtmlUtil.toAllHtml(wb, "D:/");
-            FileWriter fw = new FileWriter("d:/专项支出用款申请书_all.html");
+            String html = ExcelToHtmlUtil.toAllHtml(wb, "D:/excel/");
+            FileWriter fw = new FileWriter("D:/excel/专项支出用款申请书_all.html");
             fw.write(html);
             fw.close();
 
             System.err.println(System.nanoTime() - d);
             d = System.nanoTime();
-            html = ExcelToHtmlUtil.toAllHtml(wb, "D:/");
-            fw = new FileWriter("d:/专项支出用款申请书_all_cache.html");
+            html = ExcelToHtmlUtil.toAllHtml(wb, "D:/excel/");
+            fw = new FileWriter("D:/excel/专项支出用款申请书_all_cache.html");
             fw.write(html);
             fw.close();
             System.err.println(System.nanoTime() - d);
@@ -81,13 +81,13 @@ public class ExcelToHtmlUtilTest {
     public void testToAllHtmlWorkbook() {
 
         try {
-            Workbook wb = new HSSFWorkbook(new FileInputStream(new File("d:/tt.xls")));
+            Workbook wb = new HSSFWorkbook(new FileInputStream(new File("D:/excel/tt.xls")));
             //            Workbook wb = new HSSFWorkbook(new FileInputStream(
             //                new File(
             //                    PoiPublicUtil
             //                    .getWebRootPath("org/jeecgframework/poi/test/excel/doc/专项支出用款申请书.xls"))));
             String html = ExcelToHtmlUtil.toAllHtml(wb);
-            FileWriter fw = new FileWriter("d:/专项支出用款申请书_all.html");
+            FileWriter fw = new FileWriter("D:/excel/专项支出用款申请书_all.html");
             fw.write(html);
             fw.close();
         } catch (FileNotFoundException e) {
@@ -103,7 +103,7 @@ public class ExcelToHtmlUtilTest {
             Workbook wb = new HSSFWorkbook(new FileInputStream(new File(PoiPublicUtil
                 .getWebRootPath("org/jeecgframework/poi/test/excel/doc/exportTemp.xls"))));
             String html = ExcelToHtmlUtil.toAllHtml(wb, 1);
-            FileWriter fw = new FileWriter("d:/exportTemp_all.html");
+            FileWriter fw = new FileWriter("D:/excel/exportTemp_all.html");
             fw.write(html);
             fw.close();
         } catch (FileNotFoundException e) {

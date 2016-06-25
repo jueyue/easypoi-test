@@ -61,11 +61,11 @@ public class TemplateExcelManySheet {
       //第二个sheet Map的值put进去
         sheetMap.put(1, map);
         Workbook book = ExcelExportUtil.exportExcel(sheetMap,params);
-        File savefile = new File("d:/");
+        File savefile = new File("D:/excel/");
         if (!savefile.exists()) {
             savefile.mkdirs();
         }
-        FileOutputStream fos = new FileOutputStream("d:/exportTemp3.xls");
+        FileOutputStream fos = new FileOutputStream("D:/excel/exportTemp3.xls");
         book.write(fos);
         fos.close();
 

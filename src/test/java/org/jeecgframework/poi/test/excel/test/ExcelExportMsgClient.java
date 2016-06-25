@@ -55,11 +55,11 @@ public class ExcelExportMsgClient {
         params.setFreezeCol(2);
         Workbook workbook = ExcelExportUtil.exportExcel(params, MsgClient.class, list);
         System.out.println(new Date().getTime() - start.getTime());
-        File savefile = new File("d:/");
+        File savefile = new File("D:/excel/");
         if (!savefile.exists()) {
             savefile.mkdirs();
         }
-        FileOutputStream fos = new FileOutputStream("d:/ExcelExportMsgClient.xlsx");
+        FileOutputStream fos = new FileOutputStream("D:/excel/ExcelExportMsgClient.xlsx");
         workbook.write(fos);
         fos.close();
     }

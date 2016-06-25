@@ -9,6 +9,7 @@ import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+import org.jeecgframework.poi.QiyeInfo;
 import org.jeecgframework.poi.excel.ExcelImportUtil;
 import org.jeecgframework.poi.excel.entity.ImportParams;
 import org.jeecgframework.poi.test.entity.CourseEntity;
@@ -41,6 +42,23 @@ public class ExcelImportUtilTest {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+    }
+    @Test
+    public void asdasda() {
+    	try {
+    		ImportParams params = new ImportParams();
+    		long start = new Date().getTime();
+    		List<QiyeInfo> list = ExcelImportUtil.importExcel(new File("D:/excel/企业信息模板.xlsx"), QiyeInfo.class, params);
+    		//        List<StatisticEntity> list = ExcelImportUtil.importExcelBySax(new File(PoiPublicUtil.getWebRootPath("import/ExcelExportMsgClient.xlsx"),
+    		//            StatisticEntity.class, params);
+    		/*for (int i = 0; i < list.size(); i++) {
+                System.out.println(ReflectionToStringBuilder.toString(list.get(i)));
+            }*/
+    		System.out.println(list.size() + "-----" + (new Date().getTime() - start));
+    	} catch (Exception e) {
+    		// TODO Auto-generated catch block
+    		e.printStackTrace();
+    	}
     }
 
     @Test
