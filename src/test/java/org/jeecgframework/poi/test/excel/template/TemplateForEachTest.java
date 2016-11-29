@@ -39,12 +39,12 @@ public class TemplateForEachTest {
             list.add(entity);
         }
         map.put("entitylist", list);
+        map.put("manmark", "1");
         map.put("letest", "12345678");
-        map.put("sexmark", "2");
         map.put("fntest", "12345678.2341234");
         map.put("fdtest", null);
         List<Map<String, Object>> mapList = new ArrayList<Map<String, Object>>();
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 1; i++) {
             Map<String, Object> testMap = new HashMap<String, Object>();
 
             testMap.put("id", "xman");

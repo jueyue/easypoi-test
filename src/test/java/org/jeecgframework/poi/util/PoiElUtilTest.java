@@ -93,10 +93,6 @@ public class PoiElUtilTest {
 
         obj = PoiElUtil.eval("key2 > key1 ? key1 : '小明'", map);
         Assert.assertEquals(obj, "100");
-        
-        
-        obj = PoiElUtil.eval("key2 > key1 ? key1 == 50?'小黄' :小黑' : '小明'", map);
-        Assert.assertEquals(obj, "小黑");
 
         map.put("key1", "你好");
 
