@@ -1,4 +1,4 @@
-package org.jeecgframework.poi.test.excel.template;
+package org.jeecgframework.poi.view;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -8,25 +8,31 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.apache.poi.ss.usermodel.Workbook;
 import org.jeecgframework.poi.excel.ExcelExportUtil;
 import org.jeecgframework.poi.excel.entity.TemplateExportParams;
+import org.jeecgframework.poi.excel.entity.vo.TemplateExcelConstants;
 import org.jeecgframework.poi.excel.export.styler.ExcelExportStylerColorImpl;
+import org.jeecgframework.poi.excel.view.PoiBaseView;
 import org.jeecgframework.poi.test.entity.temp.BudgetAccountsEntity;
 import org.jeecgframework.poi.test.entity.temp.PayeeEntity;
 import org.jeecgframework.poi.test.entity.temp.TemplateExcelExportEntity;
 import org.jeecgframework.poi.util.PoiMergeCellUtil;
 import org.junit.Test;
+import org.springframework.ui.ModelMap;
 
 import com.google.common.collect.Lists;
 
 public class TemplateForEachTest {
 
     @Test
-    public void test() throws Exception {
+    public void test(HttpServletRequest request, HttpServletResponse response,
+                     ModelMap map) throws Exception {
         TemplateExportParams params = new TemplateExportParams(
             "org/jeecgframework/poi/test/excel/doc/foreach.xlsx");
-        Map<String, Object> map = new HashMap<String, Object>();
         List<TemplateExcelExportEntity> list = new ArrayList<TemplateExcelExportEntity>();
 
         for (int i = 0; i < 4; i++) {
@@ -62,16 +68,16 @@ public class TemplateForEachTest {
             mapList.add(testMap);
         }
         map.put("sitest", mapList);
-        //本来导出是专业那个 
+        //本来导出是这样的
         Workbook workbook = ExcelExportUtil.exportExcel(params, map);
-        PoiMergeCellUtil.mergeCells(workbook.getSheetAt(0), 1, 0, 4);
-        File savefile = new File("D:/excel/");
-        if (!savefile.exists()) {
-            savefile.mkdirs();
-        }
-        FileOutputStream fos = new FileOutputStream("D:/excel/foreach.xlsx");
-        workbook.write(fos);
-        fos.close();
+
+        //现在换成这样的,就会直接输出
+        map.put(TemplateExcelConstants.FILE_NAME, "用户信息");
+        map.put(TemplateExcelConstants.PARAMS, params);
+        map.put(TemplateExcelConstants.MAP_DATA, map);
+        PoiBaseView.render(map, request, response,
+            TemplateExcelConstants.JEECG_TEMPLATE_EXCEL_VIEW);
+
     }
 
 }
