@@ -38,5 +38,10 @@ public class TestDriver {
         FileOutputStream fos = new FileOutputStream("D:\\home\\lemur\\data.xlsx");
         workbook.write(fos);
         fos.close();
+        workbook = new HSSFWorkbook();
+        new HtmlToExcelServer().createSheet(html.toString(), workbook);
+        fos = new FileOutputStream("D:\\home\\lemur\\data.xls");
+        workbook.write(fos);
+        fos.close();
     }
 }
