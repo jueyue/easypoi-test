@@ -66,12 +66,12 @@ public class ExcelExportUtilTest {
             TeacherEntity teacherEntity = new TeacherEntity();
             teacherEntity.setId("12131231");
             teacherEntity.setName("路飞");
-            courseEntity.setTeacher(teacherEntity);
+            courseEntity.setChineseTeacher(teacherEntity);
 
             teacherEntity = new TeacherEntity();
             teacherEntity.setId("121312314312421131");
             teacherEntity.setName("老王");
-            courseEntity.setShuxueteacher(teacherEntity);
+            courseEntity.setMathTeacher(teacherEntity);
 
             StudentEntity studentEntity = new StudentEntity();
             studentEntity.setId("11231");
@@ -101,7 +101,7 @@ public class ExcelExportUtilTest {
         if (!savefile.exists()) {
             savefile.mkdirs();
         }
-        FileOutputStream fos = new FileOutputStream("D:/excel/ExcelExportUtilTest.testExportExcel.xls");
+        FileOutputStream fos = new FileOutputStream("D:/excel/基本导出测试.xls");
         workbook.write(fos);
         fos.close();
     }

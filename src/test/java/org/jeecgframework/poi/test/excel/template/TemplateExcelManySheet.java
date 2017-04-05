@@ -42,7 +42,8 @@ public class TemplateExcelManySheet {
         map.put("sunCourses", list.size());
         Map<String, Object> obj = new HashMap<String, Object>();
         map.put("obj", obj);
-        obj.put("name", list.size());
+        obj.put("n"
+        		+ "ame", list.size());
         
         // sheet 2
         map.put("month", 10);
@@ -80,12 +81,12 @@ public class TemplateExcelManySheet {
         TeacherEntity teacherEntity = new TeacherEntity();
         teacherEntity.setId("12131231");
         teacherEntity.setName("你们");
-        courseEntity.setTeacher(teacherEntity);
+        courseEntity.setChineseTeacher(teacherEntity);
 
         teacherEntity = new TeacherEntity();
         teacherEntity.setId("121312314312421131");
         teacherEntity.setName("老王");
-        courseEntity.setShuxueteacher(teacherEntity);
+        courseEntity.setMathTeacher(teacherEntity);
 
         StudentEntity studentEntity = new StudentEntity();
         studentEntity.setId("11231");

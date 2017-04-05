@@ -15,10 +15,10 @@ import org.jeecgframework.poi.excel.annotation.ExcelTarget;
 @ExcelTarget("teacherEntity")
 public class TeacherEntity implements java.io.Serializable {
     /** id */
-    @Excel(name = "老师ID_teacherEntity,老师属性_courseEntity", orderNum = "2", needMerge = false, isImportField = "true_teacherEntity,true_courseEntity")
+    @Excel(name = "主讲老师ID_null,代课老师ID_null", orderNum = "2",mergeVertical = true,needMerge=true,isImportField = "true_major,true_absent")
     private String id;
     /** name */
-    @Excel(name = "老师姓名_yuwen,数学老师_shuxue", orderNum = "2", mergeVertical = true, isImportField = "true_yuwen")
+    @Excel(name = "主讲老师_major,代课老师_absent", orderNum = "1", mergeVertical = true,needMerge=true,isImportField = "true_major,true_absent")
     private String name;
 
     /*

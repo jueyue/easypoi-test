@@ -67,12 +67,12 @@ public class ExcelExportTemplateTest {
         TeacherEntity teacherEntity = new TeacherEntity();
         teacherEntity.setId("12131231");
         teacherEntity.setName("你们");
-        courseEntity.setTeacher(teacherEntity);
+        courseEntity.setChineseTeacher(teacherEntity);
 
         teacherEntity = new TeacherEntity();
         teacherEntity.setId("121312314312421131");
         teacherEntity.setName("老王");
-        courseEntity.setShuxueteacher(teacherEntity);
+        courseEntity.setMathTeacher(teacherEntity);
 
         StudentEntity studentEntity = new StudentEntity();
         studentEntity.setId("11231");

@@ -21,16 +21,16 @@ public class CourseEntity implements java.io.Serializable {
     /** 主键 */
     private String        id;
     /** 课程名称 */
-    @Excel(name = "课程名称", orderNum = "1", width = 25, needMerge = true, isImportField = "true")
+    @Excel(name = "课程名称", orderNum = "1", width = 25, needMerge = true,mergeVertical=true,isImportField = "true")
     private String        name;
     /** 老师主键 */
-    @ExcelEntity(id = "yuwen")
-    private TeacherEntity teacher;
+    @ExcelEntity(id = "major")
+    private TeacherEntity chineseTeacher;
     /** 老师主键 */
-    //@ExcelEntity(id = "shuxue")
-    private TeacherEntity shuxueteacher;
+    @ExcelEntity(id = "absent")
+    private TeacherEntity mathTeacher;
 
-    @ExcelCollection(id = "st", name = "学生", orderNum = "4")
+    @ExcelCollection(name = "学生", orderNum = "4")
     private List<StudentEntity> students;
 
     /**
@@ -52,8 +52,8 @@ public class CourseEntity implements java.io.Serializable {
         return this.name;
     }
 
-    public TeacherEntity getShuxueteacher() {
-        return shuxueteacher;
+    public TeacherEntity getMathTeacher() {
+        return mathTeacher;
     }
 
     public List<StudentEntity> getStudents() {
@@ -65,8 +65,8 @@ public class CourseEntity implements java.io.Serializable {
      * 
      * @return: java.lang.String 老师主键
      */
-    public TeacherEntity getTeacher() {
-        return teacher;
+    public TeacherEntity getChineseTeacher() {
+        return chineseTeacher;
     }
 
     /**
@@ -87,8 +87,8 @@ public class CourseEntity implements java.io.Serializable {
         this.name = name;
     }
 
-    public void setShuxueteacher(TeacherEntity shuxueteacher) {
-        this.shuxueteacher = shuxueteacher;
+    public void setMathTeacher(TeacherEntity shuxueteacher) {
+        this.mathTeacher = shuxueteacher;
     }
 
     public void setStudents(List<StudentEntity> students) {
@@ -100,7 +100,7 @@ public class CourseEntity implements java.io.Serializable {
      * 
      * @param: java.lang.String 老师主键
      */
-    public void setTeacher(TeacherEntity teacher) {
-        this.teacher = teacher;
+    public void setChineseTeacher(TeacherEntity teacher) {
+        this.chineseTeacher = teacher;
     }
 }
