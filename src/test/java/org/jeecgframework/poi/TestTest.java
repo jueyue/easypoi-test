@@ -15,10 +15,30 @@
  */
 package org.jeecgframework.poi;
 
+import java.io.File;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
+
+import org.jeecgframework.poi.excel.ExcelImportUtil;
+import org.jeecgframework.poi.excel.entity.ImportParams;
+
 public class TestTest {
 	
 	public static void main(String[] args) {
-		
+	    ImportParams params = new ImportParams();
+        long start = new Date().getTime();
+        List<Map<String, Object>> list = ExcelImportUtil.importExcel(
+            new File("C:/Users/Think/Desktop/卡号.xlsx"), Map.class, params);
+        System.out.println(new Date().getTime() - start);
+        System.out.println(list.size());
+        for (Map<String, Object> map : list) {
+            if(map.get("card") != null){
+                if(!new LuhnUtil(map.get("card").toString()).check()){
+                    System.out.println(map.get("card"));
+                }
+            }
+        }
 	}
 
 }

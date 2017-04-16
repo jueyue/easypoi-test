@@ -259,7 +259,7 @@ public class ExcelExportUtilIdTest {
     
     //@Test//有问题
     public void testExportExcel_3() throws Exception{
-    	Workbook workbook = ExcelExportUtil.exportExcel(schoolCourseList,ExcelType.HSSF.name());
+    	Workbook workbook = ExcelExportUtil.exportExcel(schoolCourseList,ExcelType.HSSF);
     	FileOutputStream fos = new FileOutputStream("D:/excel/六年级课程表.xls");
     	workbook.write(fos);
     	fos.close();    	
