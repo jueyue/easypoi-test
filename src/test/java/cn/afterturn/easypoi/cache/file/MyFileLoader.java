@@ -23,7 +23,7 @@ public class MyFileLoader extends FileLoadeImpl implements IFileLoader {
     
     @Override
     public byte[] getFile(String url) {
-        url = "org/jeecgframework/poi/test/excel/doc/" + url;
+        url = "cn/afterturn/easypoi/test/excel/doc/" + url;
         return super.getFile(url);
     }
 }

@@ -47,7 +47,7 @@ public class PdfImageTest {
         StudentEntityImage.setName("撒旦法司法局");
         StudentEntityImage.setBirthday(new Date());
         StudentEntityImage.setSex(1);
-        StudentEntityImage.setImage("org/jeecgframework/poi/test/pdf/image/test.png");
+        StudentEntityImage.setImage("cn/afterturn/easypoi/test/pdf/image/test.png");
         studentList.add(StudentEntityImage);
         studentList.add(StudentEntityImage);
     }

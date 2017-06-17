@@ -61,7 +61,7 @@ public class ContractDemoTest {
         map.put("order", total);
         try {
             XWPFDocument doc = WordExportUtil
-                .exportWord07("org/jeecgframework/poi/test/word/doc/contractDemo.docx", map);
+                .exportWord07("cn/afterturn/easypoi/test/word/doc/contractDemo.docx", map);
             FileOutputStream fos = new FileOutputStream("D:/excel/ContractDemo.docx");
             doc.write(fos);
             fos.close();

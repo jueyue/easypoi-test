@@ -21,7 +21,7 @@ public class ExcelToHtmlUtilTest {
     public void testToTableHtmlWorkbook() {
         try {
             Workbook wb = new HSSFWorkbook(new FileInputStream(new File(PoiPublicUtil
-                .getWebRootPath("org/jeecgframework/poi/test/excel/doc/专项支出用款申请书.xls"))));
+                .getWebRootPath("cn/afterturn/easypoi/test/excel/doc/专项支出用款申请书.xls"))));
             String html = ExcelToHtmlUtil.toTableHtml(wb);
             FileWriter fw = new FileWriter("D:/excel/专项支出用款申请书_table.html");
             fw.write(html);
@@ -37,7 +37,7 @@ public class ExcelToHtmlUtilTest {
     public void testToTableHtmlWorkbookInt() {
         try {
             Workbook wb = new HSSFWorkbook(new FileInputStream(new File(PoiPublicUtil
-                .getWebRootPath("org/jeecgframework/poi/test/excel/doc/exportTemp.xls"))));
+                .getWebRootPath("cn/afterturn/easypoi/test/excel/doc/exportTemp.xls"))));
             String html = ExcelToHtmlUtil.toTableHtml(wb, 1);
             FileWriter fw = new FileWriter("D:/excel/exportTemp_table.html");
             fw.write(html);
@@ -57,7 +57,7 @@ public class ExcelToHtmlUtilTest {
             //            Workbook wb = new HSSFWorkbook(new FileInputStream(
             //                new File(
             //                    PoiPublicUtil
-            //                    .getWebRootPath("org/jeecgframework/poi/test/excel/doc/专项支出用款申请书.xls"))));
+            //                    .getWebRootPath("cn/afterturn/easypoi/test/excel/doc/专项支出用款申请书.xls"))));
             long d = System.nanoTime();
             String html = ExcelToHtmlUtil.toAllHtml(wb, "D:/excel/");
             FileWriter fw = new FileWriter("D:/excel/专项支出用款申请书_all.html");
@@ -86,7 +86,7 @@ public class ExcelToHtmlUtilTest {
             //            Workbook wb = new HSSFWorkbook(new FileInputStream(
             //                new File(
             //                    PoiPublicUtil
-            //                    .getWebRootPath("org/jeecgframework/poi/test/excel/doc/专项支出用款申请书.xls"))));
+            //                    .getWebRootPath("cn/afterturn/easypoi/test/excel/doc/专项支出用款申请书.xls"))));
             String html = ExcelToHtmlUtil.toAllHtml(wb);
             FileWriter fw = new FileWriter("D:/excel/专项支出用款申请书_all.html");
             fw.write(html);
@@ -102,7 +102,7 @@ public class ExcelToHtmlUtilTest {
     public void testToAllHtmlWorkbookInt() {
         try {
             Workbook wb = new HSSFWorkbook(new FileInputStream(new File(PoiPublicUtil
-                .getWebRootPath("org/jeecgframework/poi/test/excel/doc/exportTemp.xls"))));
+                .getWebRootPath("cn/afterturn/easypoi/test/excel/doc/exportTemp.xls"))));
             String html = ExcelToHtmlUtil.toAllHtml(wb, 1);
             FileWriter fw = new FileWriter("D:/excel/exportTemp_all.html");
             fw.write(html);

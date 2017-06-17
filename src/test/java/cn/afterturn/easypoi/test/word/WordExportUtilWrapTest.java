@@ -46,7 +46,7 @@ public class WordExportUtilWrapTest {
         map.put("pList", list);
         try {
             XWPFDocument doc = WordExportUtil.exportWord07(
-                "org/jeecgframework/poi/test/word/doc/SimpleExcel.docx", map);
+                "cn/afterturn/easypoi/test/word/doc/SimpleExcel.docx", map);
             FileOutputStream fos = new FileOutputStream("D:/excel/wrapExcel.docx");
             doc.write(fos);
             fos.close();

@@ -27,7 +27,7 @@ public class TemplateForEachTest {
     @Test
     public void test() throws Exception {
         TemplateExportParams params = new TemplateExportParams(
-            "org/jeecgframework/poi/test/excel/doc/foreach.xlsx");
+            "cn/afterturn/easypoi/test/excel/doc/foreach.xlsx");
         Map<String, Object> map = new HashMap<String, Object>();
         List<TemplateExcelExportEntity> list = new ArrayList<TemplateExcelExportEntity>();
 

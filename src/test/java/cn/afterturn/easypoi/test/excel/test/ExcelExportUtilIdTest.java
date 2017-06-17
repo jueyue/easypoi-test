@@ -192,7 +192,7 @@ public class ExcelExportUtilIdTest {
     @Test
     public void templateExportDemo_1() throws Exception {
         TemplateExportParams params = new TemplateExportParams(
-            "org/jeecgframework/poi/test/excel/doc/kyoffice_address_book.xls",1,2);
+            "cn/afterturn/easypoi/test/excel/doc/kyoffice_address_book.xls",1,2);
         Map<String, Object> data = new HashMap<String, Object>();
         data.put("companyName","卡友智能");
         data.put("editDate",new Date());
@@ -237,7 +237,7 @@ public class ExcelExportUtilIdTest {
     @Test
     public void templateExportDemo_2() throws Exception {
     	TemplateExportParams params = new TemplateExportParams(
-    			"org/jeecgframework/poi/test/excel/doc/kyoffice_address_book.xls",3);
+    			"cn/afterturn/easypoi/test/excel/doc/kyoffice_address_book.xls",3);
     	Map<String, Object> data = new HashMap<String, Object>();
     	List<Map<String,Object>> listMap=Lists.newArrayList();
     	for(int i=1;i<=12;i++){

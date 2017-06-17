@@ -33,12 +33,12 @@ public class WordExportUtilBaseExcelTest {
         WordImageEntity image = new WordImageEntity();
         image.setHeight(200);
         image.setWidth(500);
-        image.setUrl("org/jeecgframework/poi/test/word/img/testCode.png");
+        image.setUrl("cn/afterturn/easypoi/test/word/img/testCode.png");
         image.setType(WordImageEntity.URL);
         map.put("testCode", image);
         try {
             XWPFDocument doc = WordExportUtil.exportWord07(
-                "org/jeecgframework/poi/test/word/doc/Image.docx", map);
+                "cn/afterturn/easypoi/test/word/doc/Image.docx", map);
             FileOutputStream fos = new FileOutputStream("D:/excel/image.docx");
             doc.write(fos);
             fos.close();
@@ -72,7 +72,7 @@ public class WordExportUtilBaseExcelTest {
         map.put("pList", list);
         try {
             XWPFDocument doc = WordExportUtil.exportWord07(
-                "org/jeecgframework/poi/test/word/doc/SimpleExcel.docx", map);
+                "cn/afterturn/easypoi/test/word/doc/SimpleExcel.docx", map);
             FileOutputStream fos = new FileOutputStream("D:/excel/simpleExcel.docx");
             doc.write(fos);
             fos.close();

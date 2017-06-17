@@ -28,7 +28,7 @@ public class ExcelExportTemplateTest {
     @Test
     public void one() throws Exception {
         TemplateExportParams params = new TemplateExportParams(
-            "org/jeecgframework/poi/test/excel/doc/exportTemp.xls", true);
+            "cn/afterturn/easypoi/test/excel/doc/exportTemp.xls", true);
         params.setHeadingRows(2);
         params.setHeadingStartRow(2);
         params.setStyle(ExcelStyleType.BORDER.getClazz());
@@ -94,7 +94,7 @@ public class ExcelExportTemplateTest {
     @Test
     public void two() throws Exception {
         TemplateExportParams params = new TemplateExportParams(
-            "org/jeecgframework/poi/test/excel/doc/exportTemp.xls", 1);
+            "cn/afterturn/easypoi/test/excel/doc/exportTemp.xls", 1);
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("month", 10);
         Map<String, Object> temp;

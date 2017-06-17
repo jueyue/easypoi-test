@@ -21,10 +21,10 @@ public class ExcelExportTemplateColFeTest {
 	@Test
 	public void one() throws Exception {
 		TemplateExportParams params = new TemplateExportParams(
-		    "org/jeecgframework/poi/test/excel/doc/for_Col.xlsx", true);
+		    "cn/afterturn/easypoi/test/excel/doc/for_Col.xlsx", true);
 		params.setColForEach(true);
 		Workbook book = ExcelExportUtil.exportExcel(params, value);
-		PoiMergeCellUtil.mergeCells(book.getSheetAt(0), 1, 0,1);
+		//PoiMergeCellUtil.mergeCells(book.getSheetAt(0), 1, 0,1);
 		FileOutputStream fos = new FileOutputStream("D:/excel/ExcelExportTemplateColFeTest_one.xlsx");
 		book.write(fos);
 		fos.close();

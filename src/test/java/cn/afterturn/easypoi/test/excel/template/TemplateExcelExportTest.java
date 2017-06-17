@@ -31,7 +31,7 @@ public class TemplateExcelExportTest {
     @Test
     public void test() throws Exception {
         TemplateExportParams params = new TemplateExportParams(
-            "org/jeecgframework/poi/test/excel/doc/专项支出用款申请书.xls");
+            "cn/afterturn/easypoi/test/excel/doc/专项支出用款申请书.xls");
         params.setHeadingStartRow(3);
         params.setHeadingRows(2);
         Map<String, Object> map = new HashMap<String, Object>();
@@ -86,7 +86,7 @@ public class TemplateExcelExportTest {
     @Test
     public void fe_map() throws Exception {
         TemplateExportParams params = new TemplateExportParams(
-            "org/jeecgframework/poi/test/excel/doc/专项支出用款申请书_map.xls");
+            "cn/afterturn/easypoi/test/excel/doc/专项支出用款申请书_map.xls");
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("date", "2014-12-25");
         map.put("money", 2000000.00);
@@ -124,7 +124,7 @@ public class TemplateExcelExportTest {
     @Test
     public void test2() throws Exception {
         TemplateExportParams params = new TemplateExportParams(
-            "org/jeecgframework/poi/test/excel/doc/merge_test.xls");
+            "cn/afterturn/easypoi/test/excel/doc/merge_test.xls");
         Map<String, Object> map = new HashMap<String, Object>();
 
         List<Map<String, String>> list = new ArrayList<Map<String, String>>();

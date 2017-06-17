@@ -59,7 +59,7 @@ public class TaxManagementTest {
         map.put("totalthisyear", "3400");
         try {
             XWPFDocument doc = WordExportUtil
-                .exportWord07("org/jeecgframework/poi/test/word/doc/纳税信息.docx", map);
+                .exportWord07("cn/afterturn/easypoi/test/word/doc/纳税信息.docx", map);
             FileOutputStream fos = new FileOutputStream("D:/excel/纳税信息_test.docx");
             doc.write(fos);
             fos.close();
@@ -99,7 +99,7 @@ public class TaxManagementTest {
         map.put("totalthisyear", "3400");
         try {
             XWPFDocument doc = WordExportUtil
-                .exportWord07("org/jeecgframework/poi/test/word/doc/纳税信息.docx", map);
+                .exportWord07("cn/afterturn/easypoi/test/word/doc/纳税信息.docx", map);
             FileOutputStream fos = new FileOutputStream("D:/excel/纳税信息_entity.docx");
             doc.write(fos);
             fos.close();
