@@ -22,7 +22,7 @@ public class WordExportUtilTest {
     @Test
     public void imageWordExport() {
         Map<String, Object> map = new HashMap<String, Object>();
-        map.put("department", "Jeecg");
+        map.put("department", "Easypoi");
         map.put("person", "JueYue");
         map.put("time", format.format(new Date()));
         WordImageEntity image = new WordImageEntity();
@@ -48,7 +48,7 @@ public class WordExportUtilTest {
     @Test
     public void SimpleWordExport() {
         Map<String, Object> map = new HashMap<String, Object>();
-        map.put("department", "Jeecg");
+        map.put("department", "Easypoi");
         map.put("person", "JueYue");
         map.put("time", format.format(new Date()));
         map.put("me","JueYue");

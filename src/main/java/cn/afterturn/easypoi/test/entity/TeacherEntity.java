@@ -65,7 +65,7 @@ public class TeacherEntity implements java.io.Serializable {
 
     /*
      * public String getPic() { // if(StringUtils.isEmpty(pic)){ // pic =
-     * "plug-in/login/images/jeecg.png"; // } return pic; }
+     * "plug-in/login/images/Easypoi.png"; // } return pic; }
      * 
      * public void setPic(String pic) { this.pic = pic; }
      */

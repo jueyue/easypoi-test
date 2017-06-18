@@ -78,7 +78,7 @@ public class TemplateForEachTest {
         map.put(TemplateExcelConstants.PARAMS, params);
         map.put(TemplateExcelConstants.MAP_DATA, map);
         PoiBaseView.render(map, request, response,
-            TemplateExcelConstants.JEECG_TEMPLATE_EXCEL_VIEW);
+            TemplateExcelConstants.EASYPOI_TEMPLATE_EXCEL_VIEW);
 
     }
 

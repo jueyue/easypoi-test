@@ -25,11 +25,23 @@
 		<developer>
 			<name>JueYue</name>
 			<email>qrb.jueyue@gmail.com</email>
-			<organization>Jeecg</organization>
-			<organizationUrl>http://www.jeecg.org</organizationUrl>
+			<organization>Easypoi</organization>
+			<organizationUrl>http://www.Easypoi.org</organizationUrl>
 		</developer>
 	</developers>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.2.5.RELEASE</version>
+	</parent>
 	<dependencies>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
 		<dependency>
 			<groupId>cn.afterturn</groupId>
 			<artifactId>easypoi-web</artifactId>
