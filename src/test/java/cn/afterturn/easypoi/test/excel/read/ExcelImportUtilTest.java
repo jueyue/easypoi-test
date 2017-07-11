@@ -49,7 +49,7 @@ public class ExcelImportUtilTest {
     	try {
     		ImportParams params = new ImportParams();
     		long start = new Date().getTime();
-    		List<QiyeInfo> list = ExcelImportUtil.importExcel(new File("D:/excel/企业信息模板.xlsx"), QiyeInfo.class, params);
+    		List<QiyeInfo> list = ExcelImportUtil.importExcel( new FileInputStream(new File("D:/excel/企业信息模板.xlsx")), QiyeInfo.class, params);
     		//        List<StatisticEntity> list = ExcelImportUtil.importExcelBySax(new File(PoiPublicUtil.getWebRootPath("import/ExcelExportMsgClient.xlsx"),
     		//            StatisticEntity.class, params);
     		/*for (int i = 0; i < list.size(); i++) {
@@ -69,7 +69,7 @@ public class ExcelImportUtilTest {
         params.setHeadRows(1);
         long start = new Date().getTime();
         List<MsgClient> list = ExcelImportUtil.importExcel(
-            new File(PoiPublicUtil.getWebRootPath("import/ExcelExportMsgClient.xlsx")),
+           new File(PoiPublicUtil.getWebRootPath("import/ExcelExportMsgClient.xlsx")),
             MsgClient.class, params);
         System.out.println(new Date().getTime() - start);
         System.out.println(list.size());

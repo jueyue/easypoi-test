@@ -15,10 +15,10 @@ import cn.afterturn.easypoi.excel.annotation.ExcelTarget;
 @ExcelTarget("teacherEntity")
 public class TeacherEntity implements java.io.Serializable {
     /** id */
-    @Excel(name = "主讲老师ID_null,代课老师ID_null", orderNum = "2",mergeVertical = true,needMerge=true,isImportField = "true_major,true_absent")
+    //@Excel(name = "主讲老师", orderNum = "2",isImportField = "true_major,true_absent")
     private String id;
     /** name */
-    @Excel(name = "主讲老师_major,代课老师_absent", orderNum = "1", mergeVertical = true,needMerge=true,isImportField = "true_major,true_absent")
+    @Excel(name = "主讲老师_major,代课老师_absent", orderNum = "1",needMerge = true,isImportField = "true_major,true_absent")
     private String name;
 
     /*
