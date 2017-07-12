@@ -15,10 +15,8 @@
  */
 package cn.afterturn.easypoi;
 
-import static org.junit.Assert.*;
-
 import cn.afterturn.easypoi.cache.manager.POICacheManagerTest;
-import cn.afterturn.easypoi.html.ExcelToHtmlUtilTest;
+import cn.afterturn.easypoi.html.ExcelXorHtmlUtilTest;
 import cn.afterturn.easypoi.test.UtilTest;
 import cn.afterturn.easypoi.test.excel.read.CustomerEntityTest;
 import cn.afterturn.easypoi.test.excel.read.ExcelImportSameNameTest;
@@ -49,7 +47,7 @@ import cn.afterturn.easypoi.test.word.WordExportUtilAnnExcelTest;
 import cn.afterturn.easypoi.test.word.WordExportUtilBaseExcelTest;
 import cn.afterturn.easypoi.test.word.WordExportUtilTest;
 import cn.afterturn.easypoi.util.PoiElUtilTest;
-import org.junit.Test;
+
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
@@ -62,7 +60,7 @@ import org.junit.runners.Suite.SuiteClasses;
                 ExcelExportMsgClient.class, ExcelExportForMap.class, ExcelExportForLink.class,
                 TemplateForEachTest2.class, TemplateForEachTest.class, TemplateExcelSheetTest.class,
                 TemplateExcelManySheet.class, TemplateExcelExportTest.class,
-                ExcelExportTemplateTest.class, ExcelToHtmlUtilTest.class, ExcelVerifyTest.class,
+                ExcelExportTemplateTest.class, ExcelXorHtmlUtilTest.class, ExcelVerifyTest.class,
                 ExcelMapImportTest.class, ExcelImportUtilTest.class, ExcelImportSameNameTest.class,
                 CustomerEntityTest.class, ImportCheckTestOneLine.class, TaxManagementTest.class,
                 ContractDemoTest.class, MultiLineHeadersTest.class, PdfExportUtilTest.class,

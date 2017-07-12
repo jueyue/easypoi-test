@@ -8,6 +8,8 @@ import java.util.List;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Workbook;
 
+import cn.afterturn.easypoi.excel.export.styler.ExcelExportStylerBorderImpl;
+import cn.afterturn.easypoi.excel.export.styler.ExcelExportStylerColorImpl;
 import cn.afterturn.easypoi.test.entity.CourseEntity;
 import cn.afterturn.easypoi.test.entity.StudentEntity;
 import cn.afterturn.easypoi.test.entity.TeacherEntity;
@@ -67,8 +69,9 @@ public class ExcelExportUtilDataHandlerTest {
         CourseHanlder hanlder = new CourseHanlder();
         hanlder.setNeedHandlerFields(new String[] { "课程名称" });
         exportParams.setDataHanlder(hanlder);
+        exportParams.setStyle(ExcelExportStylerColorImpl.class);
         Workbook workbook = ExcelExportUtil.exportExcel(exportParams, CourseEntity.class, list);
-        FileOutputStream fos = new FileOutputStream("D:/excel/tt.xls");
+        FileOutputStream fos = new FileOutputStream("D:/excel/ExcelExportUtilDataHandlerTest.testExportExcel.xls");
         workbook.write(fos);
         fos.close();
     }
