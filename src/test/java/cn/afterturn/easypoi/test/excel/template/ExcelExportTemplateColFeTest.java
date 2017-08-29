@@ -21,7 +21,7 @@ public class ExcelExportTemplateColFeTest {
 	@Test
 	public void one() throws Exception {
 		TemplateExportParams params = new TemplateExportParams(
-		    "cn/afterturn/easypoi/test/excel/doc/for_Col.xlsx", true);
+		    "doc/for_Col.xlsx", true);
 		params.setColForEach(true);
 		Workbook book = ExcelExportUtil.exportExcel(params, value);
 		//PoiMergeCellUtil.mergeCells(book.getSheetAt(0), 1, 0,1);

@@ -24,7 +24,7 @@ public class EasypoiTemplateExcelViewTest {
     public String download(ModelMap modelMap) {
         Map<String, Object> map = new HashMap<String, Object>();
         TemplateExportParams params = new TemplateExportParams(
-            "cn/afterturn/easypoi/test/excel/doc/foreach.xlsx");
+            "doc/foreach.xlsx");
         List<TemplateExcelExportEntity> list = new ArrayList<TemplateExcelExportEntity>();
 
         for (int i = 0; i < 4; i++) {
@@ -79,7 +79,7 @@ public class EasypoiTemplateExcelViewTest {
                                       HttpServletResponse response) {
         Map<String, Object> map = new HashMap<String, Object>();
         TemplateExportParams params = new TemplateExportParams(
-            "cn/afterturn/easypoi/test/excel/doc/foreach.xlsx");
+            "doc/foreach.xlsx");
         List<TemplateExcelExportEntity> list = new ArrayList<TemplateExcelExportEntity>();
 
         for (int i = 0; i < 4; i++) {

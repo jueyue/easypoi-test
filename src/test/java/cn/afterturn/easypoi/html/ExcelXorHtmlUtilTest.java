@@ -20,7 +20,7 @@ public class ExcelXorHtmlUtilTest {
     public void testToTableHtmlWorkbook() {
         try {
             Workbook wb = new HSSFWorkbook(new FileInputStream(new File(PoiPublicUtil
-                .getWebRootPath("cn/afterturn/easypoi/test/excel/doc/专项支出用款申请书.xls"))));
+                .getWebRootPath("WEB-INF/doc/专项支出用款申请书.xls"))));
             String html = ExcelXorHtmlUtil.toTableHtml(wb);
             FileWriter fw = new FileWriter("D:/excel/专项支出用款申请书_table.html");
             fw.write(html);
@@ -36,7 +36,7 @@ public class ExcelXorHtmlUtilTest {
     public void testToTableHtmlWorkbookInt() {
         try {
             Workbook wb = new HSSFWorkbook(new FileInputStream(new File(PoiPublicUtil
-                .getWebRootPath("cn/afterturn/easypoi/test/excel/doc/exportTemp.xls"))));
+                .getWebRootPath("doc/exportTemp.xls"))));
             String html = ExcelXorHtmlUtil.excelToHtml(new ExcelToHtmlParams(wb, 1));
             FileWriter fw = new FileWriter("D:/excel/exportTemp_table.html");
             fw.write(html);
@@ -56,7 +56,7 @@ public class ExcelXorHtmlUtilTest {
             //            Workbook wb = new HSSFWorkbook(new FileInputStream(
             //                new File(
             //                    PoiPublicUtil
-            //                    .getWebRootPath("cn/afterturn/easypoi/test/excel/doc/专项支出用款申请书.xls"))));
+            //                    .getWebRootPath("doc/专项支出用款申请书.xls"))));
             long d = System.nanoTime();
             String html = ExcelXorHtmlUtil.excelToHtml(new ExcelToHtmlParams(wb,true,"D:/excel/"));
             FileWriter fw = new FileWriter("D:/excel/专项支出用款申请书_all.html");
@@ -85,7 +85,7 @@ public class ExcelXorHtmlUtilTest {
             //            Workbook wb = new HSSFWorkbook(new FileInputStream(
             //                new File(
             //                    PoiPublicUtil
-            //                    .getWebRootPath("cn/afterturn/easypoi/test/excel/doc/专项支出用款申请书.xls"))));
+            //                    .getWebRootPath("doc/专项支出用款申请书.xls"))));
             String html = ExcelXorHtmlUtil.toAllHtml(wb);
             FileWriter fw = new FileWriter("D:/excel/专项支出用款申请书_all.html");
             fw.write(html);
@@ -101,7 +101,7 @@ public class ExcelXorHtmlUtilTest {
     public void testToAllHtmlWorkbookInt() {
         try {
             Workbook wb = new HSSFWorkbook(new FileInputStream(new File(PoiPublicUtil
-                .getWebRootPath("cn/afterturn/easypoi/test/excel/doc/exportTemp.xls"))));
+                .getWebRootPath("doc/exportTemp.xls"))));
             String html = ExcelXorHtmlUtil.excelToHtml(new ExcelToHtmlParams(wb,true,1,null));
             FileWriter fw = new FileWriter("D:/excel/exportTemp_all.html");
             fw.write(html);

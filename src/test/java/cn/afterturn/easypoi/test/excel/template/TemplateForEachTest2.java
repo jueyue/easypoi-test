@@ -27,7 +27,7 @@ public class TemplateForEachTest2 {
     @Test
     public void test() throws Exception {
         TemplateExportParams params = new TemplateExportParams(
-            "cn/afterturn/easypoi/test/excel/doc/foreach_many.xlsx");
+            "doc/foreach_many.xlsx");
         Map<String, Object> map = new HashMap<String, Object>();
         List<Map<String, Object>> mapList = new ArrayList<Map<String, Object>>();
         for (int i = 0; i < 400; i++) {

@@ -15,15 +15,15 @@
  */
 package cn.afterturn.easypoi.cache.file;
 
-import cn.afterturn.easypoi.cache.manager.FileLoadeImpl;
+import cn.afterturn.easypoi.cache.manager.FileLoaderImpl;
 import cn.afterturn.easypoi.cache.manager.IFileLoader;
 
-public class MyFileLoader extends FileLoadeImpl implements IFileLoader {
+public class MyFileLoader extends FileLoaderImpl implements IFileLoader {
     
     
     @Override
     public byte[] getFile(String url) {
-        url = "cn/afterturn/easypoi/test/excel/doc/" + url;
+        url = "doc/" + url;
         return super.getFile(url);
     }
 }

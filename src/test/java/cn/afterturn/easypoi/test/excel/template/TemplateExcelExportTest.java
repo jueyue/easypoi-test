@@ -1,26 +1,19 @@
 package cn.afterturn.easypoi.test.excel.template;
 
-import static org.junit.Assert.*;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.apache.poi.ss.usermodel.Workbook;
 
-import cn.afterturn.easypoi.test.entity.statistics.StatisticEntity;
 import cn.afterturn.easypoi.test.entity.temp.BudgetAccountsEntity;
 import cn.afterturn.easypoi.test.entity.temp.PayeeEntity;
 import cn.afterturn.easypoi.test.entity.temp.TemplateExcelExportEntity;
 import cn.afterturn.easypoi.excel.ExcelExportUtil;
 import cn.afterturn.easypoi.excel.entity.TemplateExportParams;
-import cn.afterturn.easypoi.excel.export.styler.ExcelExportStylerBorderImpl;
-import cn.afterturn.easypoi.excel.export.styler.ExcelExportStylerColorImpl;
-import cn.afterturn.easypoi.excel.export.styler.ExcelExportStylerDefaultImpl;
 
 import org.junit.Test;
 
@@ -31,7 +24,7 @@ public class TemplateExcelExportTest {
     @Test
     public void test() throws Exception {
         TemplateExportParams params = new TemplateExportParams(
-            "cn/afterturn/easypoi/test/excel/doc/专项支出用款申请书.xls");
+                "WEB-INF/doc/专项支出用款申请书.xls");
         params.setHeadingStartRow(3);
         params.setHeadingRows(2);
         Map<String, Object> map = new HashMap<String, Object>();
@@ -86,7 +79,7 @@ public class TemplateExcelExportTest {
     @Test
     public void fe_map() throws Exception {
         TemplateExportParams params = new TemplateExportParams(
-            "cn/afterturn/easypoi/test/excel/doc/专项支出用款申请书_map.xls");
+                "WEB-INF/doc/专项支出用款申请书_map.xls");
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("date", "2014-12-25");
         map.put("money", 2000000.00);
@@ -124,7 +117,7 @@ public class TemplateExcelExportTest {
     @Test
     public void test2() throws Exception {
         TemplateExportParams params = new TemplateExportParams(
-            "cn/afterturn/easypoi/test/excel/doc/merge_test.xls");
+            "doc/merge_test.xls");
         Map<String, Object> map = new HashMap<String, Object>();
 
         List<Map<String, String>> list = new ArrayList<Map<String, String>>();
