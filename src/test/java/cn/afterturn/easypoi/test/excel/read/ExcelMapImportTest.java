@@ -28,9 +28,12 @@ public class ExcelMapImportTest {
         long start = new Date().getTime();
         List<Map<String, Object>> list = ExcelImportUtil.importExcel(
             new File(PoiPublicUtil.getWebRootPath("import/check.xls")), Map.class, params);
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println(list.get(i));
+        }
         System.out.println(new Date().getTime() - start);
         System.out.println(list.size());
-        System.out.println(list.get(0));
+
 
     }
 

@@ -12,7 +12,7 @@ public class MapImportHanlder extends ExcelDataHandlerDefaultImpl<Map<String, Ob
         if (value instanceof Double) {
             map.put(getRealKey(originKey), PoiPublicUtil.doubleToString((Double) value));
         } else {
-            map.put(getRealKey(originKey), value.toString());
+            map.put(getRealKey(originKey), value != null ? value.toString() : null);
         }
     }
 
