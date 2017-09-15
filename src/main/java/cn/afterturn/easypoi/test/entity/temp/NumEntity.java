@@ -7,16 +7,16 @@ import cn.afterturn.easypoi.excel.annotation.Excel;
  */
 public class NumEntity {
 
-    @Excel(name="str",numFormat = "0.00")
+    @Excel(name = "str", numFormat = "0.00")
     private String strTest;
 
-    @Excel(name="dou",numFormat = "00.####E0")
-    private double douTest;
+    @Excel(name = "dou", type = 10, isStatistics = true)
+    private Double douTest;
 
-    @Excel(name="long",numFormat = "#.##%")
+    @Excel(name = "long", numFormat = "#.##%")
     private long longTest;
 
-    @Excel(name="int",numFormat = "000.0")
+    @Excel(name = "int", numFormat = "000.0")
     private int intTest;
 
     public String getStrTest() {
@@ -27,11 +27,11 @@ public class NumEntity {
         this.strTest = strTest;
     }
 
-    public double getDouTest() {
+    public Double getDouTest() {
         return douTest;
     }
 
-    public void setDouTest(double douTest) {
+    public void setDouTest(Double douTest) {
         this.douTest = douTest;
     }
 

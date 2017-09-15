@@ -1,21 +1,18 @@
 package cn.afterturn.easypoi.test.excel.test;
 
-import cn.afterturn.easypoi.excel.ExcelExportUtil;
-import cn.afterturn.easypoi.excel.annotation.Excel;
-import cn.afterturn.easypoi.excel.entity.ExportParams;
-import cn.afterturn.easypoi.excel.entity.enmus.ExcelType;
-import cn.afterturn.easypoi.test.entity.MsgClient;
-import cn.afterturn.easypoi.test.entity.MsgClientGroup;
-import cn.afterturn.easypoi.test.entity.temp.NumEntity;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.junit.Test;
 
 import java.io.File;
 import java.io.FileOutputStream;
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import cn.afterturn.easypoi.excel.ExcelExportUtil;
+import cn.afterturn.easypoi.excel.entity.ExportParams;
+import cn.afterturn.easypoi.excel.entity.enmus.ExcelType;
+import cn.afterturn.easypoi.test.entity.temp.NumEntity;
 
 /**
  * Created by Think on 2017/6/17.
@@ -26,12 +23,12 @@ public class ExcelExportNumFormat {
     public void test() throws Exception {
 
         List<NumEntity> list = new ArrayList<NumEntity>();
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 20; i++) {
             NumEntity client = new NumEntity();
-            client.setDouTest(Math.random()*100000000000000000D);
-            client.setIntTest((int)(Math.random()*1000000000));
-            client.setLongTest((long)(Math.random()*100000000000000000L));
-            client.setStrTest(Math.random()*100000000000000000D+ "");
+            client.setDouTest(i % 3 == 0 ? i + 0.0D : null);
+            client.setIntTest((int) (Math.random() * 1000000000));
+            client.setLongTest((long) (Math.random() * 100000000000000000L));
+            client.setStrTest(Math.random() * 100000000000000000D + "");
             list.add(client);
         }
         Date start = new Date();

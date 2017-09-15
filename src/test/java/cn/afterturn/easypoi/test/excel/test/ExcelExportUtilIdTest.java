@@ -194,7 +194,7 @@ public class ExcelExportUtilIdTest {
         TemplateExportParams params = new TemplateExportParams(
             "doc/kyoffice_address_book.xls",1,2);
         Map<String, Object> data = new HashMap<String, Object>();
-        data.put("companyName","卡友智能");
+        data.put("companyName",";智能");
         data.put("editDate",new Date());
         List<Map<String,Object>> listMap = new ArrayList<Map<String,Object>>();
         Map<String,Object> emp1=Maps.newHashMap();
@@ -230,7 +230,7 @@ public class ExcelExportUtilIdTest {
         if (!savefile.exists()) {
             savefile.mkdirs();
         }
-        FileOutputStream fos = new FileOutputStream("D:/excel/卡友员工通讯录_0402.xls");
+        FileOutputStream fos = new FileOutputStream("D:/excel/;员工通讯录_0402.xls");
         workbook.write(fos);
         fos.close();
     }    
@@ -254,7 +254,7 @@ public class ExcelExportUtilIdTest {
     	if (!savefile.exists()) {
     		savefile.mkdirs();
     	}
-    	FileOutputStream fos = new FileOutputStream("D:/excel/卡友员工通讯录_0402.xls");
+    	FileOutputStream fos = new FileOutputStream("D:/excel/;员工通讯录_0402.xls");
     	workbook.write(fos);
     	fos.close();
     }    
