@@ -65,7 +65,32 @@ public class ExcelVerifyTest {
             LOGGER.error(e.getMessage(),e);
         }
     }
-    
+
+    @Test
+    public void basetestonlyFail() {
+        try {
+            ImportParams params = new ImportParams();
+            params.setNeedVerfiy(true);
+            params.setVerfiyGroup(new Class[]{ViliGroupOne.class});
+            ExcelImportResult<ExcelVerifyEntity> result = ExcelImportUtil.importExcelMore(
+                    new File(PoiPublicUtil.getWebRootPath("import/verfiy.xlsx")),
+                    ExcelVerifyEntity.class, params);
+            FileOutputStream fos = new FileOutputStream("D:/excel/ExcelVerifyTest.basetestonlyFail.xlsx");
+            result.getWorkbook().write(fos);
+            fos.close();
+            for (int i = 0; i < result.getList().size(); i++) {
+                System.out.println(ReflectionToStringBuilder.toString(result.getList().get(i)));
+            }
+            //失败的数据
+            for (int i = 0; i < result.getFailList().size(); i++) {
+                System.out.println(ReflectionToStringBuilder.toString(result.getFailList().get(i)));
+            }
+            Assert.assertTrue(result.getList().size() == 1);
+            Assert.assertTrue(result.isVerfiyFail());
+        } catch (Exception e) {
+            LOGGER.error(e.getMessage(),e);
+        }
+    }
     
     @Test
     public void baseModetest() {
@@ -78,10 +103,17 @@ public class ExcelVerifyTest {
             FileOutputStream fos = new FileOutputStream("D:/excel/baseModetest.xlsx");
             result.getWorkbook().write(fos);
             fos.close();
+            fos = new FileOutputStream("D:/excel/baseModetest_fail.xlsx");
+            result.getFailWorkbook().write(fos);
+            fos.close();
             for (int i = 0; i < result.getList().size(); i++) {
                 System.out.println(ReflectionToStringBuilder.toString(result.getList().get(i)));
             }
-            Assert.assertTrue(result.getList().size() == 4);
+            //失败的数据
+            for (int i = 0; i < result.getFailList().size(); i++) {
+                System.out.println(ReflectionToStringBuilder.toString(result.getFailList().get(i)));
+            }
+            Assert.assertTrue(result.getList().size() == 2);
         } catch (Exception e) {
             LOGGER.error(e.getMessage(),e);
         }
