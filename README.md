@@ -13,7 +13,8 @@ EasyPoi Excel和 Word简易工具类
 
 **开发指南**
 
-**[http://easypoi.mydoc.io](http://easypoi.mydoc.io)**
+**[http://www.afterturn.cn/doc/easypoi.html](http://www.afterturn.cn/doc/easypoi.html)**
+
 
 提供基础的测试案例,demo代码
 
