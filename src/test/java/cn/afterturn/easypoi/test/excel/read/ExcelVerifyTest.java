@@ -22,6 +22,7 @@ import java.io.FileOutputStream;
 
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 
+import cn.afterturn.easypoi.hanlder.ViliGroupOne;
 import cn.afterturn.easypoi.test.entity.ExcelVerifyEntity;
 import cn.afterturn.easypoi.test.entity.ExcelVerifyEntityOfMode;
 import cn.afterturn.easypoi.test.excel.read.hanlder.ExcelVerifyHandlerImpl;
@@ -48,6 +49,7 @@ public class ExcelVerifyTest {
         try {
             ImportParams params = new ImportParams();
             params.setNeedVerfiy(true);
+            params.setVerfiyGroup(new Class[]{ViliGroupOne.class});
             ExcelImportResult<ExcelVerifyEntity> result = ExcelImportUtil.importExcelMore(
                 new File(PoiPublicUtil.getWebRootPath("import/verfiy.xlsx")),
                 ExcelVerifyEntity.class, params);

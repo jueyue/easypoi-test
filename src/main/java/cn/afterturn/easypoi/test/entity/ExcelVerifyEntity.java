@@ -6,6 +6,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import cn.afterturn.easypoi.excel.annotation.Excel;
+import cn.afterturn.easypoi.hanlder.ViliGroupOne;
+import cn.afterturn.easypoi.hanlder.ViliGroupTwo;
 
 /**
  * Excel导入校验类
@@ -23,13 +25,13 @@ public class ExcelVerifyEntity {
      * 最大
      */
     @Excel(name = "Max")
-    @Max(value = 15,message = "max 最大值不能超过15")
+    @Max(value = 15,message = "max 最大值不能超过15" ,groups = {ViliGroupOne.class})
     private int    max;
     /**
      * 最小
      */
     @Excel(name = "Min")
-    @Min(3)
+    @Min(value = 3, groups = {ViliGroupTwo.class})
     private int    min;
     /**
      * 非空校验
