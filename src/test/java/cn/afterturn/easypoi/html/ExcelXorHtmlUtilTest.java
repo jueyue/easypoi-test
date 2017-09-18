@@ -52,21 +52,19 @@ public class ExcelXorHtmlUtilTest {
     public void testToAllHtmlWorkbookAndImage() {
 
         try {
-            Workbook wb = new HSSFWorkbook(new FileInputStream(new File("D:/excel/tt.xls")));
-            //            Workbook wb = new HSSFWorkbook(new FileInputStream(
-            //                new File(
-            //                    PoiPublicUtil
-            //                    .getWebRootPath("doc/专项支出用款申请书.xls"))));
+            //Workbook wb = new HSSFWorkbook(new FileInputStream(new File("html/exportTemp_image.xls")));
+                        Workbook wb = new HSSFWorkbook(new FileInputStream(new File(
+                                PoiPublicUtil.getWebRootPath("html/exportTemp_image.xls"))));
             long d = System.nanoTime();
-            String html = ExcelXorHtmlUtil.excelToHtml(new ExcelToHtmlParams(wb,true,"D:/excel/"));
-            FileWriter fw = new FileWriter("D:/excel/专项支出用款申请书_all.html");
+            String html = ExcelXorHtmlUtil.excelToHtml(new ExcelToHtmlParams(wb,true,"yes"));
+            FileWriter fw = new FileWriter("D:/excel/exportTemp_image_all.html");
             fw.write(html);
             fw.close();
 
             System.err.println(System.nanoTime() - d);
             d = System.nanoTime();
             html = ExcelXorHtmlUtil.excelToHtml(new ExcelToHtmlParams(wb,true,"D:/excel/"));
-            fw = new FileWriter("D:/excel/专项支出用款申请书_all_cache.html");
+            fw = new FileWriter("D:/excel/exportTemp_image_all_cache.html");
             fw.write(html);
             fw.close();
             System.err.println(System.nanoTime() - d);
