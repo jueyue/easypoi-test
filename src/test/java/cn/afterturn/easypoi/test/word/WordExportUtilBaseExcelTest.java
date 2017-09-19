@@ -73,7 +73,7 @@ public class WordExportUtilBaseExcelTest {
         try {
             XWPFDocument doc = WordExportUtil.exportWord07(
                 "cn/afterturn/easypoi/test/word/doc/SimpleExcel.docx", map);
-            FileOutputStream fos = new FileOutputStream("D:/excel/simpleExcel.docx");
+            FileOutputStream fos = new FileOutputStream("D:/excel/basesimpleExcel.docx");
             doc.write(fos);
             fos.close();
         } catch (Exception e) {
