@@ -81,4 +81,32 @@ public class WordExportUtilBaseExcelTest {
         }
     }
 
+    @Test
+    public void SimpleWordExportOnly() {
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("applyNo", "Easypoi");
+        map.put("createTime", "JueYue");
+        map.put("financePayTime", "JueYue");
+        map.put("departmentNames", format.format(new Date()));
+        map.put("userName", new Date());
+        List<Map<String,String>> list = new ArrayList<Map<String,String>>();
+        Map<String,String> temp = new HashMap<String, String>();
+        temp.put("a","下实打实");
+        temp.put("b","下实ewq打实");
+        temp.put("c","下实saddas打实");
+        temp.put("d","下实打dsad实");
+        temp.put("e","下实asdasd打实");
+        list.add(temp);
+        map.put("23123data", list);
+        try {
+            XWPFDocument doc = WordExportUtil.exportWord07(
+                "C:\\Users\\Think\\Documents\\Tencent Files\\909217383\\FileRecv\\reimb_template.docx", map);
+            FileOutputStream fos = new FileOutputStream("D:/excel/basesimpleExcel.docx");
+            doc.write(fos);
+            fos.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }
