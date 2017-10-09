@@ -42,7 +42,7 @@ public class ExcelToHtmlController {
      */
     @RequestMapping("03img")
     public void toHtmlOf03Img(HttpServletResponse response) throws IOException, InvalidFormatException {
-        ExcelToHtmlParams params = new ExcelToHtmlParams(WorkbookFactory.create(POICacheManager.getFile("exceltohtml/exportTemp_image.xls")),true,"yes");
+        ExcelToHtmlParams params = new ExcelToHtmlParams(WorkbookFactory.create(POICacheManager.getFile("exceltohtml/exporttemp_img.xls")),true,"yes");
         response.getOutputStream().write(ExcelXorHtmlUtil.excelToHtml(params).getBytes());
     }
     /**
