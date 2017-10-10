@@ -37,14 +37,14 @@ public class POICacheManagerTest {
     @Test
     public void test() throws Exception {
         //设置成为自己的文件加载
-        POICacheManager.setFileLoder(new MyFileLoader());
+        //POICacheManager.setFileLoder(new MyFileLoader());
         
         //会吧这个对象ThreadLocal中,线程结束就不起作用了
-        POICacheManager.setFileLoderOnce(new MyFileLoader());
+        //POICacheManager.setFileLoderOnce(new MyFileLoader());
         
         
         TemplateExportParams params = new TemplateExportParams(
-                "merge_test.xls");
+                "doc/merge_test.xls");
             Map<String, Object> map = new HashMap<String, Object>();
 
             List<Map<String, String>> list = new ArrayList<Map<String, String>>();

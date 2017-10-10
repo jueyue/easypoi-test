@@ -9,7 +9,6 @@ import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
-import cn.afterturn.easypoi.QiyeInfo;
 import cn.afterturn.easypoi.test.entity.CourseEntity;
 import cn.afterturn.easypoi.test.entity.MsgClient;
 import cn.afterturn.easypoi.test.entity.statistics.StatisticEntity;
@@ -17,6 +16,7 @@ import cn.afterturn.easypoi.excel.ExcelImportUtil;
 import cn.afterturn.easypoi.excel.entity.ImportParams;
 import cn.afterturn.easypoi.util.PoiPublicUtil;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 public class ExcelImportUtilTest {
@@ -38,29 +38,13 @@ public class ExcelImportUtilTest {
             /*for (int i = 0; i < list.size(); i++) {
                 System.out.println(ReflectionToStringBuilder.toString(list.get(i)));
             }*/
-            System.out.println(list.size() + "-----" + (new Date().getTime() - start));
+            Assert.assertEquals(100,list.size());
         } catch (FileNotFoundException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
-    @Test
-    public void asdasda() {
-    	try {
-    		ImportParams params = new ImportParams();
-    		long start = new Date().getTime();
-    		List<QiyeInfo> list = ExcelImportUtil.importExcel( new FileInputStream(new File("D:/excel/企业信息模板.xlsx")), QiyeInfo.class, params);
-    		//        List<StatisticEntity> list = ExcelImportUtil.importExcelBySax(new File(PoiPublicUtil.getWebRootPath("import/ExcelExportMsgClient.xlsx"),
-    		//            StatisticEntity.class, params);
-    		/*for (int i = 0; i < list.size(); i++) {
-                System.out.println(ReflectionToStringBuilder.toString(list.get(i)));
-            }*/
-    		System.out.println(list.size() + "-----" + (new Date().getTime() - start));
-    	} catch (Exception e) {
-    		// TODO Auto-generated catch block
-    		e.printStackTrace();
-    	}
-    }
+
 
     @Test
     public void test2() {
@@ -72,7 +56,7 @@ public class ExcelImportUtilTest {
            new File(PoiPublicUtil.getWebRootPath("import/ExcelExportMsgClient.xlsx")),
             MsgClient.class, params);
         System.out.println(new Date().getTime() - start);
-        System.out.println(list.size());
+        Assert.assertEquals(100,list.size());
         System.out.println(ReflectionToStringBuilder.toString(list.get(0)));
     }
 
@@ -86,7 +70,7 @@ public class ExcelImportUtilTest {
             new File(PoiPublicUtil.getWebRootPath("import/ExcelExportMsgClient.xlsx")), Map.class,
             params);
         System.out.println(new Date().getTime() - start);
-        System.out.println(list.size());
+        Assert.assertEquals(100,list.size());
         System.out.println(list.get(0));
     }
 }

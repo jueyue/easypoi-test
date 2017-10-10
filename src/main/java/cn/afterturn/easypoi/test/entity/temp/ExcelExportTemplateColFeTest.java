@@ -18,7 +18,7 @@ public class ExcelExportTemplateColFeTest {
 
 	Map<String, Object> value = new HashMap<String, Object>();
 
-	@Test
+	//@Test
 	public void one() throws Exception {
 		TemplateExportParams params = new TemplateExportParams(
 		    "C:\\Users\\Think\\Desktop\\for_ColCH.xlsx", true);

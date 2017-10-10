@@ -47,7 +47,7 @@ public class ImportCheckTestTwoLine {
             e.printStackTrace();
             isOK = false;
         }
-        Assert.assertTrue(isOK);
+        Assert.assertEquals(false,isOK);
     }
 
     @Test

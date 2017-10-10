@@ -148,26 +148,4 @@ public class ExcelExportUtilTest {
         fos.close();
     }
 
-    /**
-     * 模板导出测试
-     * 
-     * @throws Exception
-     */
-    @Test
-    public void testTempExportExcel() throws Exception {
-        TemplateExportParams params = new TemplateExportParams();
-        params.setHeadingRows(2);
-        params.setHeadingStartRow(2);
-        params.setTemplateUrl("tt.xls");
-        Workbook book = ExcelExportUtil.exportExcel(params, CourseEntity.class, list,
-            new HashMap<String, Object>());
-        File savefile = new File("D:/excel/");
-        if (!savefile.exists()) {
-            savefile.mkdirs();
-        }
-        FileOutputStream fos = new FileOutputStream("D:/excel/testTempExportExcel.xls");
-        book.write(fos);
-        fos.close();
-    }
-
 }

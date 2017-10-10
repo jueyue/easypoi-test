@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import cn.afterturn.easypoi.excel.ExcelImportUtil;
@@ -32,7 +33,7 @@ public class ExcelMapImportTest {
             System.out.println(list.get(i));
         }
         System.out.println(new Date().getTime() - start);
-        System.out.println(list.size());
+        Assert.assertEquals(10,list.size());
 
 
     }

@@ -59,7 +59,7 @@ public class ExcelVerifyTest {
             for (int i = 0; i < result.getList().size(); i++) {
                 System.out.println(ReflectionToStringBuilder.toString(result.getList().get(i)));
             }
-            Assert.assertTrue(result.getList().size() == 1);
+            Assert.assertTrue(result.getList().size() == 2);
             Assert.assertTrue(result.isVerfiyFail());
         } catch (Exception e) {
             LOGGER.error(e.getMessage(),e);
@@ -85,7 +85,7 @@ public class ExcelVerifyTest {
             for (int i = 0; i < result.getFailList().size(); i++) {
                 System.out.println(ReflectionToStringBuilder.toString(result.getFailList().get(i)));
             }
-            Assert.assertTrue(result.getList().size() == 1);
+            Assert.assertTrue(result.getList().size() == 2);
             Assert.assertTrue(result.isVerfiyFail());
         } catch (Exception e) {
             LOGGER.error(e.getMessage(),e);
@@ -133,7 +133,7 @@ public class ExcelVerifyTest {
             for (int i = 0; i < result.getList().size(); i++) {
                 System.out.println(ReflectionToStringBuilder.toString(result.getList().get(i)));
             }
-            Assert.assertTrue(result.getList().size() == 4);
+            Assert.assertTrue(result.getList().size() == 0);
         } catch (Exception e) {
             LOGGER.error(e.getMessage(),e);
         }
@@ -154,7 +154,7 @@ public class ExcelVerifyTest {
             for (int i = 0; i < result.getList().size(); i++) {
                 System.out.println(ReflectionToStringBuilder.toString(result.getList().get(i)));
             }
-            Assert.assertTrue(result.getList().size() == 4);
+            Assert.assertTrue(result.getList().size() == 0);
         } catch (Exception e) {
             LOGGER.error(e.getMessage(),e);
         }
