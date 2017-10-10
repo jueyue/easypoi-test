@@ -26,7 +26,7 @@ EasyPoi Office的超简单工具类
 - tohtml html预览测试
 - view 导出的view测试
 
-- cache 缓存而是
+- cache 自定义缓存测试
 - html html互转测试
  - test
     - excel
