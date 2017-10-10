@@ -15,6 +15,8 @@ EasyPoi Office的超简单工具类
 
 **[http://www.afterturn.cn/doc/easypoi.html](http://www.afterturn.cn/doc/easypoi.html)**
 
+**_测试是使用master的SNAPSHOT版本,请clone 代码然后install保证所有案例成功运行_**
+
 运行 Application 访问界面,几场最常用的代码
 
 提供基础的测试案例,demo代码
