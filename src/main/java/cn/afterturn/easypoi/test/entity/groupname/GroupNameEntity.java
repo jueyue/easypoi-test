@@ -15,7 +15,7 @@ public class GroupNameEntity implements java.io.Serializable {
      */
     private java.lang.String id;
     // 电话号码(主键)
-    @Excel(name = "电话号码")
+    @Excel(name = "电话号码", groupName = "联系方式", orderNum = "1")
     private String clientPhone = null;
     // 客户姓名
     @Excel(name = "姓名")
@@ -24,10 +24,10 @@ public class GroupNameEntity implements java.io.Serializable {
     @Excel(name = "备注")
     private String remark = null;
     // 生日
-    @Excel(name = "出生日期", format = "yyyy-MM-dd", width = 20, groupName = "时间")
+    @Excel(name = "出生日期", format = "yyyy-MM-dd", width = 20, groupName = "时间", orderNum = "2")
     private Date birthday = null;
     // 创建人
-    @Excel(name = "创建时间", groupName = "时间")
+    @Excel(name = "创建时间", groupName = "时间", orderNum = "3")
     private String createBy = null;
 
     /**
