@@ -1,21 +1,19 @@
-package cn.afterturn.easypoi.test.excel.test.groupname;
+package cn.afterturn.easypoi.test.excel.export.groupname;
 
 import org.apache.poi.ss.usermodel.Workbook;
 import org.junit.Test;
 
 import java.io.File;
 import java.io.FileOutputStream;
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import cn.afterturn.easypoi.excel.ExcelExportUtil;
-import cn.afterturn.easypoi.excel.annotation.Excel;
 import cn.afterturn.easypoi.excel.entity.ExportParams;
 import cn.afterturn.easypoi.excel.entity.enmus.ExcelType;
-import cn.afterturn.easypoi.test.entity.MsgClient;
-import cn.afterturn.easypoi.test.entity.MsgClientGroup;
+import cn.afterturn.easypoi.test.entity.groupname.GnEntity;
+import cn.afterturn.easypoi.test.entity.groupname.GnStudentEntity;
 import cn.afterturn.easypoi.test.entity.groupname.GroupNameEntity;
 
 /**
@@ -24,7 +22,7 @@ import cn.afterturn.easypoi.test.entity.groupname.GroupNameEntity;
 public class ExcelExportGroupNameTest {
 
     @Test
-    public void success() throws Exception {
+    public void base() throws Exception {
 
         List<GroupNameEntity> list = new ArrayList<GroupNameEntity>();
         for (int i = 0; i < 10; i++) {
@@ -46,6 +44,34 @@ public class ExcelExportGroupNameTest {
             savefile.mkdirs();
         }
         FileOutputStream fos = new FileOutputStream("D:/excel/groupName.xlsx");
+        workbook.write(fos);
+        fos.close();
+    }
+
+    @Test
+    public void entity() throws Exception {
+
+        List<GnEntity> list = new ArrayList<GnEntity>();
+        for (int i = 0; i < 10; i++) {
+            GnEntity client = new GnEntity();
+            client.setClientName("小明" + i);
+            client.setClientPhone("18797" + i);
+            GnStudentEntity studentEntity = new GnStudentEntity();
+            studentEntity.setBirthday(new Date());
+            studentEntity.setRegistrationDate(new Date());
+            studentEntity.setName("JueYue" + i);
+            studentEntity.setSex(i % 2);
+            client.setStudentEntity(studentEntity);
+            list.add(client);
+        }
+        Date start = new Date();
+        ExportParams params = new ExportParams("GroupNameGnEntity测试", "测试", ExcelType.XSSF);
+        Workbook workbook = ExcelExportUtil.exportExcel(params, GnEntity.class, list);
+        File savefile = new File("D:/excel/");
+        if (!savefile.exists()) {
+            savefile.mkdirs();
+        }
+        FileOutputStream fos = new FileOutputStream("D:/excel/groupName_GnEntity.xlsx");
         workbook.write(fos);
         fos.close();
     }

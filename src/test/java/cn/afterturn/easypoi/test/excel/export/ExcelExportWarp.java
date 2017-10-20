@@ -1,4 +1,4 @@
-package cn.afterturn.easypoi.test.excel.test;
+package cn.afterturn.easypoi.test.excel.export;
 
 import org.apache.poi.ss.usermodel.Workbook;
 import org.junit.Test;
@@ -15,7 +15,6 @@ import cn.afterturn.easypoi.excel.annotation.Excel;
 import cn.afterturn.easypoi.excel.entity.ExportParams;
 import cn.afterturn.easypoi.excel.entity.enmus.ExcelType;
 import cn.afterturn.easypoi.test.entity.MsgClient;
-import cn.afterturn.easypoi.test.entity.MsgClientGroup;
 
 /**
  * Excel 换行导出

@@ -1,18 +1,16 @@
-package cn.afterturn.easypoi.test.excel.test.img;
+package cn.afterturn.easypoi.test.excel.export.img;
 
 import org.apache.poi.ss.usermodel.Workbook;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
 import cn.afterturn.easypoi.excel.ExcelExportUtil;
 import cn.afterturn.easypoi.excel.entity.ExportParams;
-import cn.afterturn.easypoi.test.entity.CourseEntity;
 import cn.afterturn.easypoi.test.entity.img.CompanyHasImgModel;
 
 /**

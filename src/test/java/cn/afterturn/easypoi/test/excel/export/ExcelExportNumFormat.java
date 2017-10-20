@@ -1,4 +1,4 @@
-package cn.afterturn.easypoi.test.excel.test;
+package cn.afterturn.easypoi.test.excel.export;
 
 import org.apache.poi.ss.usermodel.Workbook;
 import org.junit.Test;
