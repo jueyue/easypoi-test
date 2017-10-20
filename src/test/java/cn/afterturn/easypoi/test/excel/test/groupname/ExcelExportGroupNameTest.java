@@ -45,7 +45,7 @@ public class ExcelExportGroupNameTest {
         if (!savefile.exists()) {
             savefile.mkdirs();
         }
-        FileOutputStream fos = new FileOutputStream("D:/excel/ExcelExportGroupNameTest.success.xlsx");
+        FileOutputStream fos = new FileOutputStream("D:/excel/groupName.xlsx");
         workbook.write(fos);
         fos.close();
     }
