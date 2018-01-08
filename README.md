@@ -7,7 +7,7 @@ EasyPoi Office的超简单工具类
 
 	作者博客：http://blog.afterturn.cn/
 	作者邮箱： qrb.jueyue@gmail.com
-	QQ群:  364192721
+	QQ群:   1群 364192721(满) 2 群116844390
 	
 	开发者:魔幻之翼 xf.key@163.com
 
