@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.apache.poi.common.usermodel.HyperlinkType;
 import org.apache.poi.ss.usermodel.CreationHelper;
 import org.apache.poi.ss.usermodel.Hyperlink;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -44,7 +45,7 @@ public class ExcelExportForLink {
 
             @Override
             public Hyperlink getHyperlink(CreationHelper creationHelper, Object obj, String name, Object value) {
-                Hyperlink link = creationHelper.createHyperlink(Hyperlink.LINK_URL);
+                Hyperlink link = creationHelper.createHyperlink(HyperlinkType.URL);
                 HyperLinkEntity e = (HyperLinkEntity) obj;
                 link.setAddress(e.getUrl());
                 link.setLabel(e.getName());
@@ -58,7 +59,7 @@ public class ExcelExportForLink {
         if (!savefile.exists()) {
             savefile.mkdirs();
         }
-        FileOutputStream fos = new FileOutputStream("D:/excel/tt.xlsx");
+        FileOutputStream fos = new FileOutputStream("D:/excel/ExcelExportForLink.xlsx");
         workbook.write(fos);
         fos.close();
     }
