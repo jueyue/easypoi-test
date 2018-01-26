@@ -8,7 +8,6 @@ import cn.afterturn.easypoi.excel.ExcelXorHtmlUtil;
 import cn.afterturn.easypoi.test.entity.CourseEntity;
 import cn.afterturn.easypoi.excel.ExcelExportUtil;
 import cn.afterturn.easypoi.excel.entity.enmus.ExcelType;
-import cn.afterturn.easypoi.excel.html.HtmlToExcelServer;
 
 import org.junit.Test;
 import java.util.Scanner;

@@ -26,7 +26,7 @@ public class ExcelExportBigData {
         Workbook workbook = null;
         Date start = new Date();
         ExportParams params = new ExportParams("大数据测试", "测试");
-        for (int i = 0; i < 2000000; i++) {
+        for (int i = 0; i < 50000; i++) {
             MsgClient client = new MsgClient();
             client.setBirthday(new Date());
             client.setClientName("小明" + i);

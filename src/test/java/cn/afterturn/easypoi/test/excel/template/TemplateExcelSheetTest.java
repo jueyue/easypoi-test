@@ -16,14 +16,14 @@ import org.junit.Test;
 import cn.afterturn.easypoi.excel.entity.ExportParams;
 import cn.afterturn.easypoi.excel.entity.TemplateExportParams;
 import cn.afterturn.easypoi.excel.entity.params.ExcelExportEntity;
-import cn.afterturn.easypoi.excel.export.ExcelExportServer;
+import cn.afterturn.easypoi.excel.export.ExcelExportService;
 import cn.afterturn.easypoi.excel.export.template.ExcelExportOfTemplateUtil;
 
 public class TemplateExcelSheetTest {
 
     @Test
     public void test() throws Exception {
-        ExcelExportServer util = new ExcelExportServer();
+        ExcelExportService util = new ExcelExportService();
         Workbook workbook = new HSSFWorkbook();
         ExportParams entity = new ExportParams();
         entity.setCreateHeadRows(false);
