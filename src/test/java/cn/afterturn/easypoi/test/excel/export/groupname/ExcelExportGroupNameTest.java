@@ -1,5 +1,6 @@
 package cn.afterturn.easypoi.test.excel.export.groupname;
 
+import cn.afterturn.easypoi.test.entity.groupname.GroupExportVo;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.junit.Test;
 
@@ -72,6 +73,21 @@ public class ExcelExportGroupNameTest {
             savefile.mkdirs();
         }
         FileOutputStream fos = new FileOutputStream("D:/excel/groupName_GnEntity.xlsx");
+        workbook.write(fos);
+        fos.close();
+    }
+
+
+    @Test
+    public void groupSort() throws Exception {
+        List<GroupExportVo> list = new ArrayList<GroupExportVo>();
+        ExportParams params = new ExportParams("Group排序", "测试", ExcelType.XSSF);
+        Workbook workbook = ExcelExportUtil.exportExcel(params, GroupExportVo.class, list);
+        File savefile = new File("D:/excel/");
+        if (!savefile.exists()) {
+            savefile.mkdirs();
+        }
+        FileOutputStream fos = new FileOutputStream("D:/excel/groupName_groupSort.xlsx");
         workbook.write(fos);
         fos.close();
     }
