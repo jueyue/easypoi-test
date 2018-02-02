@@ -41,7 +41,7 @@ public class ExcelExportForLink {
 
         Date start = new Date();
         ExportParams params = new ExportParams("2412312", "测试", ExcelType.XSSF);
-        params.setDataHanlder(new ExcelDataHandlerDefaultImpl() {
+        params.setDataHandler(new ExcelDataHandlerDefaultImpl() {
 
             @Override
             public Hyperlink getHyperlink(CreationHelper creationHelper, Object obj, String name, Object value) {

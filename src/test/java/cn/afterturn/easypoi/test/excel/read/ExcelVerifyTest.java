@@ -120,14 +120,14 @@ public class ExcelVerifyTest {
     }
     
     @Test
-    public void baseHanldertest() {
+    public void baseHandlertest() {
         try {
             ImportParams params = new ImportParams();
-            params.setVerifyHanlder(new ExcelVerifyHandlerImpl());
+            params.setVerifyHandler(new ExcelVerifyHandlerImpl());
             ExcelImportResult<ExcelVerifyEntityOfMode> result = ExcelImportUtil.importExcelMore(
                 new File(PoiPublicUtil.getWebRootPath("import/verfiy.xlsx")),
                 ExcelVerifyEntityOfMode.class, params);
-            FileOutputStream fos = new FileOutputStream("D:/excel/baseHanldertest.xlsx");
+            FileOutputStream fos = new FileOutputStream("D:/excel/baseHandlertest.xlsx");
             result.getWorkbook().write(fos);
             fos.close();
             for (int i = 0; i < result.getList().size(); i++) {
@@ -143,7 +143,7 @@ public class ExcelVerifyTest {
     public void combinedVerificationTest() {
         try {
             ImportParams params = new ImportParams();
-            params.setVerifyHanlder(new ExcelVerifyHandlerImpl());
+            params.setVerifyHandler(new ExcelVerifyHandlerImpl());
             params.setNeedVerfiy(true);
             ExcelImportResult<ExcelVerifyEntityOfMode> result = ExcelImportUtil.importExcelMore(
                 new File(PoiPublicUtil.getWebRootPath("import/verfiy.xlsx")),

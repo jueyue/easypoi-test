@@ -64,9 +64,9 @@ public class ExcelExportUtilDataHandlerTest {
     @Test
     public void testExportExcel() throws Exception {
         ExportParams exportParams = new ExportParams("2412312", "测试", "测试");
-        CourseHanlder hanlder = new CourseHanlder();
+        CourseHandler hanlder = new CourseHandler();
         hanlder.setNeedHandlerFields(new String[] { "课程名称" });
-        exportParams.setDataHanlder(hanlder);
+        exportParams.setDataHandler(hanlder);
         exportParams.setStyle(ExcelExportStylerColorImpl.class);
         Workbook workbook = ExcelExportUtil.exportExcel(exportParams, CourseEntity.class, list);
         FileOutputStream fos = new FileOutputStream("D:/excel/ExcelExportUtilDataHandlerTest.testExportExcel.xls");

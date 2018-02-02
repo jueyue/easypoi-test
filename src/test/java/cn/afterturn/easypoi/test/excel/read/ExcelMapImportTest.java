@@ -25,7 +25,7 @@ public class ExcelMapImportTest {
         ImportParams params = new ImportParams();
         params.setTitleRows(1);
         params.setHeadRows(1);
-        params.setDataHanlder(new MapImportHanlder());
+        params.setDataHandler(new MapImportHandler());
         long start = new Date().getTime();
         List<Map<String, Object>> list = ExcelImportUtil.importExcel(
             new File(PoiPublicUtil.getWebRootPath("import/check.xls")), Map.class, params);

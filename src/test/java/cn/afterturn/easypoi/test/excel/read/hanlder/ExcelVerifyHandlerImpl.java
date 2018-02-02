@@ -18,13 +18,13 @@ package cn.afterturn.easypoi.test.excel.read.hanlder;
 import org.apache.commons.lang3.StringUtils;
 
 import cn.afterturn.easypoi.test.entity.ExcelVerifyEntity;
-import cn.afterturn.easypoi.excel.entity.result.ExcelVerifyHanlderResult;
+import cn.afterturn.easypoi.excel.entity.result.ExcelVerifyHandlerResult;
 import cn.afterturn.easypoi.handler.inter.IExcelVerifyHandler;
 
 public class ExcelVerifyHandlerImpl implements IExcelVerifyHandler<ExcelVerifyEntity> {
 
     @Override
-    public ExcelVerifyHanlderResult verifyHandler(ExcelVerifyEntity obj) {
+    public ExcelVerifyHandlerResult verifyHandler(ExcelVerifyEntity obj) {
         StringBuilder builder = new StringBuilder();
         if (StringUtils.isNotEmpty(obj.getEmail())) {
             builder.append("Email must null;");
@@ -32,7 +32,7 @@ public class ExcelVerifyHandlerImpl implements IExcelVerifyHandler<ExcelVerifyEn
         if (obj.getMax() > 15) {
             builder.append("max must lt 15;");
         }
-        return new ExcelVerifyHanlderResult(false, builder.toString());
+        return new ExcelVerifyHandlerResult(false, builder.toString());
     }
 
 }
