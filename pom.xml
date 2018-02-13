@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>cn.afterturn</groupId>
 	<artifactId>easypoi-test</artifactId>
-	<version>3.0.4-SNAPSHOT</version>
+	<version>3.1.0</version>
 
 	<url>http://git.oschina.net/jueyue/easypoi-test</url>
 	<description> office 工具类 基于 poi</description>
@@ -45,7 +45,7 @@
 		<dependency>
 			<groupId>cn.afterturn</groupId>
 			<artifactId>easypoi-web</artifactId>
-			<version>3.0.4-SNAPSHOT</version>
+			<version>3.1.0</version>
 		</dependency>
 
 		<dependency>
