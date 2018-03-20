@@ -45,6 +45,7 @@ public class ExcelExportWarp {
         Date start = new Date();
         ExportParams params = new ExportParams("换行测试", "换行测试", ExcelType.HSSF);
         params.setFreezeCol(2);
+        params.setHeight((short) -1);
         Workbook workbook = ExcelExportUtil.exportExcel(params, MsgClient.class, list);
         System.out.println(new Date().getTime() - start.getTime());
         File savefile = new File("D:/excel/");
@@ -86,6 +87,42 @@ public class ExcelExportWarp {
             savefile.mkdirs();
         }
         FileOutputStream fos = new FileOutputStream("D:/excel/ExcelExportWarp.xlsx");
+        workbook.write(fos);
+        fos.close();
+    }
+
+
+    @Test
+    public void testHeight03() throws Exception {
+
+        Field[] fields =  MsgClient.class.getFields();
+        for (int i = 0; i < fields.length; i++) {
+            Excel excel = fields[i].getAnnotation(Excel.class);
+            System.out.println(excel);
+        }
+
+        List<MsgClient> list = new ArrayList<MsgClient>();
+        for (int i = 0; i < 100; i++) {
+            MsgClient client = new MsgClient();
+            client.setBirthday(new Date());
+            client.setClientName("名称:完美小明sdsakjdaslkjdkjlsj kjsadlkjsadlkja jsaldkjsa lkjsadlkjsad " + i);
+            client.setClientPhone("18797" + i);
+            client.setCreateBy("用户:\nJueYue");
+            client.setId("1" + i);
+            client.setRemark("测试" + i);
+            list.add(client);
+        }
+        Date start = new Date();
+        ExportParams params = new ExportParams("换行测试", "换行测试", ExcelType.HSSF);
+        params.setFreezeCol(2);
+        params.setHeight((short) -1);
+        Workbook workbook = ExcelExportUtil.exportExcel(params, MsgClient.class, list);
+        System.out.println(new Date().getTime() - start.getTime());
+        File savefile = new File("D:/excel/");
+        if (!savefile.exists()) {
+            savefile.mkdirs();
+        }
+        FileOutputStream fos = new FileOutputStream("D:/excel/ExcelExportAutoHeight.xls");
         workbook.write(fos);
         fos.close();
     }
