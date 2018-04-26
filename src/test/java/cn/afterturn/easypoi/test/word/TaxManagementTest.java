@@ -24,7 +24,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
-import cn.afterturn.easypoi.test.word.entity.Person;
 import cn.afterturn.easypoi.test.word.entity.TaxManagement;
 import cn.afterturn.easypoi.word.WordExportUtil;
 import cn.afterturn.easypoi.word.entity.params.ExcelListEntity;
@@ -59,7 +58,7 @@ public class TaxManagementTest {
         map.put("totalthisyear", "3400");
         try {
             XWPFDocument doc = WordExportUtil
-                .exportWord07("cn/afterturn/easypoi/test/word/doc/纳税信息.docx", map);
+                .exportWord07("word/纳税信息.docx", map);
             FileOutputStream fos = new FileOutputStream("D:/excel/纳税信息_test.docx");
             doc.write(fos);
             fos.close();
@@ -99,7 +98,7 @@ public class TaxManagementTest {
         map.put("totalthisyear", "3400");
         try {
             XWPFDocument doc = WordExportUtil
-                .exportWord07("cn/afterturn/easypoi/test/word/doc/纳税信息.docx", map);
+                .exportWord07("word/纳税信息.docx", map);
             FileOutputStream fos = new FileOutputStream("D:/excel/纳税信息_entity.docx");
             doc.write(fos);
             fos.close();

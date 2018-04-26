@@ -56,7 +56,7 @@ public class WordExportUtilAnnExcelTest {
         map.put("pList", new ExcelListEntity(list, Person.class));
         try {
             XWPFDocument doc = WordExportUtil.exportWord07(
-                "cn/afterturn/easypoi/test/word/doc/SimpleExcel.docx", map);
+                    "word/SimpleExcel.docx", map);
             FileOutputStream fos = new FileOutputStream("D:/excel/simpleExcel.docx");
             doc.write(fos);
             fos.close();
@@ -106,7 +106,7 @@ public class WordExportUtilAnnExcelTest {
         map.put("cs", new ExcelListEntity(list, CourseEntity.class));
         try {
             XWPFDocument doc = WordExportUtil.exportWord07(
-                "cn/afterturn/easypoi/test/word/doc/Excel.docx", map);
+                    "word/Excel.docx", map);
             FileOutputStream fos = new FileOutputStream("D:/excel/Excel.docx");
             doc.write(fos);
             fos.close();

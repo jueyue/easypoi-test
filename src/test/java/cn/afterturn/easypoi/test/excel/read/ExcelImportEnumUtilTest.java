@@ -29,7 +29,7 @@ public class ExcelImportEnumUtilTest {
             long start = new Date().getTime();
             List<EnumDataEntity> list = ExcelImportUtil.importExcel(
                     new FileInputStream(
-                            new File(PoiPublicUtil.getWebRootPath("import/EnumDataEntity.xlsx"))),
+                            new File(FileUtilTest.getWebRootPath("import/EnumDataEntity.xlsx"))),
                     EnumDataEntity.class, params);
 
             Assert.assertEquals(6, list.size());

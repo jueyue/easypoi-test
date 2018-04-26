@@ -57,7 +57,7 @@ public class ExcelImportSameNameTest {
         try {
             Workbook workbook = ExcelExportUtil.exportExcel(params, ClassName.class, list);
             FileOutputStream fos = new FileOutputStream(
-                PoiPublicUtil.getWebRootPath("import/sameName.xls"));
+                FileUtilTest.getWebRootPath("import/sameName.xls"));
             workbook.write(fos);
             fos.close();
         } catch (FileNotFoundException e) {
@@ -75,7 +75,7 @@ public class ExcelImportSameNameTest {
         params.setHeadRows(2);
         long start = new Date().getTime();
         List<ClassName> list = ExcelImportUtil.importExcel(
-            new File(PoiPublicUtil.getWebRootPath("import/sameName.xls")), ClassName.class, params);
+            new File(FileUtilTest.getWebRootPath("import/sameName.xls")), ClassName.class, params);
         System.out.println(new Date().getTime() - start);
         System.out.println(list.size());
         System.out.println(ReflectionToStringBuilder.toString(list.get(0)));

@@ -11,7 +11,6 @@ import java.util.Map;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import cn.afterturn.easypoi.test.word.entity.Person;
 import cn.afterturn.easypoi.word.WordExportUtil;
-import cn.afterturn.easypoi.word.entity.WordImageEntity;
 
 import org.junit.Test;
 
@@ -46,7 +45,7 @@ public class WordExportUtilWrapTest {
         map.put("pList", list);
         try {
             XWPFDocument doc = WordExportUtil.exportWord07(
-                "cn/afterturn/easypoi/test/word/doc/SimpleExcel.docx", map);
+                    "word/SimpleExcel.docx", map);
             FileOutputStream fos = new FileOutputStream("D:/excel/wrapExcel.docx");
             doc.write(fos);
             fos.close();

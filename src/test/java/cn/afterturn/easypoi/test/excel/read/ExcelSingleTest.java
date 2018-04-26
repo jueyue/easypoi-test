@@ -30,7 +30,7 @@ public class ExcelSingleTest {
             params.setTitleRows(7);
             params.setLastOfInvalidRow(9);
             ExcelImportResult<Map> result = ExcelImportUtil.importExcelMore(
-                    new File(PoiPublicUtil.getWebRootPath("import/业务委托单.xlsx")),
+                    new File(FileUtilTest.getWebRootPath("import/业务委托单.xlsx")),
                     Map.class, params);
             for (int i = 0; i < result.getList().size(); i++) {
                 System.out.println(result.getList().get(i));

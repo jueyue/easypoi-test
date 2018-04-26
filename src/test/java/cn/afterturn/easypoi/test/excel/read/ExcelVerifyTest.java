@@ -51,7 +51,7 @@ public class ExcelVerifyTest {
             params.setNeedVerfiy(true);
             params.setVerfiyGroup(new Class[]{ViliGroupOne.class});
             ExcelImportResult<ExcelVerifyEntity> result = ExcelImportUtil.importExcelMore(
-                new File(PoiPublicUtil.getWebRootPath("import/verfiy.xlsx")),
+                new File(FileUtilTest.getWebRootPath("import/verfiy.xlsx")),
                 ExcelVerifyEntity.class, params);
             FileOutputStream fos = new FileOutputStream("D:/excel/ExcelVerifyTest.basetest.xlsx");
             result.getWorkbook().write(fos);
@@ -73,7 +73,7 @@ public class ExcelVerifyTest {
             params.setNeedVerfiy(true);
             params.setVerfiyGroup(new Class[]{ViliGroupOne.class});
             ExcelImportResult<ExcelVerifyEntity> result = ExcelImportUtil.importExcelMore(
-                    new File(PoiPublicUtil.getWebRootPath("import/verfiy.xlsx")),
+                    new File(FileUtilTest.getWebRootPath("import/verfiy.xlsx")),
                     ExcelVerifyEntity.class, params);
             FileOutputStream fos = new FileOutputStream("D:/excel/ExcelVerifyTest.basetestonlyFail.xlsx");
             result.getWorkbook().write(fos);
@@ -98,7 +98,7 @@ public class ExcelVerifyTest {
             ImportParams params = new ImportParams();
             params.setNeedVerfiy(true);
             ExcelImportResult<ExcelVerifyEntityOfMode> result = ExcelImportUtil.importExcelMore(
-                    new FileInputStream(new File(PoiPublicUtil.getWebRootPath("import/verfiy.xlsx"))),
+                    new FileInputStream(new File(FileUtilTest.getWebRootPath("import/verfiy.xlsx"))),
                 ExcelVerifyEntityOfMode.class, params);
             FileOutputStream fos = new FileOutputStream("D:/excel/baseModetest.xlsx");
             result.getWorkbook().write(fos);
@@ -125,7 +125,7 @@ public class ExcelVerifyTest {
             ImportParams params = new ImportParams();
             params.setVerifyHandler(new ExcelVerifyHandlerImpl());
             ExcelImportResult<ExcelVerifyEntityOfMode> result = ExcelImportUtil.importExcelMore(
-                new File(PoiPublicUtil.getWebRootPath("import/verfiy.xlsx")),
+                new File(FileUtilTest.getWebRootPath("import/verfiy.xlsx")),
                 ExcelVerifyEntityOfMode.class, params);
             FileOutputStream fos = new FileOutputStream("D:/excel/baseHandlertest.xlsx");
             result.getWorkbook().write(fos);
@@ -146,7 +146,7 @@ public class ExcelVerifyTest {
             params.setVerifyHandler(new ExcelVerifyHandlerImpl());
             params.setNeedVerfiy(true);
             ExcelImportResult<ExcelVerifyEntityOfMode> result = ExcelImportUtil.importExcelMore(
-                new File(PoiPublicUtil.getWebRootPath("import/verfiy.xlsx")),
+                new File(FileUtilTest.getWebRootPath("import/verfiy.xlsx")),
                 ExcelVerifyEntityOfMode.class, params);
             FileOutputStream fos = new FileOutputStream("D:/excel/combinedVerificationTest.xlsx");
             result.getWorkbook().write(fos);

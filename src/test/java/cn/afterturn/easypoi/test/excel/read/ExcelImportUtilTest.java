@@ -31,9 +31,9 @@ public class ExcelImportUtilTest {
             long start = new Date().getTime();
             List<StatisticEntity> list = ExcelImportUtil.importExcelBySax(
                 new FileInputStream(
-                    new File(PoiPublicUtil.getWebRootPath("import/ExcelExportMsgClient.xlsx"))),
+                    new File(FileUtilTest.getWebRootPath("import/ExcelExportMsgClient.xlsx"))),
                 StatisticEntity.class, params);
-            //        List<StatisticEntity> list = ExcelImportUtil.importExcelBySax(new File(PoiPublicUtil.getWebRootPath("import/ExcelExportMsgClient.xlsx"),
+            //        List<StatisticEntity> list = ExcelImportUtil.importExcelBySax(new File(FileUtilTest.getWebRootPath("import/ExcelExportMsgClient.xlsx"),
             //            StatisticEntity.class, params);
             /*for (int i = 0; i < list.size(); i++) {
                 System.out.println(ReflectionToStringBuilder.toString(list.get(i)));
@@ -53,7 +53,7 @@ public class ExcelImportUtilTest {
         params.setHeadRows(1);
         long start = new Date().getTime();
         List<MsgClient> list = ExcelImportUtil.importExcel(
-           new File(PoiPublicUtil.getWebRootPath("import/ExcelExportMsgClient.xlsx")),
+           new File(FileUtilTest.getWebRootPath("import/ExcelExportMsgClient.xlsx")),
             MsgClient.class, params);
         System.out.println(new Date().getTime() - start);
         Assert.assertEquals(100,list.size());
@@ -67,7 +67,7 @@ public class ExcelImportUtilTest {
         params.setHeadRows(1);
         long start = new Date().getTime();
         List<Map<String, Object>> list = ExcelImportUtil.importExcel(
-            new File(PoiPublicUtil.getWebRootPath("import/ExcelExportMsgClient.xlsx")), Map.class,
+            new File(FileUtilTest.getWebRootPath("import/ExcelExportMsgClient.xlsx")), Map.class,
             params);
         System.out.println(new Date().getTime() - start);
         Assert.assertEquals(100,list.size());

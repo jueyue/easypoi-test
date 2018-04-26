@@ -13,7 +13,6 @@ import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import cn.afterturn.easypoi.entity.ImageEntity;
 import cn.afterturn.easypoi.test.word.entity.Person;
 import cn.afterturn.easypoi.word.WordExportUtil;
-import cn.afterturn.easypoi.word.entity.WordImageEntity;
 
 import org.junit.Test;
 
@@ -35,11 +34,11 @@ public class WordExportUtilBaseExcelTest {
         ImageEntity image = new ImageEntity();
         image.setHeight(200);
         image.setWidth(500);
-        image.setUrl("cn/afterturn/easypoi/test/word/img/testCode.png");
+        image.setUrl("imgs/word/testCode.png");
         image.setType(ImageEntity.URL);
         map.put("testCode", image);
         XWPFDocument doc = WordExportUtil.exportWord07(
-                "cn/afterturn/easypoi/test/word/doc/Image.docx", map);
+                "word/Image.docx", map);
         FileOutputStream fos = new FileOutputStream("D:/excel/image.docx");
         doc.write(fos);
         fos.close();
@@ -69,7 +68,7 @@ public class WordExportUtilBaseExcelTest {
         list.add(p);
         map.put("pList", list);
         XWPFDocument doc = WordExportUtil.exportWord07(
-                "cn/afterturn/easypoi/test/word/doc/SimpleExcel.docx", map);
+                "word/SimpleExcel.docx", map);
         FileOutputStream fos = new FileOutputStream("D:/excel/basesimpleExcel.docx");
         doc.write(fos);
         fos.close();

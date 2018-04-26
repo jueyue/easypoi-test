@@ -1,5 +1,6 @@
 package cn.afterturn.easypoi.test.excel.read.groupname;
 
+import cn.afterturn.easypoi.test.excel.read.FileUtilTest;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.junit.Assert;
 import org.junit.Test;
@@ -27,7 +28,7 @@ public class ExcelGroupNameImport {
         params.setHeadRows(2);
         long start = new Date().getTime();
         List<GroupNameEntity> list = ExcelImportUtil.importExcel(
-                new File(PoiPublicUtil.getWebRootPath("import/groupName.xlsx")), GroupNameEntity.class, params);
+                new File(FileUtilTest.getWebRootPath("import/groupName.xlsx")), GroupNameEntity.class, params);
         System.out.println(new Date().getTime() - start);
         Assert.assertEquals(10,list.size());
         Assert.assertEquals("187970",list.get(0).getClientPhone());
@@ -44,7 +45,7 @@ public class ExcelGroupNameImport {
         params.setHeadRows(2);
         long start = new Date().getTime();
         List<GnEntity> list = ExcelImportUtil.importExcel(
-                new File(PoiPublicUtil.getWebRootPath("import/groupName_GnEntity.xlsx")), GnEntity.class, params);
+                new File(FileUtilTest.getWebRootPath("import/groupName_GnEntity.xlsx")), GnEntity.class, params);
         System.out.println(new Date().getTime() - start);
         Assert.assertEquals(10,list.size());
         System.out.println(ReflectionToStringBuilder.toString(list.get(0)));

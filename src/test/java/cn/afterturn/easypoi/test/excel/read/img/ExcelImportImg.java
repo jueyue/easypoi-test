@@ -1,5 +1,6 @@
 package cn.afterturn.easypoi.test.excel.read.img;
 
+import cn.afterturn.easypoi.test.excel.read.FileUtilTest;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.junit.Assert;
 import org.junit.Test;
@@ -25,7 +26,7 @@ public class ExcelImportImg {
             ImportParams params = new ImportParams();
             params.setNeedSave(true);
             List<CompanyHasImgModel> result = ExcelImportUtil.importExcel(
-                    new File(PoiPublicUtil.getWebRootPath("import/imgexcel.xls")),
+                    new File(FileUtilTest.getWebRootPath("import/imgexcel.xls")),
                     CompanyHasImgModel.class, params);
             for (int i = 0; i < result.size(); i++) {
                 System.out.println(ReflectionToStringBuilder.toString(result.get(i)));

@@ -22,6 +22,7 @@ import cn.afterturn.easypoi.test.entity.CourseEntity;
 import cn.afterturn.easypoi.test.entity.CourseEntityNoAnn;
 import cn.afterturn.easypoi.excel.ExcelImportUtil;
 import cn.afterturn.easypoi.excel.entity.ImportParams;
+import cn.afterturn.easypoi.test.excel.read.FileUtilTest;
 import cn.afterturn.easypoi.util.PoiPublicUtil;
 
 import org.junit.Assert;
@@ -41,7 +42,7 @@ public class ImportCheckTestTwoLine {
             ImportParams params = new ImportParams();
             params.setHeadRows(2);
             List<CourseEntity> list = ExcelImportUtil.importExcel(
-                new File(PoiPublicUtil.getWebRootPath("import/checkTwo.xls")),
+                new File(FileUtilTest.getWebRootPath("import/checkTwo.xls")),
                 CourseEntity.class, params);
         } catch (Exception e) {
             e.printStackTrace();
@@ -58,7 +59,7 @@ public class ImportCheckTestTwoLine {
             params.setHeadRows(2);
             params.setStartSheetIndex(1);
             List<CourseEntity> list = ExcelImportUtil.importExcel(
-                new File(PoiPublicUtil.getWebRootPath("import/checkTwo.xls")),
+                new File(FileUtilTest.getWebRootPath("import/checkTwo.xls")),
                 CourseEntity.class, params);
         } catch (Exception e) {
             e.printStackTrace();
@@ -75,7 +76,7 @@ public class ImportCheckTestTwoLine {
             params.setHeadRows(2);
             params.setImportFields(new String[]{"课程名称","老师姓名","学生_学生姓名","学生_学生性别","学生_出生日期"});
             List<CourseEntityNoAnn> list = ExcelImportUtil.importExcel(
-                new File(PoiPublicUtil.getWebRootPath("import/checkTwo.xls")),
+                new File(FileUtilTest.getWebRootPath("import/checkTwo.xls")),
                 CourseEntityNoAnn.class, params);
         } catch (Exception e) {
             e.printStackTrace();
@@ -93,7 +94,7 @@ public class ImportCheckTestTwoLine {
             params.setStartSheetIndex(1);
             params.setImportFields(new String[]{"课程名称","老师姓名","学生_学生姓名","学生_学生性别","学生_出生日期","学生_进校日期"});
             List<CourseEntityNoAnn> list = ExcelImportUtil.importExcel(
-                new File(PoiPublicUtil.getWebRootPath("import/checkTwo.xls")),
+                new File(FileUtilTest.getWebRootPath("import/checkTwo.xls")),
                 CourseEntityNoAnn.class, params);
         } catch (Exception e) {
             e.printStackTrace();

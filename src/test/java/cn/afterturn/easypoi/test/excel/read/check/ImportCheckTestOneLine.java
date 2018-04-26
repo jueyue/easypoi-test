@@ -22,6 +22,7 @@ import cn.afterturn.easypoi.test.entity.check.ImportCheckOneLine;
 import cn.afterturn.easypoi.test.entity.check.ImportCheckOneLineNoAnn;
 import cn.afterturn.easypoi.excel.ExcelImportUtil;
 import cn.afterturn.easypoi.excel.entity.ImportParams;
+import cn.afterturn.easypoi.test.excel.read.FileUtilTest;
 import cn.afterturn.easypoi.util.PoiPublicUtil;
 
 import org.junit.Assert;
@@ -42,7 +43,7 @@ public class ImportCheckTestOneLine {
             ImportParams params = new ImportParams();
             params.setTitleRows(1);
             List<ImportCheckOneLine> list = ExcelImportUtil.importExcel(
-                new File(PoiPublicUtil.getWebRootPath("import/check.xls")),
+                new File(FileUtilTest.getWebRootPath("import/check.xls")),
                 ImportCheckOneLine.class, params);
         } catch (Exception e) {
             e.printStackTrace();
@@ -59,7 +60,7 @@ public class ImportCheckTestOneLine {
             params.setTitleRows(1);
             params.setStartSheetIndex(1);
             List<ImportCheckOneLine> list = ExcelImportUtil.importExcel(
-                new File(PoiPublicUtil.getWebRootPath("import/check.xls")),
+                new File(FileUtilTest.getWebRootPath("import/check.xls")),
                 ImportCheckOneLine.class, params);
         } catch (Exception e) {
             e.printStackTrace();
@@ -76,7 +77,7 @@ public class ImportCheckTestOneLine {
             params.setTitleRows(1);
             params.setImportFields(new String[] { "姓名", "性别", "年纪", "爱好" });
             List<ImportCheckOneLineNoAnn> list = ExcelImportUtil.importExcel(
-                new File(PoiPublicUtil.getWebRootPath("import/check.xls")),
+                new File(FileUtilTest.getWebRootPath("import/check.xls")),
                 ImportCheckOneLineNoAnn.class, params);
         } catch (Exception e) {
             e.printStackTrace();
@@ -94,7 +95,7 @@ public class ImportCheckTestOneLine {
             params.setStartSheetIndex(1);
             params.setImportFields(new String[] { "姓名", "性别", "年纪", "爱好" });
             List<ImportCheckOneLineNoAnn> list = ExcelImportUtil.importExcel(
-                new File(PoiPublicUtil.getWebRootPath("import/check.xls")),
+                new File(FileUtilTest.getWebRootPath("import/check.xls")),
                 ImportCheckOneLineNoAnn.class, params);
         } catch (Exception e) {
             e.printStackTrace();

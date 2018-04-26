@@ -31,7 +31,7 @@ public class BigDataRead {
             ImportParams params = new ImportParams();
             params.setTitleRows(1);
             List<MsgClient> result = ExcelImportUtil.importExcel(
-                    new File(PoiPublicUtil.getWebRootPath("import/BigDataExport.xlsx")),
+                    new File(FileUtilTest.getWebRootPath("import/BigDataExport.xlsx")),
                     MsgClient.class, params);
             LOGGER.debug("end,time is {}", ((new Date().getTime() - start.getTime()) / 1000));
             Assert.assertTrue(result.size() == 200000);
@@ -46,7 +46,7 @@ public class BigDataRead {
             ImportParams params = new ImportParams();
             params.setTitleRows(1);
             List<MsgClient> result = ExcelImportUtil.importExcel(
-                    new File(PoiPublicUtil.getWebRootPath("import/BigDataExport20000.xlsx")),
+                    new File(FileUtilTest.getWebRootPath("import/BigDataExport20000.xlsx")),
                     MsgClient.class, params);
             LOGGER.debug("end,time is {}", ((new Date().getTime() - start.getTime()) / 1000));
             Assert.assertTrue(result.size() == 20000);
@@ -62,7 +62,7 @@ public class BigDataRead {
             ImportParams params = new ImportParams();
             params.setTitleRows(1);
             List<MsgClient> result = ExcelImportUtil.importExcel(
-                    new File(PoiPublicUtil.getWebRootPath("import/BigDataExport50000.xlsx")),
+                    new File(FileUtilTest.getWebRootPath("import/BigDataExport50000.xlsx")),
                     MsgClient.class, params);
             LOGGER.debug("end,time is {}", ((new Date().getTime() - start.getTime()) / 1000));
             Assert.assertTrue(result.size() == 50000);

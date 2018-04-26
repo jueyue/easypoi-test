@@ -22,18 +22,18 @@ public class WordExportUtilTest {
     @Test
     public void imageWordExport() {
         Map<String, Object> map = new HashMap<String, Object>();
-        map.put("department", "Easypoi");
+        map.put("department", "");
         map.put("person", "JueYue");
         map.put("time", format.format(new Date()));
         WordImageEntity image = new WordImageEntity();
         image.setHeight(200);
         image.setWidth(500);
-        image.setUrl("cn/afterturn/easypoi/test/word/img/testCode.png");
+        image.setUrl("imgs/word/testCode.png");
         image.setType(WordImageEntity.URL);
         map.put("testCode", image);
         try {
             XWPFDocument doc = WordExportUtil.exportWord07(
-                "cn/afterturn/easypoi/test/word/doc/Image.docx", map);
+                    "word/Image.docx", map);
             FileOutputStream fos = new FileOutputStream("D:/excel/image.docx");
             doc.write(fos);
             fos.close();
@@ -55,7 +55,7 @@ public class WordExportUtilTest {
         map.put("date", "2015-01-03");
         try {
             XWPFDocument doc = WordExportUtil.exportWord07(
-                "cn/afterturn/easypoi/test/word/doc/Simple.docx", map);
+                    "word/Simple.docx", map);
             FileOutputStream fos = new FileOutputStream("D:/excel/simple.docx");
             doc.write(fos);
             fos.close();
