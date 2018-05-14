@@ -75,12 +75,16 @@ public class ExcelVerifyTest {
             ExcelImportResult<ExcelVerifyEntity> result = ExcelImportUtil.importExcelMore(
                     new File(FileUtilTest.getWebRootPath("import/verfiy.xlsx")),
                     ExcelVerifyEntity.class, params);
-            FileOutputStream fos = new FileOutputStream("D:/excel/ExcelVerifyTest.basetestonlyFail.xlsx");
+            FileOutputStream fos = new FileOutputStream("D:/excel/ExcelVerifyTest.basetestonlyFail_success.xlsx");
             result.getWorkbook().write(fos);
             fos.close();
             for (int i = 0; i < result.getList().size(); i++) {
                 System.out.println(ReflectionToStringBuilder.toString(result.getList().get(i)));
             }
+            System.out.println("---------------------- fail -------------------");
+            fos = new FileOutputStream("D:/excel/ExcelVerifyTest.basetestonlyFail.xlsx");
+            result.getFailWorkbook().write(fos);
+            fos.close();
             //失败的数据
             for (int i = 0; i < result.getFailList().size(); i++) {
                 System.out.println(ReflectionToStringBuilder.toString(result.getFailList().get(i)));
@@ -113,7 +117,7 @@ public class ExcelVerifyTest {
             for (int i = 0; i < result.getFailList().size(); i++) {
                 System.out.println(ReflectionToStringBuilder.toString(result.getFailList().get(i)));
             }
-            Assert.assertTrue(result.getList().size() == 2);
+            Assert.assertTrue(result.getList().size() == 1);
         } catch (Exception e) {
             LOGGER.error(e.getMessage(),e);
         }
