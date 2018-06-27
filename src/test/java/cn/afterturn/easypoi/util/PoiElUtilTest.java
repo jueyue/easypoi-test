@@ -102,4 +102,9 @@ public class PoiElUtilTest {
         Assert.assertEquals(obj, "不好");
 
     }
+
+    @Test
+    public void strTest(){
+        Assert.assertTrue("-1".compareTo("1") < 0);
+    }
 }
