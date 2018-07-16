@@ -29,15 +29,13 @@ public class ExcelImportUtilTest {
             ImportParams params = new ImportParams();
             params.setTitleRows(1);
             long start = new Date().getTime();
-            List<StatisticEntity> list = ExcelImportUtil.importExcelBySax(
+            List<MsgClient> list = ExcelImportUtil.importExcelBySax(
                 new FileInputStream(
                     new File(FileUtilTest.getWebRootPath("import/ExcelExportMsgClient.xlsx"))),
-                StatisticEntity.class, params);
-            //        List<StatisticEntity> list = ExcelImportUtil.importExcelBySax(new File(FileUtilTest.getWebRootPath("import/ExcelExportMsgClient.xlsx"),
-            //            StatisticEntity.class, params);
-            /*for (int i = 0; i < list.size(); i++) {
+                    MsgClient.class, params);
+            for (int i = 0; i < list.size(); i++) {
                 System.out.println(ReflectionToStringBuilder.toString(list.get(i)));
-            }*/
+            }
             Assert.assertEquals(100,list.size());
         } catch (FileNotFoundException e) {
             // TODO Auto-generated catch block
