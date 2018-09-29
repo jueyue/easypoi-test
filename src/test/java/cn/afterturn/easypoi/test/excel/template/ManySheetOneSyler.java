@@ -1,6 +1,8 @@
 package cn.afterturn.easypoi.test.excel.template;
 
 import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.HorizontalAlignment;
+import org.apache.poi.ss.usermodel.VerticalAlignment;
 import org.apache.poi.ss.usermodel.Workbook;
 
 import cn.afterturn.easypoi.excel.export.styler.ExcelExportStylerDefaultImpl;
@@ -19,8 +21,8 @@ public class ManySheetOneSyler extends ExcelExportStylerDefaultImpl {
     public CellStyle stringSeptailStyle(Workbook workbook, boolean isWarp) {
         if (stringSeptailStyle == null) {
             stringSeptailStyle = workbook.createCellStyle();
-            stringSeptailStyle.setAlignment(CellStyle.ALIGN_CENTER);
-            stringSeptailStyle.setVerticalAlignment(CellStyle.VERTICAL_CENTER);
+            stringSeptailStyle.setAlignment(HorizontalAlignment.CENTER);
+            stringSeptailStyle.setVerticalAlignment(VerticalAlignment.CENTER);
             stringSeptailStyle.setDataFormat(STRING_FORMAT);
             stringSeptailStyle.setWrapText(true);
         }
@@ -31,8 +33,8 @@ public class ManySheetOneSyler extends ExcelExportStylerDefaultImpl {
     public CellStyle stringNoneStyle(Workbook workbook, boolean isWarp) {
         if (stringNoneStyle == null) {
             stringNoneStyle = workbook.createCellStyle();
-            stringNoneStyle.setAlignment(CellStyle.ALIGN_CENTER);
-            stringNoneStyle.setVerticalAlignment(CellStyle.VERTICAL_CENTER);
+            stringNoneStyle.setAlignment(HorizontalAlignment.CENTER);
+            stringNoneStyle.setVerticalAlignment(VerticalAlignment.CENTER);
             stringNoneStyle.setDataFormat(STRING_FORMAT);
             stringNoneStyle.setWrapText(true);
         }

@@ -1,9 +1,7 @@
 package cn.afterturn.easypoi.test.excel.styler;
 
 import org.apache.poi.hssf.usermodel.HSSFDataFormat;
-import org.apache.poi.ss.usermodel.BuiltinFormats;
-import org.apache.poi.ss.usermodel.CellStyle;
-import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.*;
 
 import cn.afterturn.easypoi.excel.entity.params.ExcelExportEntity;
 import cn.afterturn.easypoi.excel.export.styler.ExcelExportStylerDefaultImpl;
@@ -24,8 +22,8 @@ public class ExcelExportStatisticStyler extends ExcelExportStylerDefaultImpl {
 
     private void createNumberCellStyler() {
         numberCellStyle = workbook.createCellStyle();
-        numberCellStyle.setAlignment(CellStyle.ALIGN_CENTER);
-        numberCellStyle.setVerticalAlignment(CellStyle.VERTICAL_CENTER);
+        numberCellStyle.setAlignment(HorizontalAlignment.CENTER);
+        numberCellStyle.setVerticalAlignment(VerticalAlignment.CENTER);
         numberCellStyle.setDataFormat((short) BuiltinFormats.getBuiltinFormat("0.00"));
         numberCellStyle.setWrapText(true);
     }
