@@ -29,7 +29,6 @@ import cn.afterturn.easypoi.test.excel.read.hanlder.ExcelVerifyHandlerImpl;
 import cn.afterturn.easypoi.excel.ExcelImportUtil;
 import cn.afterturn.easypoi.excel.entity.ImportParams;
 import cn.afterturn.easypoi.excel.entity.result.ExcelImportResult;
-import cn.afterturn.easypoi.util.PoiPublicUtil;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -48,8 +47,8 @@ public class ExcelVerifyTest {
     public void basetest() {
         try {
             ImportParams params = new ImportParams();
-            params.setNeedVerfiy(true);
-            params.setVerfiyGroup(new Class[]{ViliGroupOne.class});
+            params.setNeedVerify(true);
+            params.setVerifyGroup(new Class[]{ViliGroupOne.class});
             ExcelImportResult<ExcelVerifyEntity> result = ExcelImportUtil.importExcelMore(
                 new File(FileUtilTest.getWebRootPath("import/verfiy.xlsx")),
                 ExcelVerifyEntity.class, params);
@@ -70,8 +69,8 @@ public class ExcelVerifyTest {
     public void basetestonlyFail() {
         try {
             ImportParams params = new ImportParams();
-            params.setNeedVerfiy(true);
-            params.setVerfiyGroup(new Class[]{ViliGroupOne.class});
+            params.setNeedVerify(true);
+            params.setVerifyGroup(new Class[]{ViliGroupOne.class});
             ExcelImportResult<ExcelVerifyEntity> result = ExcelImportUtil.importExcelMore(
                     new File(FileUtilTest.getWebRootPath("import/verfiy.xlsx")),
                     ExcelVerifyEntity.class, params);
@@ -100,7 +99,7 @@ public class ExcelVerifyTest {
     public void baseModetest() {
         try {
             ImportParams params = new ImportParams();
-            params.setNeedVerfiy(true);
+            params.setNeedVerify(true);
             ExcelImportResult<ExcelVerifyEntityOfMode> result = ExcelImportUtil.importExcelMore(
                     new FileInputStream(new File(FileUtilTest.getWebRootPath("import/verfiy.xlsx"))),
                 ExcelVerifyEntityOfMode.class, params);
@@ -148,7 +147,7 @@ public class ExcelVerifyTest {
         try {
             ImportParams params = new ImportParams();
             params.setVerifyHandler(new ExcelVerifyHandlerImpl());
-            params.setNeedVerfiy(true);
+            params.setNeedVerify(true);
             ExcelImportResult<ExcelVerifyEntityOfMode> result = ExcelImportUtil.importExcelMore(
                 new File(FileUtilTest.getWebRootPath("import/verfiy.xlsx")),
                 ExcelVerifyEntityOfMode.class, params);

@@ -6,11 +6,11 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import cn.afterturn.easypoi.entity.ImageEntity;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.junit.Test;
 
 import cn.afterturn.easypoi.word.WordExportUtil;
-import cn.afterturn.easypoi.word.entity.WordImageEntity;
 
 public class WordExportUtilTest {
 
@@ -25,11 +25,11 @@ public class WordExportUtilTest {
         map.put("department", "");
         map.put("person", "JueYue");
         map.put("time", format.format(new Date()));
-        WordImageEntity image = new WordImageEntity();
+        ImageEntity image = new ImageEntity();
         image.setHeight(200);
         image.setWidth(500);
         image.setUrl("imgs/word/testCode.png");
-        image.setType(WordImageEntity.URL);
+        image.setType(ImageEntity.URL);
         map.put("testCode", image);
         try {
             XWPFDocument doc = WordExportUtil.exportWord07(
