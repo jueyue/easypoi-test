@@ -1,5 +1,8 @@
 package cn.afterturn.easypoi.test.excel.read;
 
+import cn.afterturn.easypoi.excel.ExcelImportUtil;
+import cn.afterturn.easypoi.excel.entity.ImportParams;
+import cn.afterturn.easypoi.test.entity.MsgClient;
 import org.junit.Assert;
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -8,13 +11,6 @@ import org.slf4j.LoggerFactory;
 import java.io.File;
 import java.util.Date;
 import java.util.List;
-import java.util.Map;
-
-import cn.afterturn.easypoi.excel.ExcelImportUtil;
-import cn.afterturn.easypoi.excel.entity.ImportParams;
-import cn.afterturn.easypoi.excel.entity.result.ExcelImportResult;
-import cn.afterturn.easypoi.test.entity.MsgClient;
-import cn.afterturn.easypoi.util.PoiPublicUtil;
 
 /**
  * @author JueYue on 2017/12/6.
@@ -38,6 +34,30 @@ public class BigDataRead {
         } catch (Exception e) {
         }
     }
+
+    /**
+     * 测试并发读取,读取的顺序
+     */
+    @Test
+    public void testConCurrent() {
+        try {
+            Date start = new Date();
+            LOGGER.debug("start");
+            ImportParams params = new ImportParams();
+            params.setTitleRows(1);
+            params.setConcurrentTask(true);
+            List<MsgClient> result = ExcelImportUtil.importExcel(
+                    new File(FileUtilTest.getWebRootPath("import/BigDataExport.xlsx")),
+                    MsgClient.class, params);
+            LOGGER.debug("end,time is {}", ((new Date().getTime() - start.getTime()) / 1000));
+            Assert.assertTrue(result.size() == 200000);
+            for (int i = 0; i < result.size(); i++) {
+                Assert.assertTrue(result.get(i).getClientName().equalsIgnoreCase("小明" + i));
+            }
+        } catch (Exception e) {
+        }
+    }
+
     @Test
     public void test2000() {
         try {

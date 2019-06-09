@@ -1,16 +1,11 @@
 package cn.afterturn.easypoi.util;
 
-import static org.junit.Assert.*;
+import junit.framework.Assert;
+import org.junit.Test;
 
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-
-import junit.framework.Assert;
-
-import org.junit.Test;
-
-import cn.afterturn.easypoi.util.PoiElUtil;
 
 public class PoiElUtilTest {
 
@@ -104,7 +99,25 @@ public class PoiElUtilTest {
     }
 
     @Test
-    public void strTest(){
+    public void strTest() {
         Assert.assertTrue("-1".compareTo("1") < 0);
+    }
+
+
+    @Test
+    public void calculate() throws Exception {
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("a", "1");
+        map.put("b", "2");
+        map.put("c", "3");
+        map.put("d", "4");
+        String obj = PoiElUtil.eval("cal: a+b", map) + "";
+        Assert.assertEquals(obj, "3.0");
+        obj = PoiElUtil.eval("cal: a+b+(c-d)", map) + "";
+        Assert.assertEquals(obj, "2.0");
+        obj = PoiElUtil.eval("cal: a*b*(c+d)", map) + "";
+        Assert.assertEquals(obj, "14.0");
+        obj = PoiElUtil.eval("cal: c*b*(a+b)/(b+d)", map) + "";
+        Assert.assertEquals(obj, "3.0");
     }
 }

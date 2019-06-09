@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import cn.afterturn.easypoi.handler.inter.IReadHandler;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import cn.afterturn.easypoi.test.entity.CourseEntity;
@@ -29,14 +30,20 @@ public class ExcelImportUtilTest {
             ImportParams params = new ImportParams();
             params.setTitleRows(1);
             long start = new Date().getTime();
-            List<MsgClient> list = ExcelImportUtil.importExcelBySax(
-                new FileInputStream(
-                    new File(FileUtilTest.getWebRootPath("import/ExcelExportMsgClient.xlsx"))),
-                    MsgClient.class, params);
-            for (int i = 0; i < list.size(); i++) {
-                System.out.println(ReflectionToStringBuilder.toString(list.get(i)));
-            }
-            Assert.assertEquals(100,list.size());
+            ExcelImportUtil.importExcelBySax(
+                    new FileInputStream(
+                            new File(FileUtilTest.getWebRootPath("import/ExcelExportMsgClient.xlsx"))),
+                    MsgClient.class, params, new IReadHandler<MsgClient>() {
+                        @Override
+                        public void handler(MsgClient o) {
+                            System.out.println(ReflectionToStringBuilder.toString(o));
+                        }
+
+                        @Override
+                        public void doAfterAll() {
+
+                        }
+                    });
         } catch (FileNotFoundException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

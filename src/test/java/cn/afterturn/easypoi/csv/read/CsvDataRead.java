@@ -2,6 +2,7 @@ package cn.afterturn.easypoi.csv.read;
 
 import cn.afterturn.easypoi.csv.CsvImportUtil;
 import cn.afterturn.easypoi.csv.entity.CsvImportParams;
+import cn.afterturn.easypoi.handler.inter.IReadHandler;
 import cn.afterturn.easypoi.test.entity.MsgClient;
 import cn.afterturn.easypoi.test.excel.read.FileUtilTest;
 import cn.afterturn.easypoi.util.JSON;
@@ -33,8 +34,16 @@ public class CsvDataRead {
             params.setTitleRows(1);
             CsvImportUtil.importCsv(new FileInputStream(
                             new File(FileUtilTest.getWebRootPath("csv/BigDataExport.csv"))),
-                    MsgClient.class, params, (client) -> {
-                        //LOGGER.info(JSON.toJson(client));
+                    MsgClient.class, params, new IReadHandler() {
+                        @Override
+                        public void handler(Object o) {
+
+                        }
+
+                        @Override
+                        public void doAfterAll() {
+
+                        }
                     });
             LOGGER.debug("end,time is {}", ((new Date().getTime() - start.getTime()) / 1000));
         } catch (Exception e) {
@@ -50,8 +59,16 @@ public class CsvDataRead {
             CsvImportParams params = new CsvImportParams(CsvImportParams.UTF8);
             CsvImportUtil.importCsv(new FileInputStream(
                             new File(FileUtilTest.getWebRootPath("csv/20181107202743.csv"))),
-                    Map.class, params, (client) -> {
-                        LOGGER.info(JSON.toJson(client));
+                    Map.class, params, new IReadHandler<Map>() {
+                        @Override
+                        public void handler(Map o) {
+
+                        }
+
+                        @Override
+                        public void doAfterAll() {
+
+                        }
                     });
             LOGGER.debug("end,time is {}", ((new Date().getTime() - start.getTime()) / 1000));
         } catch (Exception e) {

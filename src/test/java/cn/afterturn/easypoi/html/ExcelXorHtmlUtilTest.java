@@ -34,6 +34,25 @@ public class ExcelXorHtmlUtilTest {
     }
 
     @Test
+    public void testToTableHtmlWorkbookRowNum() {
+        try {
+            Workbook wb = new HSSFWorkbook(new FileInputStream(new File(FileUtilTest
+                    .getWebRootPath("WEB-INF/doc/专项支出用款申请书.xls"))));
+            ExcelToHtmlParams params = new ExcelToHtmlParams(wb, false, 0, null);
+            params.setShowColumnHead(true);
+            params.setShowRowNum(true);
+            String html = ExcelXorHtmlUtil.excelToHtml(params);
+            FileWriter fw = new FileWriter("D:/excel/专项支出用款申请书_table_RowNum.html");
+            fw.write(html);
+            fw.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
     public void testToTableHtmlWorkbookInt() {
         try {
             Workbook wb = new HSSFWorkbook(new FileInputStream(new File(FileUtilTest

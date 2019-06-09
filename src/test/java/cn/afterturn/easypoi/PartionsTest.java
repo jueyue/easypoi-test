@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.util.List;
 
 /**
  * @author by jueyue on 18-9-30.
@@ -20,13 +20,18 @@ public class PartionsTest {
 
     public static void main(String[] args) {
         try {
-            ExcelImportUtil.importExcelBySax(
-                    new FileInputStream(new File("C:\\Users\\jueyue\\Desktop\\导入活动用户模板 (18).xlsx")),
-                    CmsActivityUserTO.class, new ImportParams(),
-                    (user) -> {
-                        LOGGER.info(JSON.toJson(user));
-                    });
-        } catch (FileNotFoundException e) {
+            List<ComInfoDTO> list = ExcelImportUtil.importExcel(
+                    new FileInputStream(new File("C:\\Users\\jueyue\\Desktop\\查陈周公司导出数据结果—天眼查(W20122016981545306973526).xlsx")),
+                    ComInfoDTO.class, new ImportParams());
+            for (ComInfoDTO c : list
+            ) {
+                try {
+                    System.out.println(c.getCompanyName());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
