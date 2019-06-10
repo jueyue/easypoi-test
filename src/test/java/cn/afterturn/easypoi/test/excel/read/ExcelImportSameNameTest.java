@@ -39,25 +39,29 @@ public class ExcelImportSameNameTest {
         studentEntity.setRegistrationDate(new java.sql.Time(new Date().getTime()));
         studentEntity.setSex(1);
         List<StudentEntity> studentList = new ArrayList<StudentEntity>();
+        List<StudentEntity> studentList2 = new ArrayList<StudentEntity>();
         studentList.add(studentEntity);
         studentList.add(studentEntity);
+        studentList2.add(studentEntity);
+        studentList2.add(studentEntity);
+        studentList2.add(studentEntity);
+        studentList2.add(studentEntity);
 
         List<ClassName> list = new ArrayList<ClassName>();
         ClassName classes = new ClassName();
         classes.setName("班级1");
-        classes.setArrA(studentList);
+        classes.setArrA(studentList2);
         classes.setArrB(studentList);
         list.add(classes);
         classes = new ClassName();
         classes.setName("班级2");
         classes.setArrA(studentList);
-        classes.setArrB(studentList);
+        classes.setArrB(studentList2);
         list.add(classes);
         ExportParams params = new ExportParams();
         try {
             Workbook workbook = ExcelExportUtil.exportExcel(params, ClassName.class, list);
-            FileOutputStream fos = new FileOutputStream(
-                FileUtilTest.getWebRootPath("import/sameName.xls"));
+            FileOutputStream fos = new FileOutputStream("D:/excel/sameName.xls");
             workbook.write(fos);
             fos.close();
         } catch (FileNotFoundException e) {
