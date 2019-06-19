@@ -35,6 +35,29 @@ public class BigDataRead {
         }
     }
 
+    /**
+     * 测试并发读取,读取的顺序
+     */
+    @Test
+    public void testConCurrent() {
+        try {
+            Date start = new Date();
+            LOGGER.debug("start");
+            ImportParams params = new ImportParams();
+            params.setTitleRows(1);
+            params.setConcurrentTask(true);
+            List<MsgClient> result = ExcelImportUtil.importExcel(
+                    new File(FileUtilTest.getWebRootPath("import/BigDataExport.xlsx")),
+                    MsgClient.class, params);
+            LOGGER.debug("end,time is {}", ((new Date().getTime() - start.getTime()) / 1000));
+            Assert.assertTrue(result.size() == 200000);
+            for (int i = 0; i < result.size(); i++) {
+                Assert.assertTrue(result.get(i).getClientName().equalsIgnoreCase("小明" + i));
+            }
+        } catch (Exception e) {
+        }
+    }
+
     @Test
     public void test2000() {
         try {
