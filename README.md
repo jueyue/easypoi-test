@@ -5,8 +5,8 @@ EasyPoi Office的超简单工具类
 就可以方便的写出Excel导出,Excel模板导出,Excel导入,Word模板导出,通过简单的注解和模板
 语言(熟悉的表达式语法),完成以前复杂的写法
 
-	作者博客：http://blog.afterturn.cn/
-	作者邮箱： qrb.jueyue@gmail.com
+	作者博客：https://blog.csdn.net/qjueyue
+	作者邮箱： qrb.jueyue@foxmail.com
 	QQ群:   1群 364192721(满) 2 群116844390
 	
 	开发者:魔幻之翼 xf.key@163.com
@@ -22,12 +22,7 @@ EasyPoi Office的超简单工具类
 
 **开发指南**
 
-**[http://www.afterturn.cn/doc/easypoi.html](http://www.afterturn.cn/doc/easypoi.html)**
-
-**_测试是使用master的SNAPSHOT版本,请clone 代码然后install保证所有案例成功运行_**
-===========================
-不想clone ,把***-SNAPSHOT去掉SNAPSHOT,直接依赖正式版,大部分案例可以成功
-===========================
+**[https://opensource.afterturn.cn/](https://opensource.afterturn.cn/)**
 
 运行 Application 访问界面,几场最常用的代码
 
