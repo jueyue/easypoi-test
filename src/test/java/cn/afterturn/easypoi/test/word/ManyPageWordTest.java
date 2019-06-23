@@ -2,6 +2,7 @@ package cn.afterturn.easypoi.test.word;
 
 import cn.afterturn.easypoi.word.WordExportUtil;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
+import org.junit.Test;
 
 import java.io.FileOutputStream;
 import java.util.ArrayList;
@@ -14,7 +15,8 @@ import java.util.Map;
  */
 public class ManyPageWordTest {
 
-    public static void main(String[] args) {
+    @Test
+    public  void testPage() {
         List<Map<String, Object>> list = new ArrayList<>();
         for (int i = 0; i < 100; i++) {
             Map<String, Object> map = new HashMap<>();
@@ -25,7 +27,7 @@ public class ManyPageWordTest {
         try {
             XWPFDocument doc = WordExportUtil
                     .exportWord07("word/loan.docx", list);
-            FileOutputStream fos = new FileOutputStream("D:/excel/拼接多页测试.docx");
+            FileOutputStream fos = new FileOutputStream("D:/excel/ManyPageWordTest.拼接多页测试.docx");
             doc.write(fos);
             fos.close();
         } catch (Exception e) {

@@ -33,7 +33,7 @@ public class TemplateExcelManySheet {
     @Test
     public void manyMap() throws Exception {
         TemplateExportParams params = new TemplateExportParams(
-            "doc/exportTemp.xls", true);
+            "doc/exportTemp.xls", 0,1);
         params.setHeadingRows(2);
         params.setHeadingStartRow(2);
         params.setStyle(ExcelStyleType.BORDER.getClazz());
