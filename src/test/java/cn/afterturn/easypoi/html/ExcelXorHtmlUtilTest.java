@@ -18,7 +18,7 @@ public class ExcelXorHtmlUtilTest {
         Workbook wb = new HSSFWorkbook(new FileInputStream(new File(FileUtilTest
                 .getWebRootPath("WEB-INF/doc/专项支出用款申请书.xls"))));
         String     html = ExcelXorHtmlUtil.toTableHtml(wb);
-        FileWriter fw   = new FileWriter("D:/excel/专项支出用款申请书_table.html");
+        FileWriter fw   = new FileWriter("D:/home/excel/专项支出用款申请书_table.html");
         fw.write(html);
         fw.close();
     }
@@ -29,7 +29,7 @@ public class ExcelXorHtmlUtilTest {
                 .getWebRootPath("WEB-INF/doc/专项支出用款申请书.xls"))));
         ExcelToHtmlParams params = new ExcelToHtmlParams(wb, false, 0, null);
         String            html   = ExcelXorHtmlUtil.excelToHtml(params);
-        FileWriter        fw     = new FileWriter("D:/excel/专项支出用款申请书_table_RowNum.html");
+        FileWriter        fw     = new FileWriter("D:/home/excel/专项支出用款申请书_table_RowNum.html");
         fw.write(html);
         fw.close();
     }
@@ -39,7 +39,7 @@ public class ExcelXorHtmlUtilTest {
         Workbook wb = new HSSFWorkbook(new FileInputStream(new File(FileUtilTest
                 .getWebRootPath("doc/exportTemp.xls"))));
         String     html = ExcelXorHtmlUtil.excelToHtml(new ExcelToHtmlParams(wb, 1));
-        FileWriter fw   = new FileWriter("D:/excel/exportTemp_table.html");
+        FileWriter fw   = new FileWriter("D:/home/excel/exportTemp_table.html");
         fw.write(html);
         fw.close();
     }
@@ -52,14 +52,14 @@ public class ExcelXorHtmlUtilTest {
                 FileUtilTest.getWebRootPath("html/exportTemp_image.xls"))));
         long       d    = System.nanoTime();
         String     html = ExcelXorHtmlUtil.excelToHtml(new ExcelToHtmlParams(wb, true, "yes"));
-        FileWriter fw   = new FileWriter("D:/excel/exportTemp_image_all.html");
+        FileWriter fw   = new FileWriter("D:/home/excel/exportTemp_image_all.html");
         fw.write(html);
         fw.close();
 
         System.err.println(System.nanoTime() - d);
         d = System.nanoTime();
-        html = ExcelXorHtmlUtil.excelToHtml(new ExcelToHtmlParams(wb, true, "D:/excel/"));
-        fw = new FileWriter("D:/excel/exportTemp_image_all_cache.html");
+        html = ExcelXorHtmlUtil.excelToHtml(new ExcelToHtmlParams(wb, true, "D:/home/excel/"));
+        fw = new FileWriter("D:/home/excel/exportTemp_image_all_cache.html");
         fw.write(html);
         fw.close();
         System.err.println(System.nanoTime() - d);
@@ -74,7 +74,7 @@ public class ExcelXorHtmlUtilTest {
         //                    PoiPublicUtil
         //                    .getWebRootPath("doc/专项支出用款申请书.xls"))));
         String     html = ExcelXorHtmlUtil.toAllHtml(wb);
-        FileWriter fw   = new FileWriter("D:/excel/专项支出用款申请书_all.html");
+        FileWriter fw   = new FileWriter("D:/home/excel/专项支出用款申请书_all.html");
         fw.write(html);
         fw.close();
     }
@@ -84,7 +84,7 @@ public class ExcelXorHtmlUtilTest {
         Workbook wb = new HSSFWorkbook(new FileInputStream(new File(FileUtilTest
                 .getWebRootPath("doc/exportTemp.xls"))));
         String     html = ExcelXorHtmlUtil.excelToHtml(new ExcelToHtmlParams(wb, true, 1, null));
-        FileWriter fw   = new FileWriter("D:/excel/exportTemp_all.html");
+        FileWriter fw   = new FileWriter("D:/home/excel/exportTemp_all.html");
         fw.write(html);
         fw.close();
     }

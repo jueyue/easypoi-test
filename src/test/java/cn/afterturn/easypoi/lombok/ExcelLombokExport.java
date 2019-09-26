@@ -33,11 +33,11 @@ public class ExcelLombokExport {
         params.setFreezeCol(2);
         Workbook workbook = ExcelExportUtil.exportExcel(params, MsgClient.class, list);
         System.out.println(new Date().getTime() - start.getTime());
-        File savefile = new File("D:/excel/");
+        File savefile = new File("D:/home/excel/");
         if (!savefile.exists()) {
             savefile.mkdirs();
         }
-        FileOutputStream fos = new FileOutputStream("D:/excel/ExcelLombokExport.xlsx");
+        FileOutputStream fos = new FileOutputStream("D:/home/excel/ExcelLombokExport.xlsx");
         workbook.write(fos);
         fos.close();
     }

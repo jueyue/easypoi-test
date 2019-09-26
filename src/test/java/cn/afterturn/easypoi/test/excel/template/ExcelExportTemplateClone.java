@@ -69,11 +69,11 @@ public class ExcelExportTemplateClone {
         realMap.put(1, numTowList);
 
         Workbook book     = ExcelExportUtil.exportExcelClone(realMap, params);
-        File     savefile = new File("D:/excel/");
+        File     savefile = new File("D:/home/excel/");
         if (!savefile.exists()) {
             savefile.mkdirs();
         }
-        FileOutputStream fos = new FileOutputStream("D:/excel/exportCloneTemp.xls");
+        FileOutputStream fos = new FileOutputStream("D:/home/excel/exportCloneTemp.xls");
         book.write(fos);
         fos.close();
 

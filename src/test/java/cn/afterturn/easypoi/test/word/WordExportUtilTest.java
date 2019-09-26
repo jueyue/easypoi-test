@@ -34,7 +34,7 @@ public class WordExportUtilTest {
         try {
             XWPFDocument doc = WordExportUtil.exportWord07(
                     "word/Image.docx", map);
-            FileOutputStream fos = new FileOutputStream("D:/excel/image.docx");
+            FileOutputStream fos = new FileOutputStream("D:/home/excel/image.docx");
             doc.write(fos);
             fos.close();
         } catch (Exception e) {
@@ -53,10 +53,11 @@ public class WordExportUtilTest {
         map.put("time", format.format(new Date()));
         map.put("me","JueYue");
         map.put("date", "2015-01-03");
+        map.put("mark", "0x0051");
         try {
             XWPFDocument doc = WordExportUtil.exportWord07(
                     "word/Simple.docx", map);
-            FileOutputStream fos = new FileOutputStream("D:/excel/simple.docx");
+            FileOutputStream fos = new FileOutputStream("D:/home/excel/simple.docx");
             doc.write(fos);
             fos.close();
         } catch (Exception e) {

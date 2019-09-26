@@ -40,11 +40,11 @@ public class ExcelExportGroupNameTest {
         Date start = new Date();
         ExportParams params = new ExportParams("GroupName测试", "测试", ExcelType.XSSF);
         Workbook workbook = ExcelExportUtil.exportExcel(params, GroupNameEntity.class, list);
-        File savefile = new File("D:/excel/");
+        File savefile = new File("D:/home/excel/");
         if (!savefile.exists()) {
             savefile.mkdirs();
         }
-        FileOutputStream fos = new FileOutputStream("D:/excel/groupName.xlsx");
+        FileOutputStream fos = new FileOutputStream("D:/home/excel/groupName.xlsx");
         workbook.write(fos);
         fos.close();
     }
@@ -68,11 +68,11 @@ public class ExcelExportGroupNameTest {
         Date start = new Date();
         ExportParams params = new ExportParams("GroupNameGnEntity测试", "测试", ExcelType.XSSF);
         Workbook workbook = ExcelExportUtil.exportExcel(params, GnEntity.class, list);
-        File savefile = new File("D:/excel/");
+        File savefile = new File("D:/home/excel/");
         if (!savefile.exists()) {
             savefile.mkdirs();
         }
-        FileOutputStream fos = new FileOutputStream("D:/excel/groupName_GnEntity.xlsx");
+        FileOutputStream fos = new FileOutputStream("D:/home/excel/groupName_GnEntity.xlsx");
         workbook.write(fos);
         fos.close();
     }
@@ -83,11 +83,11 @@ public class ExcelExportGroupNameTest {
         List<GroupExportVo> list = new ArrayList<GroupExportVo>();
         ExportParams params = new ExportParams("Group排序", "测试", ExcelType.XSSF);
         Workbook workbook = ExcelExportUtil.exportExcel(params, GroupExportVo.class, list);
-        File savefile = new File("D:/excel/");
+        File savefile = new File("D:/home/excel/");
         if (!savefile.exists()) {
             savefile.mkdirs();
         }
-        FileOutputStream fos = new FileOutputStream("D:/excel/groupName_groupSort.xlsx");
+        FileOutputStream fos = new FileOutputStream("D:/home/excel/groupName_groupSort.xlsx");
         workbook.write(fos);
         fos.close();
     }

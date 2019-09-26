@@ -44,11 +44,11 @@ public class TemplateForEachTest2 {
         }
         map.put("list", mapList);
         Workbook workbook = ExcelExportUtil.exportExcel(params, map);
-        File savefile = new File("D:/excel/");
+        File savefile = new File("D:/home/excel/");
         if (!savefile.exists()) {
             savefile.mkdirs();
         }
-        FileOutputStream fos = new FileOutputStream("D:/excel/foreach_many_exprot.xlsx");
+        FileOutputStream fos = new FileOutputStream("D:/home/excel/foreach_many_exprot.xlsx");
         workbook.write(fos);
         fos.close();
     }

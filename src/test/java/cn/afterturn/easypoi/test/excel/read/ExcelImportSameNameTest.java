@@ -61,7 +61,7 @@ public class ExcelImportSameNameTest {
         ExportParams params = new ExportParams();
         try {
             Workbook workbook = ExcelExportUtil.exportExcel(params, ClassName.class, list);
-            FileOutputStream fos = new FileOutputStream("D:/excel/sameName.xls");
+            FileOutputStream fos = new FileOutputStream("D:/home/excel/sameName.xls");
             workbook.write(fos);
             fos.close();
         } catch (FileNotFoundException e) {

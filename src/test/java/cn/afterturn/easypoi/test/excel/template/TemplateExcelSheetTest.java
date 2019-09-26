@@ -103,11 +103,11 @@ public class TemplateExcelSheetTest {
         for (int i = 0, le = dataList.size() / 5; i < le; i++) {
             util.createSheetForMap(workbook, entity, entityList, dataList.subList(0, 5));
         }
-        File savefile = new File("D:/excel/");
+        File savefile = new File("D:/home/excel/");
         if (!savefile.exists()) {
             savefile.mkdirs();
         }
-        FileOutputStream fos = new FileOutputStream("D:/excel/foreach.xls");
+        FileOutputStream fos = new FileOutputStream("D:/home/excel/foreach.xls");
         workbook.write(fos);
         fos.close();
     }

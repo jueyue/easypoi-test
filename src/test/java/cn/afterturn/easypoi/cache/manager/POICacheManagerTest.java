@@ -58,11 +58,11 @@ public class POICacheManagerTest {
             }
             map.put("list", list);
             Workbook workbook = ExcelExportUtil.exportExcel(params, map);
-            File savefile = new File("D:/excel/");
+            File savefile = new File("D:/home/excel/");
             if (!savefile.exists()) {
                 savefile.mkdirs();
             }
-            FileOutputStream fos = new FileOutputStream("D:/excel/tt.xls");
+            FileOutputStream fos = new FileOutputStream("D:/home/excel/tt.xls");
             workbook.write(fos);
             fos.close();
     }

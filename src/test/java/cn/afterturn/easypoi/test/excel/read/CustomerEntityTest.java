@@ -20,7 +20,7 @@ public class CustomerEntityTest {
             ImportParams params = new ImportParams();
             long start = new Date().getTime();
             List<CustomerEntity> list = ExcelImportUtil.importExcel(new FileInputStream(
-                new File("D:/excel/tt.xlsx")), CustomerEntity.class, params);
+                new File("D:/home/excel/tt.xlsx")), CustomerEntity.class, params);
             System.out.println(list.size() + "-----" + (new Date().getTime() - start));
         } catch (Exception e) {
             e.printStackTrace();

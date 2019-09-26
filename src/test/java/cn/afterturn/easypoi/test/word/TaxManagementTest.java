@@ -59,7 +59,7 @@ public class TaxManagementTest {
         try {
             XWPFDocument doc = WordExportUtil
                 .exportWord07("word/纳税信息.docx", map);
-            FileOutputStream fos = new FileOutputStream("D:/excel/纳税信息_test.docx");
+            FileOutputStream fos = new FileOutputStream("D:/home/excel/纳税信息_test.docx");
             doc.write(fos);
             fos.close();
         } catch (Exception e) {
@@ -99,7 +99,7 @@ public class TaxManagementTest {
         try {
             XWPFDocument doc = WordExportUtil
                 .exportWord07("word/纳税信息.docx", map);
-            FileOutputStream fos = new FileOutputStream("D:/excel/纳税信息_entity.docx");
+            FileOutputStream fos = new FileOutputStream("D:/home/excel/纳税信息_entity.docx");
             doc.write(fos);
             fos.close();
         } catch (Exception e) {

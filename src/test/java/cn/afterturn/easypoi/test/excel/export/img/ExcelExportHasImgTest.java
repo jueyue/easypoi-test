@@ -36,12 +36,12 @@ public class ExcelExportHasImgTest {
     @Test
     public void exportCompanyImg() throws Exception {
 
-        File savefile = new File("D:/excel/");
+        File savefile = new File("D:/home/excel/");
         if (!savefile.exists()) {
             savefile.mkdirs();
         }
         Workbook workbook = ExcelExportUtil.exportExcel(new ExportParams(), CompanyHasImgModel.class, list);
-        FileOutputStream fos = new FileOutputStream("D:/excel/ExcelExportHasImgTest.exportCompanyImg.xls");
+        FileOutputStream fos = new FileOutputStream("D:/home/excel/ExcelExportHasImgTest.exportCompanyImg.xls");
         workbook.write(fos);
         fos.close();
     }

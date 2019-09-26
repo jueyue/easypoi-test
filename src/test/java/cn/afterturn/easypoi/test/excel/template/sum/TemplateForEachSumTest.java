@@ -44,11 +44,11 @@ public class TemplateForEachSumTest {
         params.setSheetNum(new Integer[]{0,2});
         Workbook workbook = ExcelExportUtil.exportExcel(params, map);
         PoiMergeCellUtil.mergeCells(workbook.getSheetAt(0), 1, 0, 4);
-        File savefile = new File("D:/excel/");
+        File savefile = new File("D:/home/excel/");
         if (!savefile.exists()) {
             savefile.mkdirs();
         }
-        FileOutputStream fos = new FileOutputStream("D:/excel/foreach_sum_out.xlsx");
+        FileOutputStream fos = new FileOutputStream("D:/home/excel/foreach_sum_out.xlsx");
         workbook.write(fos);
         fos.close();
     }

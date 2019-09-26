@@ -27,7 +27,7 @@ public class ManyPageWordTest {
         try {
             XWPFDocument doc = WordExportUtil
                     .exportWord07("word/loan.docx", list);
-            FileOutputStream fos = new FileOutputStream("D:/excel/ManyPageWordTest.拼接多页测试.docx");
+            FileOutputStream fos = new FileOutputStream("D:/home/excel/ManyPageWordTest.拼接多页测试.docx");
             doc.write(fos);
             fos.close();
         } catch (Exception e) {

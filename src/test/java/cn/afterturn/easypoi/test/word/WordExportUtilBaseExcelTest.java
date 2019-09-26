@@ -39,7 +39,7 @@ public class WordExportUtilBaseExcelTest {
         map.put("testCode", image);
         XWPFDocument doc = WordExportUtil.exportWord07(
                 "word/Image.docx", map);
-        FileOutputStream fos = new FileOutputStream("D:/excel/image.docx");
+        FileOutputStream fos = new FileOutputStream("D:/home/excel/image.docx");
         doc.write(fos);
         fos.close();
     }
@@ -69,7 +69,7 @@ public class WordExportUtilBaseExcelTest {
         map.put("pList", list);
         XWPFDocument doc = WordExportUtil.exportWord07(
                 "word/SimpleExcel.docx", map);
-        FileOutputStream fos = new FileOutputStream("D:/excel/basesimpleExcel.docx");
+        FileOutputStream fos = new FileOutputStream("D:/home/excel/basesimpleExcel.docx");
         doc.write(fos);
         fos.close();
     }

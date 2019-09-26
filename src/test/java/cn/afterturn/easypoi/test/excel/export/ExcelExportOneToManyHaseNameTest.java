@@ -29,11 +29,11 @@ public class ExcelExportOneToManyHaseNameTest {
             ExportParams params = new ExportParams("一对多,对多,对多导出", "测试", ExcelType.XSSF);
             params.setDictHandler(new ExcelDictHandlerImpl());
             Workbook workbook = ExcelExportUtil.exportExcel(params, DemandEntity.class, list);
-            File savefile = new File("D:/excel/");
+            File savefile = new File("D:/home/excel/");
             if (!savefile.exists()) {
                 savefile.mkdirs();
             }
-            FileOutputStream fos = new FileOutputStream("D:/excel/ExcelExportOneToManyHaseNameTest.demandEntityTest.xlsx");
+            FileOutputStream fos = new FileOutputStream("D:/home/excel/ExcelExportOneToManyHaseNameTest.demandEntityTest.xlsx");
             workbook.write(fos);
             fos.close();
         } catch (IOException e) {

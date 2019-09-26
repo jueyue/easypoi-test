@@ -49,11 +49,11 @@ public class TemplateDeleteTest {
         }
         map.put("mapList", mapList);
         Workbook workbook = ExcelExportUtil.exportExcel(params, map);
-        File savefile = new File("D:/excel/");
+        File savefile = new File("D:/home/excel/");
         if (!savefile.exists()) {
             savefile.mkdirs();
         }
-        FileOutputStream fos = new FileOutputStream("D:/excel/delete-test-gen.xls");
+        FileOutputStream fos = new FileOutputStream("D:/home/excel/delete-test-gen.xls");
         workbook.write(fos);
         fos.close();
     }

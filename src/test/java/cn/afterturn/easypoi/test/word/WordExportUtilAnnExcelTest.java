@@ -57,7 +57,7 @@ public class WordExportUtilAnnExcelTest {
         try {
             XWPFDocument doc = WordExportUtil.exportWord07(
                     "word/SimpleExcel.docx", map);
-            FileOutputStream fos = new FileOutputStream("D:/excel/simpleExcel.docx");
+            FileOutputStream fos = new FileOutputStream("D:/home/excel/simpleExcel.docx");
             doc.write(fos);
             fos.close();
         } catch (Exception e) {
@@ -107,7 +107,7 @@ public class WordExportUtilAnnExcelTest {
         try {
             XWPFDocument doc = WordExportUtil.exportWord07(
                     "word/Excel.docx", map);
-            FileOutputStream fos = new FileOutputStream("D:/excel/Excel.docx");
+            FileOutputStream fos = new FileOutputStream("D:/home/excel/Excel.docx");
             doc.write(fos);
             fos.close();
         } catch (Exception e) {

@@ -40,7 +40,7 @@ public class ExcelExportEnumTest {
         ExportParams params = new ExportParams("枚举测试", "测试", ExcelType.XSSF);
         Workbook workbook = ExcelExportUtil.exportExcel(params, EnumDataEntity.class, list);
         System.out.println(new Date().getTime() - start.getTime());
-        FileOutputStream fos = new FileOutputStream("D:/excel/EnumDataEntity.xlsx");
+        FileOutputStream fos = new FileOutputStream("D:/home/excel/EnumDataEntity.xlsx");
         workbook.write(fos);
         fos.close();
     }

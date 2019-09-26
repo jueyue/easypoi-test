@@ -53,7 +53,7 @@ public class ExcelExportForMap {
 
             Workbook workbook = ExcelExportUtil.exportExcel(new ExportParams("测试", "测试"), entity,
                 list);
-            FileOutputStream fos = new FileOutputStream("D:/excel/ExcelExportForMap.tt.xls");
+            FileOutputStream fos = new FileOutputStream("D:/home/excel/ExcelExportForMap.tt.xls");
             workbook.write(fos);
             fos.close();
         } catch (FileNotFoundException e) {
@@ -101,7 +101,7 @@ public class ExcelExportForMap {
 
             Workbook workbook = ExcelExportUtil.exportExcel(new ExportParams("员工通讯录", "通讯录"),
                 entity, list);
-            FileOutputStream fos = new FileOutputStream("D:/excel/testMerge.xls");
+            FileOutputStream fos = new FileOutputStream("D:/home/excel/testMerge.xls");
             workbook.write(fos);
             fos.close();
         } catch (FileNotFoundException e) {
@@ -131,7 +131,7 @@ public class ExcelExportForMap {
             ExportParams params = new ExportParams("测试", "测试", ExcelType.XSSF);
             params.setFreezeCol(5);
             Workbook workbook = ExcelExportUtil.exportExcel(params, entity, list);
-            FileOutputStream fos = new FileOutputStream("D:/excel/testMany.xlsx");
+            FileOutputStream fos = new FileOutputStream("D:/home/excel/testMany.xlsx");
             workbook.write(fos);
             fos.close();
         } catch (FileNotFoundException e) {

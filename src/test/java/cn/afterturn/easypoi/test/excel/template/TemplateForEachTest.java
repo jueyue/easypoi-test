@@ -67,11 +67,11 @@ public class TemplateForEachTest {
         //本来导出是专业那个 
         Workbook workbook = ExcelExportUtil.exportExcel(params, map);
         PoiMergeCellUtil.mergeCells(workbook.getSheetAt(0), 1, 0, 4);
-        File savefile = new File("D:/excel/");
+        File savefile = new File("D:/home/excel/");
         if (!savefile.exists()) {
             savefile.mkdirs();
         }
-        FileOutputStream fos = new FileOutputStream("D:/excel/foreach.xlsx");
+        FileOutputStream fos = new FileOutputStream("D:/home/excel/foreach.xlsx");
         workbook.write(fos);
         fos.close();
     }

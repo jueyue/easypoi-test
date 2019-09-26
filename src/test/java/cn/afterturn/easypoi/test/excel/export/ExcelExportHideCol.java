@@ -34,11 +34,11 @@ public class ExcelExportHideCol {
         Workbook workbook = ExcelExportUtil.exportExcel(new ExportParams("计算机一班学生","学生"),
                 StudentHiderEntity.class, studentList);
         System.out.println(new Date().getTime() - start.getTime());
-        File savefile = new File("D:/excel/");
+        File savefile = new File("D:/home/excel/");
         if (!savefile.exists()) {
             savefile.mkdirs();
         }
-        FileOutputStream fos = new FileOutputStream("D:/excel/ExcelExportHideCol.xls");
+        FileOutputStream fos = new FileOutputStream("D:/home/excel/ExcelExportHideCol.xls");
         workbook.write(fos);
         fos.close();
     }

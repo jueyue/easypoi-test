@@ -35,11 +35,11 @@ public class ExcelExportNumFormat {
         ExportParams params = new ExportParams("2412312", "测试", ExcelType.XSSF);
         Workbook workbook = ExcelExportUtil.exportExcel(params, NumEntity.class, list);
         System.out.println(new Date().getTime() - start.getTime());
-        File savefile = new File("D:/excel/");
+        File savefile = new File("D:/home/excel/");
         if (!savefile.exists()) {
             savefile.mkdirs();
         }
-        FileOutputStream fos = new FileOutputStream("D:/excel/ExcelExportNumFormat.xlsx");
+        FileOutputStream fos = new FileOutputStream("D:/home/excel/ExcelExportNumFormat.xlsx");
         workbook.write(fos);
         fos.close();
     }

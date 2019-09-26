@@ -41,11 +41,11 @@ public class CsvExportUtilTest {
             list.add(client);
         }
 
-        File savefile = new File("D:/excel/");
+        File savefile = new File("D:/home/excel/");
         if (!savefile.exists()) {
             savefile.mkdirs();
         }
-        FileOutputStream fos = new FileOutputStream("D:/excel/ExcelExportBigData.bigDataExport.csv");
+        FileOutputStream fos = new FileOutputStream("D:/home/excel/ExcelExportBigData.bigDataExport.csv");
         CsvExportUtil.exportCsv(params, MsgClient.class, list, fos);
         fos.flush();
         fos.close();
@@ -70,11 +70,11 @@ public class CsvExportUtilTest {
             list.add(client);
         }
 
-        File savefile = new File("D:/excel/");
+        File savefile = new File("D:/home/excel/");
         if (!savefile.exists()) {
             savefile.mkdirs();
         }
-        FileOutputStream fos = new FileOutputStream("D:/excel/ExcelExportBigData.bigDataExport_GBK.csv");
+        FileOutputStream fos = new FileOutputStream("D:/home/excel/ExcelExportBigData.bigDataExport_GBK.csv");
         CsvExportUtil.exportCsv(params, MsgClient.class, list, fos);
         fos.flush();
         fos.close();

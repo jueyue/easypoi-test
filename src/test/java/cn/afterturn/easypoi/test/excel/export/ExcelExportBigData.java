@@ -51,11 +51,11 @@ public class ExcelExportBigData {
         }, 10);
 
         System.out.println(new Date().getTime() - start.getTime());
-        File savefile = new File("D:/excel/");
+        File savefile = new File("D:/home/excel/");
         if (!savefile.exists()) {
             savefile.mkdirs();
         }
-        FileOutputStream fos = new FileOutputStream("D:/excel/ExcelExportBigData.bigDataExport.xlsx");
+        FileOutputStream fos = new FileOutputStream("D:/home/excel/ExcelExportBigData.bigDataExport.xlsx");
         workbook.write(fos);
         fos.close();
     }

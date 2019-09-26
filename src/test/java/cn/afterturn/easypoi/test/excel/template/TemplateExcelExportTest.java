@@ -67,11 +67,11 @@ public class TemplateExcelExportTest {
 
         Workbook workbook = ExcelExportUtil.exportExcel(params, TemplateExcelExportEntity.class,
             list, map);
-        File savefile = new File("D:/excel/");
+        File savefile = new File("D:/home/excel/");
         if (!savefile.exists()) {
             savefile.mkdirs();
         }
-        FileOutputStream fos = new FileOutputStream("D:/excel/专项支出用款申请书.xls");
+        FileOutputStream fos = new FileOutputStream("D:/home/excel/专项支出用款申请书.xls");
         workbook.write(fos);
         fos.close();
     }
@@ -105,11 +105,11 @@ public class TemplateExcelExportTest {
         map.put("maplist", listMap);
 
         Workbook workbook = ExcelExportUtil.exportExcel(params, map);
-        File savefile = new File("D:/excel/");
+        File savefile = new File("D:/home/excel/");
         if (!savefile.exists()) {
             savefile.mkdirs();
         }
-        FileOutputStream fos = new FileOutputStream("D:/excel/专项支出用款申请书_map.xls");
+        FileOutputStream fos = new FileOutputStream("D:/home/excel/专项支出用款申请书_map.xls");
         workbook.write(fos);
         fos.close();
     }
@@ -131,11 +131,11 @@ public class TemplateExcelExportTest {
         }
         map.put("list", list);
         Workbook workbook = ExcelExportUtil.exportExcel(params, map);
-        File savefile = new File("D:/excel/");
+        File savefile = new File("D:/home/excel/");
         if (!savefile.exists()) {
             savefile.mkdirs();
         }
-        FileOutputStream fos = new FileOutputStream("D:/excel/merge_test.xls");
+        FileOutputStream fos = new FileOutputStream("D:/home/excel/merge_test.xls");
         workbook.write(fos);
         fos.close();
     }

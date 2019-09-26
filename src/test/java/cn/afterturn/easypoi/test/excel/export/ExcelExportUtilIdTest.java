@@ -167,7 +167,7 @@ public class ExcelExportUtilIdTest {
         ExportParams params = new ExportParams("0328课程表", "日期：2016-03-28", "六年一班");
         params.setStyle(ExcelExportStylerBorderImpl.class);
         Workbook workbook = ExcelExportUtil.exportExcel(params, CourseEntity.class,courseList);
-        FileOutputStream fos = new FileOutputStream("D:/excel/0328课程表.xls");
+        FileOutputStream fos = new FileOutputStream("D:/home/excel/0328课程表.xls");
         workbook.write(fos);
         fos.close();
     }
@@ -180,7 +180,7 @@ public class ExcelExportUtilIdTest {
     	ExportParams params = new ExportParams("学生列表", "日期：2017-03-27","六年级一班");
     	params.setStyle(ExcelExportStylerBorderImpl.class);
     	Workbook workbook = ExcelExportUtil.exportExcel(params,StudentEntity.class,stuList);
-    	FileOutputStream fos = new FileOutputStream("D:/excel/学生列表.xls");
+    	FileOutputStream fos = new FileOutputStream("D:/home/excel/学生列表.xls");
     	workbook.write(fos);
     	fos.close();
     }
@@ -226,11 +226,11 @@ public class ExcelExportUtilIdTest {
         data.put("employeeList2", listMap);
 
         Workbook workbook = ExcelExportUtil.exportExcel(params, data);
-        File savefile = new File("D:/excel/");
+        File savefile = new File("D:/home/excel/");
         if (!savefile.exists()) {
             savefile.mkdirs();
         }
-        FileOutputStream fos = new FileOutputStream("D:/excel/;员工通讯录_0402.xls");
+        FileOutputStream fos = new FileOutputStream("D:/home/excel/;员工通讯录_0402.xls");
         workbook.write(fos);
         fos.close();
     }    
@@ -250,11 +250,11 @@ public class ExcelExportUtilIdTest {
     	data.put("salaryList", listMap);
     	
     	Workbook workbook = ExcelExportUtil.exportExcel(params, data);
-    	File savefile = new File("D:/excel/");
+    	File savefile = new File("D:/home/excel/");
     	if (!savefile.exists()) {
     		savefile.mkdirs();
     	}
-    	FileOutputStream fos = new FileOutputStream("D:/excel/;员工通讯录_0402.xls");
+    	FileOutputStream fos = new FileOutputStream("D:/home/excel/;员工通讯录_0402.xls");
     	workbook.write(fos);
     	fos.close();
     }    
@@ -262,7 +262,7 @@ public class ExcelExportUtilIdTest {
     //@Test//有问题
     public void testExportExcel_3() throws Exception{
     	Workbook workbook = ExcelExportUtil.exportExcel(schoolCourseList,ExcelType.HSSF);
-    	FileOutputStream fos = new FileOutputStream("D:/excel/六年级课程表.xls");
+    	FileOutputStream fos = new FileOutputStream("D:/home/excel/六年级课程表.xls");
     	workbook.write(fos);
     	fos.close();    	
     }

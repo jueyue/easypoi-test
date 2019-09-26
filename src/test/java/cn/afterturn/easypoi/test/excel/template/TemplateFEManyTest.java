@@ -49,11 +49,11 @@ public class TemplateFEManyTest {
                 "doc/foreach_insert_many.xlsx");
         Workbook workbook = ExcelExportUtil.exportExcel(params, map);
         PoiMergeCellUtil.mergeCells(workbook.getSheetAt(0), 1, 0, 4);
-        File savefile = new File("D:/excel/");
+        File savefile = new File("D:/home/excel/");
         if (!savefile.exists()) {
             savefile.mkdirs();
         }
-        FileOutputStream fos = new FileOutputStream("D:/excel/TemplateFEManyTest_test.xlsx");
+        FileOutputStream fos = new FileOutputStream("D:/home/excel/TemplateFEManyTest_test.xlsx");
         workbook.write(fos);
         fos.close();
     }
