@@ -41,7 +41,7 @@ public class ExcelExportOneToManyHaseNameTest {
         }
     }
 
-    public List<DemandEntity> getList() {
+    public static List<DemandEntity> getList() {
         List<DemandEntity> list = new ArrayList<DemandEntity>();
         DemandEntity de = new DemandEntity();
         de.setDeptName("省建设厅");
@@ -72,6 +72,7 @@ public class ExcelExportOneToManyHaseNameTest {
         sdepts.add(new DeptEntity("省工商局"));
         sdepts.add(new DeptEntity("省省建设厅"));
         dae.setSdepts(sdepts);
+        dae.setRemark("这就是生活啊");
         sme.getDataitemList().add(dae);
         de.getSupMaterialList().add(sme);
 
@@ -81,6 +82,7 @@ public class ExcelExportOneToManyHaseNameTest {
         sme.setSourceType(1);
         sme.setName("居民身份证");
         de.getSupMaterialList().add(sme);
+
         list.add(de);
 
         de = new DemandEntity();
@@ -112,6 +114,7 @@ public class ExcelExportOneToManyHaseNameTest {
         sdepts.add(new DeptEntity("省工商局"));
         sdepts.add(new DeptEntity("省省建设厅"));
         dae.setSdepts(sdepts);
+        dae.setRemark("这就是人生啊");
         sme.getDataitemList().add(dae);
         de.getSupMaterialList().add(sme);
         list.add(de);
