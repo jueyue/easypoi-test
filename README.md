@@ -6,7 +6,7 @@ EasyPoi Office的超简单工具类
 语言(熟悉的表达式语法),完成以前复杂的写法
 
 	作者博客：https://blog.csdn.net/qjueyue
-	作者邮箱： qrb.jueyue@foxmail.com
+	作者邮箱：xue315998@qq.com
 	QQ群:   1群 364192721(满) 2 群116844390
 	
 	开发者:魔幻之翼 xf.key@163.com
