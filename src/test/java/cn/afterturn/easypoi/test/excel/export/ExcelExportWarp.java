@@ -46,6 +46,7 @@ public class ExcelExportWarp {
         ExportParams params = new ExportParams("换行测试", "换行测试", ExcelType.HSSF);
         params.setFreezeCol(2);
         params.setHeight((short) -1);
+        params.setReadonly(true);
         Workbook workbook = ExcelExportUtil.exportExcel(params, MsgClient.class, list);
         System.out.println(new Date().getTime() - start.getTime());
         File savefile = new File("D:/home/excel/");
@@ -80,6 +81,7 @@ public class ExcelExportWarp {
         Date start = new Date();
         ExportParams params = new ExportParams("换行测试", "换行测试", ExcelType.XSSF);
         params.setFreezeCol(2);
+        params.setReadonly(true);
         Workbook workbook = ExcelExportUtil.exportExcel(params, MsgClient.class, list);
         System.out.println(new Date().getTime() - start.getTime());
         File savefile = new File("D:/home/excel/");
@@ -116,6 +118,7 @@ public class ExcelExportWarp {
         ExportParams params = new ExportParams("换行测试", "换行测试", ExcelType.HSSF);
         params.setFreezeCol(2);
         params.setHeight((short) -1);
+        params.setReadonly(true);
         Workbook workbook = ExcelExportUtil.exportExcel(params, MsgClient.class, list);
         System.out.println(new Date().getTime() - start.getTime());
         File savefile = new File("D:/home/excel/");
