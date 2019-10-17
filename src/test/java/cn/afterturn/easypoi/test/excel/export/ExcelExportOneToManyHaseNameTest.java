@@ -74,14 +74,14 @@ public class ExcelExportOneToManyHaseNameTest {
         dae.setSdepts(sdepts);
         dae.setRemark("这就是生活啊");
         sme.getDataitemList().add(dae);
-        de.getSupMaterialList2().add(sme);
+        de.getSupMaterialList().add(sme);
 
         sme = new SupMaterialEntity();
         sme.setMtype(1);
         sme.setLawType(1);
         sme.setSourceType(1);
         sme.setName("居民身份证");
-        de.getSupMaterialList2().add(sme);
+        de.getSupMaterialList().add(sme);
 
         list.add(de);
 
@@ -116,7 +116,7 @@ public class ExcelExportOneToManyHaseNameTest {
         dae.setSdepts(sdepts);
         dae.setRemark("这就是人生啊");
         sme.getDataitemList().add(dae);
-        de.getSupMaterialList2().add(sme);
+        de.getSupMaterialList().add(sme);
         list.add(de);
 
 

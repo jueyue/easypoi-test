@@ -46,12 +46,12 @@ public class DemandEntity {
      */
     @Excel(name = "年办件量", needMerge = true)
     private Long handleTotal;
+    @ExcelCollection(name = "需求材料表")
+    private List<SupMaterialEntity> supMaterialList2 = Lists.newArrayList();
     /**
      * 需求材料表
      */
     @ExcelCollection(name = "需求材料表")
     private List<SupMaterialEntity> supMaterialList = Lists.newArrayList();
-    @ExcelCollection(name = "需求材料表")
-    private List<SupMaterialEntity> supMaterialList2 = Lists.newArrayList();
 
 }
