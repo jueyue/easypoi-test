@@ -3,6 +3,7 @@ package cn.afterturn.easypoi.test.entity.onettomany.hasname;
 import cn.afterturn.easypoi.excel.annotation.Excel;
 import cn.afterturn.easypoi.excel.annotation.ExcelCollection;
 import com.google.common.collect.Lists;
+import lombok.Data;
 
 import java.util.List;
 
@@ -11,6 +12,7 @@ import java.util.List;
  *
  * @author Walt
  */
+@Data
 public class DemandEntity {
 
     private static final long serialVersionUID = 1L;
@@ -49,54 +51,7 @@ public class DemandEntity {
      */
     @ExcelCollection(name = "需求材料表")
     private List<SupMaterialEntity> supMaterialList = Lists.newArrayList();
+    @ExcelCollection(name = "需求材料表")
+    private List<SupMaterialEntity> supMaterialList2 = Lists.newArrayList();
 
-    public List<SupMaterialEntity> getSupMaterialList() {
-        return supMaterialList;
-    }
-
-    public void setSupMaterialList(List<SupMaterialEntity> supMaterialList) {
-        this.supMaterialList = supMaterialList;
-    }
-
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-
-    public Integer getCategory() {
-        return category;
-    }
-
-    public void setCategory(Integer category) {
-        this.category = category;
-    }
-
-    public Long getHandleTotal() {
-        return handleTotal;
-    }
-
-    public void setHandleTotal(Long handleTotal) {
-        this.handleTotal = handleTotal;
-    }
-
-    public String getDeptName() {
-        return deptName;
-    }
-
-    public void setDeptName(String deptName) {
-        this.deptName = deptName;
-    }
 }
