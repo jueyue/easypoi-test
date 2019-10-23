@@ -59,7 +59,7 @@ public class ExcelVerifyTest {
                 System.out.println(ReflectionToStringBuilder.toString(result.getList().get(i)));
             }
             Assert.assertTrue(result.getList().size() == 2);
-            Assert.assertTrue(result.isVerfiyFail());
+            Assert.assertTrue(result.isVerifyFail());
         } catch (Exception e) {
             LOGGER.error(e.getMessage(),e);
         }
@@ -89,7 +89,7 @@ public class ExcelVerifyTest {
                 System.out.println(ReflectionToStringBuilder.toString(result.getFailList().get(i)));
             }
             Assert.assertTrue(result.getList().size() == 2);
-            Assert.assertTrue(result.isVerfiyFail());
+            Assert.assertTrue(result.isVerifyFail());
         } catch (Exception e) {
             LOGGER.error(e.getMessage(),e);
         }

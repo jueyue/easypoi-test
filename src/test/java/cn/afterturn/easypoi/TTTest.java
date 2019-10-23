@@ -1,14 +1,14 @@
 package cn.afterturn.easypoi;
 
-import cn.afterturn.easypoi.excel.ExcelImportUtil;
-import cn.afterturn.easypoi.excel.entity.ImportParams;
-import cn.afterturn.easypoi.handler.inter.IReadHandler;
+import cn.afterturn.easypoi.excel.ExcelExportUtil;
+import cn.afterturn.easypoi.excel.entity.TemplateExportParams;
+import org.apache.poi.ss.usermodel.Workbook;
 import org.junit.Test;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.util.Date;
+import java.io.FileOutputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -22,25 +22,28 @@ public class TTTest {
 
     @Test
     public void img03() throws Exception {
-        try {
-            ImportParams params = new ImportParams();
-            params.setTitleRows(1);
-            long start = new Date().getTime();
-            ExcelImportUtil.importExcelBySax(
-                    new FileInputStream(
-                            new File(DESKTOP + "后移.xlsx")),
-                    Map.class, params, new IReadHandler<Map>() {
-                        @Override
-                        public void handler(Map o) {
-                            System.out.println(o);
-                        }
 
-                        @Override
-                        public void doAfterAll() {
-                            System.out.println("全部执行完毕了--------------------------------");
-                        }
-                    });
-        } catch (FileNotFoundException e) {
+        try {
+            TemplateExportParams params = new TemplateExportParams(
+                    DESKTOP + "hc.xlsx");
+            List<Map>           list = new ArrayList<>();
+            Map<String, Object> data = new HashMap<>();
+            data.put("base", 1);
+            data.put("one", 1);
+            data.put("two", 2);
+            list.add(data);
+            list.add(data);
+            list.add(data);
+            list.add(data);
+            list.add(data);
+            list.add(data);
+            Map map = new HashMap();
+            map.put("entitylist", list);
+            Workbook         workbook = ExcelExportUtil.exportExcel(params, map);
+            FileOutputStream fos      = new FileOutputStream(DESKTOP + "hc12.xlsx");
+            workbook.write(fos);
+            fos.close();
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
