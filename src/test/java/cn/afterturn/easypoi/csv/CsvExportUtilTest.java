@@ -14,23 +14,11 @@ import java.util.List;
 public class CsvExportUtilTest {
 
     @Test
-    public void exportBigExcel() {
-    }
-
-    @Test
-    public void exportBigExcel1() {
-    }
-
-    @Test
-    public void closeExportBigExcel() {
-    }
-
-    @Test
     public void exportCsv() throws IOException {
-        List<MsgClient> list = new ArrayList<MsgClient>();
-        Date start = new Date();
+        List<MsgClient> list   = new ArrayList<MsgClient>();
+        Date            start  = new Date();
         CsvExportParams params = new CsvExportParams();
-        for (int i = 0; i < 500000; i++) {
+        for (int i = 0; i < 500; i++) {
             MsgClient client = new MsgClient();
             client.setBirthday(new Date());
             client.setClientName("小明" + i);
@@ -46,17 +34,19 @@ public class CsvExportUtilTest {
             savefile.mkdirs();
         }
         FileOutputStream fos = new FileOutputStream("D:/home/excel/ExcelExportBigData.bigDataExport.csv");
-        CsvExportUtil.exportCsv(params, MsgClient.class, list, fos);
-        fos.flush();
-        fos.close();
+        CsvExportUtil    ce  = CsvExportUtil.exportCsv(params, MsgClient.class, fos);
+        for (int i = 0; i < 1000; i++) {
+            ce.write(list);
+        }
+        ce.close();
         System.out.println("导出完成" + (new Date().getTime() - start.getTime()));
     }
 
 
     @Test
     public void exportCsvGBK() throws IOException {
-        List<MsgClient> list = new ArrayList<MsgClient>();
-        Date start = new Date();
+        List<MsgClient> list   = new ArrayList<MsgClient>();
+        Date            start  = new Date();
         CsvExportParams params = new CsvExportParams();
         params.setEncoding(CsvExportParams.GBK);
         for (int i = 0; i < 50; i++) {
@@ -75,9 +65,11 @@ public class CsvExportUtilTest {
             savefile.mkdirs();
         }
         FileOutputStream fos = new FileOutputStream("D:/home/excel/ExcelExportBigData.bigDataExport_GBK.csv");
-        CsvExportUtil.exportCsv(params, MsgClient.class, list, fos);
-        fos.flush();
-        fos.close();
+        CsvExportUtil    ce  = CsvExportUtil.exportCsv(params, MsgClient.class, fos);
+        for (int i = 0; i < 1000; i++) {
+            ce.write(list);
+        }
+        ce.close();
         System.out.println("导出完成" + (new Date().getTime() - start.getTime()));
     }
 
