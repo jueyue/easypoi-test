@@ -13,12 +13,10 @@ EasyPoi Office的超简单工具类
 
 
 
-[VIP技术服务](https://lemur.taobao.com)
+## cn.afterturn：企业专用easypoi
 
-    提供一年的技术支持服务
-    提供10次内的1V1服务,限1小时
-    提供升级指导
-    针对lemur提供的所有开源项目提供支持服务
+cn.afterturn：easypoi与Tidelift合作，为您用于构建应用程序的开源依赖项提供商业支持和维护。节省时间，降低风险并改善代码运行状况，同时向维护人员支付所使用的确切依赖项。[了解更多。]（https://tidelift.com/subscription/pkg/maven-cn-afterturn-easypoi?utm_source=maven-cn-afterturn-easypoi&utm_medium=referral&utm_campaign=readme）
+
 
 **开发指南**
 
