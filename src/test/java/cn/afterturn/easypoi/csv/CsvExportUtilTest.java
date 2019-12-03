@@ -1,6 +1,7 @@
 package cn.afterturn.easypoi.csv;
 
 import cn.afterturn.easypoi.csv.entity.CsvExportParams;
+import cn.afterturn.easypoi.handler.inter.IWriter;
 import cn.afterturn.easypoi.test.entity.MsgClient;
 import org.junit.Test;
 
@@ -34,7 +35,7 @@ public class CsvExportUtilTest {
             savefile.mkdirs();
         }
         FileOutputStream fos = new FileOutputStream("D:/home/excel/ExcelExportBigData.bigDataExport.csv");
-        CsvExportUtil    ce  = CsvExportUtil.exportCsv(params, MsgClient.class, fos);
+        IWriter    ce  = CsvExportUtil.exportCsv(params, MsgClient.class, fos);
         for (int i = 0; i < 1000; i++) {
             ce.write(list);
         }
@@ -65,7 +66,7 @@ public class CsvExportUtilTest {
             savefile.mkdirs();
         }
         FileOutputStream fos = new FileOutputStream("D:/home/excel/ExcelExportBigData.bigDataExport_GBK.csv");
-        CsvExportUtil    ce  = CsvExportUtil.exportCsv(params, MsgClient.class, fos);
+        IWriter          ce  = CsvExportUtil.exportCsv(params, MsgClient.class, fos);
         for (int i = 0; i < 1000; i++) {
             ce.write(list);
         }

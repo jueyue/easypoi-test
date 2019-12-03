@@ -4,9 +4,10 @@ import cn.afterturn.easypoi.excel.ExcelImportUtil;
 import cn.afterturn.easypoi.excel.entity.ImportParams;
 import cn.afterturn.easypoi.handler.inter.IReadHandler;
 import cn.afterturn.easypoi.test.entity.MsgClient;
-import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -18,8 +19,9 @@ import java.util.List;
 /**
  * @author by jueyue on 19-6-23.
  */
-@Slf4j
 public class ExcelImportConcurrentTest {
+
+    private Logger log = LoggerFactory.getLogger(ExcelImportConcurrentTest.class);
 
     @Test
     public void test() {
