@@ -21,11 +21,24 @@ public class ExcelExportTemplateColFeTest {
 	@Test
 	public void one() throws Exception {
 		TemplateExportParams params = new TemplateExportParams(
-		    "doc/for_Col.xlsx", true);
+		    "doc/for_Col.xlsx");
 		params.setColForEach(true);
 		Workbook book = ExcelExportUtil.exportExcel(params, value);
 		//PoiMergeCellUtil.mergeCells(book.getSheetAt(0), 1, 0,1);
 		FileOutputStream fos = new FileOutputStream("D:/home/excel/ExcelExportTemplateColFeTest_one.xlsx");
+		book.write(fos);
+		fos.close();
+
+	}
+
+
+	@Test
+	public void two() throws Exception {
+		TemplateExportParams params = new TemplateExportParams(
+				"doc/for_Col.xlsx", 1);
+		params.setColForEach(true);
+		Workbook book = ExcelExportUtil.exportExcel(params, value);
+		FileOutputStream fos = new FileOutputStream("D:/home/excel/ExcelExportTemplateColFeTest_two.xlsx");
 		book.write(fos);
 		fos.close();
 
