@@ -4,6 +4,7 @@
 	<groupId>cn.afterturn</groupId>
 	<artifactId>easypoi-test</artifactId>
 	<version>4.0.0</version>
+	<packaging>jar</packaging>
 
 	<url>http://git.oschina.net/jueyue/easypoi-test</url>
 	<description> office 工具类 基于 poi</description>
@@ -51,6 +52,12 @@
 		<dependency>
 			<groupId>cn.afterturn</groupId>
 			<artifactId>easypoi-spring-boot-starter</artifactId>
+			<version>4.1.3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>cn.afterturn</groupId>
+			<artifactId>easypoi-wps</artifactId>
 			<version>4.1.3</version>
 		</dependency>
 
@@ -111,6 +118,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>easypoi</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -121,6 +129,10 @@
 					<target>1.8</target>
 					<encoding>UTF-8</encoding>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
 		<resources>
