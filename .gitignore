@@ -9,3 +9,5 @@
 target
 JOSNTest.java
 XmlTest.java
+#vip的测试需求不提交
+vip/
