@@ -17,7 +17,7 @@ import java.util.Map;
  */
 public class XmlTest {
 
-    @Test
+    //@Test
     public void test() throws Exception {
         BufferedReader rows = new BufferedReader(new InputStreamReader(new FileInputStream("C:\\Users\\jueyue\\Desktop\\山东组织机构.xml")));
         StringBuilder  xml = new StringBuilder();

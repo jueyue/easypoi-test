@@ -1,20 +1,23 @@
 package cn.afterturn.easypoi.test.word.entity;
 
+import cn.afterturn.easypoi.entity.ImageEntity;
 import cn.afterturn.easypoi.excel.annotation.Excel;
 
 /**
  * 测试人员类
+ *
  * @author JueYue
- *   2014年7月26日 下午10:51:30
+ * 2014年7月26日 下午10:51:30
  */
 public class Person {
 
     @Excel(name = "姓名")
-    private String name;
+    private String      name;
     @Excel(name = "手机")
-    private String tel;
+    private String      tel;
     @Excel(name = "Email")
-    private String email;
+    private String      email;
+    private ImageEntity sign;
 
     public String getEmail() {
         return email;
@@ -40,4 +43,11 @@ public class Person {
         this.tel = tel;
     }
 
+    public ImageEntity getSign() {
+        return sign;
+    }
+
+    public void setSign(ImageEntity sign) {
+        this.sign = sign;
+    }
 }

@@ -55,16 +55,23 @@ public class WordExportUtilBaseExcelTest {
         map.put("auditPerson", "JueYue");
         map.put("time", format.format(new Date()));
         map.put("date", new Date());
+        ImageEntity image = new ImageEntity();
+        image.setHeight(30);
+        image.setWidth(80);
+        image.setUrl("imgs/word/signName.png");
+        image.setType(ImageEntity.URL);
         List<Person> list = new ArrayList<Person>();
         Person p = new Person();
         p.setName("小明");
         p.setTel("18711111111");
         p.setEmail("18711111111@139.com");
+        p.setSign(image);
         list.add(p);
         p = new Person();
         p.setName("小红");
         p.setTel("18711111112");
         p.setEmail("18711111112@139.com");
+        p.setSign(image);
         list.add(p);
         map.put("pList", list);
         XWPFDocument doc = WordExportUtil.exportWord07(

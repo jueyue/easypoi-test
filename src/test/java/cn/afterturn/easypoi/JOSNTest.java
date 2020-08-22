@@ -14,7 +14,7 @@ import java.util.Map;
  */
 public class JOSNTest {
 
-    @Test
+    //@Test
     public void test() throws Exception {
         BufferedReader rows = new BufferedReader(new InputStreamReader(new FileInputStream("C:\\Users\\jueyue\\Desktop\\山东组织机构.json")));
         StringBuilder  json = new StringBuilder();
