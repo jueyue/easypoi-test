@@ -30,6 +30,7 @@ public class WordForEachTest {
         image.setWidth(500);
         image.setUrl("imgs/word/testCode.png");
         image.setType(ImageEntity.URL);
+        image.setLocationType(ImageEntity.ABOVE);
         map.put("testCode", image);
 
         List<ImageEntity> listImage = new ArrayList<>();
