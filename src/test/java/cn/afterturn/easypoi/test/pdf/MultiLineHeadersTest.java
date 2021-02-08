@@ -27,10 +27,10 @@ import cn.afterturn.easypoi.test.entity.TeacherEntity;
 import cn.afterturn.easypoi.pdf.PdfExportUtil;
 import cn.afterturn.easypoi.pdf.entity.PdfExportParams;
 
+import com.itextpdf.layout.Document;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.itextpdf.text.Document;
 
 /**
  * 多行表头导出
@@ -75,8 +75,8 @@ public class MultiLineHeadersTest {
 
     @Test
     public void testExportPdf() {
-        PdfExportParams params = new PdfExportParams("绝月的测试", "作者绝月");
-        Document document = null;
+        PdfExportParams params   = new PdfExportParams("绝月的测试", "作者绝月");
+        Document        document = null;
         try {
             File file = new File("D:/home/excel//MultiLineHeadersTest.testExportPdf.pdf");
             file.createNewFile();

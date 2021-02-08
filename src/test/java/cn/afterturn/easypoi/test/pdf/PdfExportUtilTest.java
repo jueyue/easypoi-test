@@ -29,9 +29,9 @@ import cn.afterturn.easypoi.excel.annotation.Excel;
 import cn.afterturn.easypoi.pdf.PdfExportUtil;
 import cn.afterturn.easypoi.pdf.entity.PdfExportParams;
 
+import com.itextpdf.layout.Document;
 import org.junit.Test;
 
-import com.itextpdf.text.Document;
 
 public class PdfExportUtilTest {
 

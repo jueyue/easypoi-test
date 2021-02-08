@@ -29,7 +29,6 @@ import cn.afterturn.easypoi.pdf.entity.PdfExportParams;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.itextpdf.text.Document;
 
 /**
  * Pdf 图片的导出
@@ -56,7 +55,7 @@ public class PdfImageTest {
     public void imageTest() {
         PdfExportParams params = new PdfExportParams("学生信息");
         try {
-            File file = new File("D:/home/excel//PdfImageTest.pdf");
+            File file = new File("D:/home/excel/PdfImageTest.pdf");
             file.createNewFile();
             PdfExportUtil.exportPdf(params, StudentEntityImage.class, studentList,
                 new FileOutputStream(file));
